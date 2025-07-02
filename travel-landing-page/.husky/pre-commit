@@ -1,0 +1,2 @@
+cd travel-landing-page
+npx lint-staged
