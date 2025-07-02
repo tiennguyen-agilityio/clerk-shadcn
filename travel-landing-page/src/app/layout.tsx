@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import { neobrutalism, shadesOfPurple } from "@clerk/themes";
 import "./globals.css";
 
 import { localization } from "@utils";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +31,18 @@ export default function RootLayout({
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
       localization={localization}
+      appearance={{
+        cssLayerName: "clerk",
+        baseTheme: [neobrutalism],
+        signIn: { baseTheme: shadesOfPurple },
+      }}
     >
       <html lang="en">
+        <Head>
+          <link rel="icon" href="/favicon.ico" type="image/png" />
+          <meta name="theme-color" content="#ffffff" />
+          <meta name="description" content="Travel Landing Page" />
+        </Head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           {children}
         </body>
