@@ -1,6 +1,13 @@
 "use client";
 
-import { RedirectToSignIn, SignedIn, SignedOut, UserButton, ClerkLoading } from "@clerk/nextjs";
+import {
+  RedirectToSignIn,
+  SignedIn,
+  SignedOut,
+  UserButton,
+  ClerkLoading,
+  ClerkLoaded,
+} from "@clerk/nextjs";
 
 import { Loading } from "@components";
 
@@ -12,26 +19,28 @@ export default function Home() {
           <Loading />
         </ClerkLoading>
 
-        <SignedIn>
-          <h1>Home page</h1>
+        <ClerkLoaded>
+          <SignedIn>
+            <h1>Home page</h1>
 
-          <UserButton
-            showName
-            userProfileMode="navigation"
-            userProfileUrl="/user/profile"
-            appearance={{
-              elements: {
-                userButton: "rounded-md border border-gray-300 shadow p-2",
-                userButtonTrigger: "bg-red-200",
-                userButtonOuterIdentifier: "text-white pr-2",
-              },
-            }}
-          />
-        </SignedIn>
+            <UserButton
+              showName
+              userProfileMode="navigation"
+              userProfileUrl="/user/profile"
+              appearance={{
+                elements: {
+                  userButton: "rounded-md border border-gray-300 shadow p-2",
+                  userButtonTrigger: "bg-red-200",
+                  userButtonOuterIdentifier: "text-white pr-2",
+                },
+              }}
+            />
+          </SignedIn>
 
-        <SignedOut>
-          <RedirectToSignIn />
-        </SignedOut>
+          <SignedOut>
+            <RedirectToSignIn />
+          </SignedOut>
+        </ClerkLoaded>
       </main>
     </div>
   );
