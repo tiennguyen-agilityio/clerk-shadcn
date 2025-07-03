@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Abel, Acme } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import { neobrutalism } from "@clerk/themes";
 import "./globals.css";
 
 import { localization } from "@utils";
 import Head from "next/head";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const abel = Abel({
   subsets: ["latin"],
+  weight: "400",
+  variable: "--font-abel",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const acme = Acme({
   subsets: ["latin"],
+  weight: "400",
+  variable: "--font-acme",
 });
 
 export const metadata: Metadata = {
@@ -33,18 +34,16 @@ export default function RootLayout({
       localization={localization}
       appearance={{
         cssLayerName: "clerk",
-        baseTheme: [neobrutalism],
       }}
+      waitlistUrl="/waitlist"
     >
-      <html lang="en">
+      <html lang="en" className={`${abel.variable} ${acme.variable}`}>
         <Head>
           <link rel="icon" href="/favicon.ico" type="image/png" />
           <meta name="theme-color" content="#ffffff" />
           <meta name="description" content="Travel Landing Page" />
         </Head>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {children}
-        </body>
+        <body className={`${abel.variable} ${acme.variable} antialiased`}>{children}</body>
       </html>
     </ClerkProvider>
   );

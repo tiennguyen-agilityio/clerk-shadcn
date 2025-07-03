@@ -21,7 +21,7 @@ export default function Home() {
 
         <ClerkLoaded>
           <SignedIn>
-            <h1>Home page</h1>
+            <h1 className="font-acme">Home page</h1>
 
             <UserButton
               showName
