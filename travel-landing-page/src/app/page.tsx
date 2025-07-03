@@ -11,6 +11,8 @@ export default function Home() {
 
           <UserButton
             showName
+            userProfileMode="navigation"
+            userProfileUrl="/user/profile"
             appearance={{
               elements: {
                 userButton: "rounded-md border border-gray-300 shadow p-2",
