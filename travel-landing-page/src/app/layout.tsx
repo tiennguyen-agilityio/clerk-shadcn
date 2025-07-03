@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import { neobrutalism, shadesOfPurple } from "@clerk/themes";
+import { neobrutalism } from "@clerk/themes";
 import "./globals.css";
 
 import { localization } from "@utils";
@@ -34,7 +34,6 @@ export default function RootLayout({
       appearance={{
         cssLayerName: "clerk",
         baseTheme: [neobrutalism],
-        signIn: { baseTheme: shadesOfPurple },
       }}
     >
       <html lang="en">
