@@ -1,22 +1,11 @@
 import type { Metadata } from "next";
 import Head from "next/head";
-import { Abel, Acme } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
-import { localization } from "@utils";
+import { localization } from "@/utils";
 
-const abel = Abel({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-abel",
-});
-
-const acme = Acme({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-acme",
-});
+import { abel, acme } from "@/config";
 
 export const metadata: Metadata = {
   title: "Create Next App",

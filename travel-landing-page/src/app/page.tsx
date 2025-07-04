@@ -1,6 +1,6 @@
 import { SignedIn, UserButton, ClerkLoading, ClerkLoaded } from "@clerk/nextjs";
 
-import { Loading } from "@components";
+import { Loading } from "@/components";
 
 export default function Home() {
   return (
