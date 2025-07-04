@@ -4,8 +4,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
 import { localization } from "@/utils";
-
 import { abel, acme } from "@/config";
+import { Header } from "@/components";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,7 +34,10 @@ export default function RootLayout({
           <meta name="theme-color" content="#ffffff" />
           <meta name="description" content="Travel Landing Page" />
         </Head>
-        <body className={`${abel.variable} ${acme.variable} antialiased`}>{children}</body>
+        <body className={`${abel.variable} ${acme.variable} antialiased`}>
+          <Header />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
