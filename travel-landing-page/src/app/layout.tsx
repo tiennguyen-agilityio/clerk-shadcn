@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import Head from "next/head";
 import { Abel, Acme } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
 import { localization } from "@utils";
-import Head from "next/head";
 
 const abel = Abel({
   subsets: ["latin"],
@@ -36,6 +36,8 @@ export default function RootLayout({
         cssLayerName: "clerk",
       }}
       waitlistUrl="/waitlist"
+      afterSignOutUrl="/sign-in"
+      // clerkJSVariant="headless"
     >
       <html lang="en" className={`${abel.variable} ${acme.variable}`}>
         <Head>

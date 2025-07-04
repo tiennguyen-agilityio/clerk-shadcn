@@ -1,13 +1,4 @@
-"use client";
-
-import {
-  RedirectToSignIn,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  ClerkLoading,
-  ClerkLoaded,
-} from "@clerk/nextjs";
+import { SignedIn, UserButton, ClerkLoading, ClerkLoaded } from "@clerk/nextjs";
 
 import { Loading } from "@components";
 
@@ -36,10 +27,6 @@ export default function Home() {
               }}
             />
           </SignedIn>
-
-          <SignedOut>
-            <RedirectToSignIn />
-          </SignedOut>
         </ClerkLoaded>
       </main>
     </div>
