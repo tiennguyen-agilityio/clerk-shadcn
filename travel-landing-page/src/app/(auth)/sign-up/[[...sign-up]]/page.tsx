@@ -1,6 +1,6 @@
 import { SignUp } from "@clerk/nextjs";
 
-import Loading from "@components/Loading";
+import Loading from "@/components/Loading";
 
 const SignUpPage = () => {
   return <SignUp fallback={<Loading />} />;

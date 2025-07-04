@@ -8,7 +8,7 @@ const config: Config = {
   moduleDirectories: ["node_modules"],
   moduleNameMapper: {
     ".+\\.(png|jpg)$": "identity-obj-proxy",
-    "^@root(.*)$": "<rootDir>/src$1",
+    "^@root(.*)$": "<rootDir>/src/$1",
     "^@/(.*)$": "<rootDir>/src/$1",
   },
   transform: {
