@@ -3,6 +3,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import clsx from "clsx";
 
 import { NAV_BAR } from "@/constants";
 
@@ -31,7 +32,10 @@ const Header = () => {
             <div className="flex items-center font-acme text-[13px] text-white">
               <SignInButton>
                 <span
-                  className={`cursor-pointer ${isActiveSignIn ? "text-orange-500" : "text-white"}`}
+                  className={clsx(
+                    "cursor-pointer text-white-500",
+                    isActiveSignIn && "text-orange-500"
+                  )}
                 >
                   Sign In
                 </span>
@@ -39,7 +43,10 @@ const Header = () => {
               /
               <SignUpButton>
                 <span
-                  className={`cursor-pointer ${isActiveSignUp ? "text-orange-500" : "text-white"}`}
+                  className={clsx(
+                    "cursor-pointer text-white-500",
+                    isActiveSignUp && "text-orange-500"
+                  )}
                 >
                   Sign Up
                 </span>

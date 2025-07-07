@@ -10,7 +10,7 @@ exports[`NavBar should render correctly 1`] = `
       href="/camping"
     >
       <span
-        class="font-acme text-[13px] text-white"
+        class="font-acme text-[13px] text-white-500"
       >
         Camping Locations
       </span>
@@ -23,7 +23,7 @@ exports[`NavBar should render correctly 1`] = `
       href="/activities"
     >
       <span
-        class="font-acme text-[13px] text-white"
+        class="font-acme text-[13px] text-white-500"
       >
         Activities
       </span>
@@ -36,7 +36,7 @@ exports[`NavBar should render correctly 1`] = `
       href="/equipment"
     >
       <span
-        class="font-acme text-[13px] text-white"
+        class="font-acme text-[13px] text-white-500"
       >
         Equipment
       </span>
@@ -49,7 +49,7 @@ exports[`NavBar should render correctly 1`] = `
       href="/blogs"
     >
       <span
-        class="font-acme text-[13px] text-white"
+        class="font-acme text-[13px] text-white-500"
       >
         Blogs
       </span>
@@ -71,7 +71,7 @@ exports[`NavBar should render correctly Activities 1`] = `
       href="/camping"
     >
       <span
-        class="font-acme text-[13px] text-white"
+        class="font-acme text-[13px] text-white-500"
       >
         Camping Locations
       </span>
@@ -97,7 +97,7 @@ exports[`NavBar should render correctly Activities 1`] = `
       href="/equipment"
     >
       <span
-        class="font-acme text-[13px] text-white"
+        class="font-acme text-[13px] text-white-500"
       >
         Equipment
       </span>
@@ -110,7 +110,7 @@ exports[`NavBar should render correctly Activities 1`] = `
       href="/blogs"
     >
       <span
-        class="font-acme text-[13px] text-white"
+        class="font-acme text-[13px] text-white-500"
       >
         Blogs
       </span>
