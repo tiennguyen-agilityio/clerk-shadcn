@@ -1,4 +1,5 @@
 import Link from "next/link";
+import clsx from "clsx";
 
 interface NavItem {
   name: string;
@@ -19,7 +20,10 @@ const NavBar = ({ list, href = "" }: NavBarProps) => {
         return (
           <Link key={item.name} href={item.href} className="flex flex-col items-center mx-4 group">
             <span
-              className={`font-acme text-[13px] ${isActive ? "text-orange-500" : "text-white"}`}
+              className={clsx(
+                "font-acme text-[13px]",
+                isActive ? "text-orange-500" : "text-white-500"
+              )}
             >
               {item.name}
             </span>

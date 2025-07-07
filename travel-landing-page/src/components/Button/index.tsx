@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import clsx from "clsx";
 
 interface ButtonProps {
   children: ReactNode;
@@ -6,10 +7,13 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const Button = ({ children, className = "", onClick }: ButtonProps) => {
+const Button = ({ children, className, onClick }: ButtonProps) => {
   return (
     <button
-      className={`flex items-center gap-2 px-6 py-3 rounded-full bg-orange-600 text-current font-acme text-[13px] hover:bg-orange-700 transition-colors duration-300 ${className}`}
+      className={clsx(
+        "flex items-center gap-2 px-6 py-3 rounded-full bg-orange-600 text-current font-acme text-[13px] hover:bg-orange-700 transition-colors duration-300",
+        className
+      )}
       onClick={onClick}
     >
       {children}

@@ -1,4 +1,6 @@
 import React from "react";
+import clsx from "clsx";
+import Link from "next/link";
 
 interface LogoProps {
   text?: string;
@@ -6,7 +8,11 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ text = "Travelsy", className = "" }: LogoProps) => {
-  return <h1 className={`text-lg font-acme text-white-500 ${className}`}>{text}</h1>;
+  return (
+    <Link href="/" className={clsx("text-lg font-acme text-white-500", className)}>
+      {text}
+    </Link>
+  );
 };
 
 export default Logo;
