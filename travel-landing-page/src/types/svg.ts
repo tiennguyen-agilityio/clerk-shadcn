@@ -4,3 +4,10 @@ export interface SVGProps {
   height?: number | string;
   onClick?: () => void;
 }
+
+export enum DIRECTION {
+  UP = "up",
+  DOWN = "down",
+  LEFT = "left",
+  RIGHT = "right",
+}

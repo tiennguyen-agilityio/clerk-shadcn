@@ -1,2 +1,9 @@
 export { default as BookmarkIcon } from "./BookmarkIcon";
 export { default as SearchIcon } from "./SearchIcon";
+export { default as DiscoverIcon } from "./DiscoverIcon";
+export { default as MPesaIcon } from "./MPesaIcon";
+export { default as VisaIcon } from "./VisaIcon";
+export { default as PaypalIcon } from "./PaypalIcon";
+export { default as MasterCardIcon } from "./MasterCardIcon";
+export { default as USAFlagIcon } from "./USAFlagIcon";
+export { default as ArrowIcon } from "./ArrowIcon";
