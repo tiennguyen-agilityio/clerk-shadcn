@@ -5,7 +5,7 @@ import "./globals.css";
 
 import { localization } from "@/utils";
 import { abel, acme } from "@/config";
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -37,6 +37,7 @@ export default function RootLayout({
         <body className={`${abel.variable} ${acme.variable} antialiased`}>
           <Header />
           {children}
+          <Footer />
         </body>
       </html>
     </ClerkProvider>

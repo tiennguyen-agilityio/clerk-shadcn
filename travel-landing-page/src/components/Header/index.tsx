@@ -19,7 +19,7 @@ const Header = () => {
   const isHasBorder = ["/sign-in", "/sign-up"].includes(pathname);
 
   return (
-    <div className={clsx("w-full", isHasBorder && "border-b-1 border-[#d8d8d8]")}>
+    <header className={clsx("w-full", isHasBorder && "border-b-1 border-[#d8d8d8]")}>
       <div className="flex items-center content-center mx-auto h-25 max-w-7xl">
         <Logo className="w-auto" />
         <div className="flex ml-auto mr-0 items-center">
@@ -61,7 +61,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
