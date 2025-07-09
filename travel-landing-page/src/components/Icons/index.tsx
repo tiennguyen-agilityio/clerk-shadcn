@@ -7,3 +7,5 @@ export { default as PaypalIcon } from "./PaypalIcon";
 export { default as MasterCardIcon } from "./MasterCardIcon";
 export { default as USAFlagIcon } from "./USAFlagIcon";
 export { default as ArrowIcon } from "./ArrowIcon";
+export { default as FacebookIcon } from "./FacebookIcon";
+export { default as GoogleIcon } from "./GoogleIcon";
