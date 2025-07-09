@@ -10,7 +10,7 @@
     "format": "prettier --write .",
     "prepare": "cd .. && husky travel-landing-page/.husky",
     "eslint:fix": "eslint --fix .",
-    "test": "jest -- -u",
+    "test": "jest",
     "test:coverage": "jest --coverage -u",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
