@@ -1,0 +1,26 @@
+stages:
+  - deploy
+
+image: alpine:latest
+
+variables:
+  GITHUB_REPO: "https://tiennguyen:${GITHUB_TOKEN}@github.com/tiennguyen-agilityio/clerk-shadcn.git"
+  TARGET_BRANCH: "feature/apply-clerk"
+
+before_script:
+  - apk add --no-cache git
+  - echo "Setting up Git configuration..."
+  - git config --global user.email "tien.nguyen@asnet.com"
+  - git config --global user.name "Tien Nguyen"
+  - git remote add github $GITHUB_REPO || true
+
+push_to_github:
+  stage: deploy
+  script:
+    - echo "Pushing code to GitHub..."
+    - git push -f github HEAD:$TARGET_BRANCH
+  rules:
+   
+    - if: '$CI_COMMIT_BRANCH == "feature/apply-clerk"'
+      when: on_success
+    - when: manual
