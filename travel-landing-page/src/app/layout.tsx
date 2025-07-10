@@ -36,7 +36,7 @@ export default function RootLayout({
         </Head>
         <body className={`${abel.variable} ${acme.variable} antialiased`}>
           <Header />
-          {children}
+          <div className="flex flex-col items-center justify-center h-fit">{children}</div>
           <Footer />
         </body>
       </html>

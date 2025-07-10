@@ -28,7 +28,7 @@ const NavBar = ({ list, href = "" }: NavBarProps) => {
               {item.name}
             </span>
             <span
-              className={`w-2 h-2 rounded-full mt-1 transition-opacity ${
+              className={`w-2 h-2 rounded-full transition-opacity ${
                 isActive ? "opacity-100 bg-orange-500" : "opacity-0"
               }`}
             />

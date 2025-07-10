@@ -14,7 +14,7 @@ const TestimonialItem = ({
   authorName,
 }: TestimonialItemProps) => {
   return (
-    <div className="flex flex-col shadow h-full p-7.5 pb-10">
+    <div className="flex flex-col shadow h-full p-7.5 pb-10 bg-white">
       <p className="font-abel text-base">{title}</p>
       <p className="font-acme text-sm mt-3.5">{descriptions}</p>
       <div className="flex items-center gap-2.5 mt-auto mb-0">

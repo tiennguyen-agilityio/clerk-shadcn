@@ -15,7 +15,7 @@ exports[`NavBar should render correctly 1`] = `
         Camping Locations
       </span>
       <span
-        class="w-2 h-2 rounded-full mt-1 transition-opacity opacity-0"
+        class="w-2 h-2 rounded-full transition-opacity opacity-0"
       />
     </a>
     <a
@@ -28,7 +28,7 @@ exports[`NavBar should render correctly 1`] = `
         Activities
       </span>
       <span
-        class="w-2 h-2 rounded-full mt-1 transition-opacity opacity-0"
+        class="w-2 h-2 rounded-full transition-opacity opacity-0"
       />
     </a>
     <a
@@ -41,7 +41,7 @@ exports[`NavBar should render correctly 1`] = `
         Equipment
       </span>
       <span
-        class="w-2 h-2 rounded-full mt-1 transition-opacity opacity-0"
+        class="w-2 h-2 rounded-full transition-opacity opacity-0"
       />
     </a>
     <a
@@ -54,7 +54,7 @@ exports[`NavBar should render correctly 1`] = `
         Blogs
       </span>
       <span
-        class="w-2 h-2 rounded-full mt-1 transition-opacity opacity-0"
+        class="w-2 h-2 rounded-full transition-opacity opacity-0"
       />
     </a>
   </nav>
@@ -76,7 +76,7 @@ exports[`NavBar should render correctly Activities 1`] = `
         Camping Locations
       </span>
       <span
-        class="w-2 h-2 rounded-full mt-1 transition-opacity opacity-0"
+        class="w-2 h-2 rounded-full transition-opacity opacity-0"
       />
     </a>
     <a
@@ -89,7 +89,7 @@ exports[`NavBar should render correctly Activities 1`] = `
         Activities
       </span>
       <span
-        class="w-2 h-2 rounded-full mt-1 transition-opacity opacity-100 bg-orange-500"
+        class="w-2 h-2 rounded-full transition-opacity opacity-100 bg-orange-500"
       />
     </a>
     <a
@@ -102,7 +102,7 @@ exports[`NavBar should render correctly Activities 1`] = `
         Equipment
       </span>
       <span
-        class="w-2 h-2 rounded-full mt-1 transition-opacity opacity-0"
+        class="w-2 h-2 rounded-full transition-opacity opacity-0"
       />
     </a>
     <a
@@ -115,7 +115,7 @@ exports[`NavBar should render correctly Activities 1`] = `
         Blogs
       </span>
       <span
-        class="w-2 h-2 rounded-full mt-1 transition-opacity opacity-0"
+        class="w-2 h-2 rounded-full transition-opacity opacity-0"
       />
     </a>
   </nav>
