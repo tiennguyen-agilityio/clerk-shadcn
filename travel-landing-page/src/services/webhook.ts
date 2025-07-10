@@ -1,5 +1,6 @@
 import { Webhook } from "svix";
 import { WebhookEvent } from "@clerk/nextjs/server";
+import { headers } from "next/headers";
 
 import { API_ROUTES } from "@/constants";
 import { APIS } from "@/services";
@@ -50,15 +51,25 @@ export const webhookHandler = async (req: Request) => {
     return new Response("Server Misconfiguration", { status: 500 });
   }
 
-  const arrayBuffer = await req.arrayBuffer();
-  const payload = Buffer.from(arrayBuffer);
-  const headers = Object.fromEntries(req.headers.entries());
-
   const wh = new Webhook(WEBHOOK_SECRET);
+
+  const headerPayload = await headers();
+  const svixHeaders = {
+    "svix-id": headerPayload.get("svix-id") || "",
+    "svix-timestamp": headerPayload.get("svix-timestamp") || "",
+    "svix-signature": headerPayload.get("svix-signature") || "",
+  };
+
+  if (!svixHeaders["svix-id"] || !svixHeaders["svix-timestamp"] || !svixHeaders["svix-signature"]) {
+    return new Response("Error: Missing Svix headers", { status: 400 });
+  }
+
+  const data = await req.json();
+  const payload = JSON.stringify(data);
 
   let event;
   try {
-    event = wh.verify(payload, headers) as WebhookEvent;
+    event = wh.verify(payload, svixHeaders) as WebhookEvent;
   } catch (err) {
     console.error("❌ Webhook signature verification failed:", err);
     return new Response("Invalid signature", { status: 400 });
