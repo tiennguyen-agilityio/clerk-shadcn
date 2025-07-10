@@ -3,11 +3,7 @@ const UserLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
-      {children}
-    </div>
-  );
+  return <div className="flex flex-col items-center justify-center h-fit py-15">{children}</div>;
 };
 
 export default UserLayout;
