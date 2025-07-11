@@ -16,7 +16,7 @@ const Header = () => {
   const pathname = usePathname() || "";
   const isActiveSignIn = pathname.startsWith("/sign-in");
   const isActiveSignUp = pathname.startsWith("/sign-up");
-  const isHasBorder = ["/sign-in", "/sign-up"].includes(pathname);
+  const isHasBorder = ["/sign-in", "/sign-up", "/wait-list"].includes(pathname);
 
   return (
     <header className={clsx("w-full", isHasBorder && "border-b-1 border-[#d8d8d8]")}>
