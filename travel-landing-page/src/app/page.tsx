@@ -4,31 +4,28 @@ import { Loading } from "@/components";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <ClerkLoading>
-          <Loading />
-        </ClerkLoading>
+    <div className="grid grid-rows-[20px_1fr_20px] items-center gap-5 sm:p-20">
+      <ClerkLoading>
+        <Loading />
+      </ClerkLoading>
 
-        <ClerkLoaded>
-          <SignedIn>
-            <h1 className="font-acme">Home page</h1>
-
-            <UserButton
-              showName
-              userProfileMode="navigation"
-              userProfileUrl="/user/profile"
-              appearance={{
-                elements: {
-                  userButton: "rounded-md border border-gray-300 shadow p-2",
-                  userButtonTrigger: "bg-red-200",
-                  userButtonOuterIdentifier: "text-white pr-2",
-                },
-              }}
-            />
-          </SignedIn>
-        </ClerkLoaded>
-      </main>
+      <ClerkLoaded>
+        <h1 className="font-acme">Home page</h1>
+        <SignedIn>
+          <UserButton
+            showName
+            userProfileMode="navigation"
+            userProfileUrl="/user/profile"
+            appearance={{
+              elements: {
+                userButton: "rounded-md border border-gray-300 shadow p-2",
+                userButtonTrigger: "bg-red-200",
+                userButtonOuterIdentifier: "text-white pr-2",
+              },
+            }}
+          />
+        </SignedIn>
+      </ClerkLoaded>
     </div>
   );
 }
