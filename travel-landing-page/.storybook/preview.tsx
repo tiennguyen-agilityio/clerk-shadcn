@@ -1,9 +1,10 @@
 import type { Preview } from "@storybook/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "next-themes";
 import { AppRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 import { acme, abel } from "../src/config";
-import "../src/app/globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
+import "../src/themes/globals.css";
 
 const preview: Preview = {
   parameters: {
@@ -16,14 +17,35 @@ const preview: Preview = {
     nextRouter: {
       Provider: AppRouterContext.Provider,
     },
+    themes: {
+      name: "Theme",
+      description: "Global theme for components",
+      defaultValue: "light",
+      toolbar: {
+        icon: "circlehollow",
+        items: [
+          { value: "light", title: "Light" },
+          { value: "dark", title: "Dark" },
+          { value: "system", title: "System" },
+        ],
+        showName: true,
+      },
+    },
   },
   tags: ["autodocs"],
   decorators: [
-    (Story) => (
+    (Story, context) => (
       <ClerkProvider>
-        <div className={`${acme.variable} ${abel.variable}`}>
-          <Story />
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme={context.globals.theme || "light"}
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <div className={`${acme.variable} ${abel.variable} antialiased`}>
+            <Story />
+          </div>
+        </ThemeProvider>
       </ClerkProvider>
     ),
   ],

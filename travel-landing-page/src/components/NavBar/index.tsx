@@ -19,12 +19,7 @@ const NavBar = ({ list, href = "" }: NavBarProps) => {
 
         return (
           <Link key={item.name} href={item.href} className="flex flex-col items-center mx-4 group">
-            <span
-              className={clsx(
-                "font-acme text-[13px]",
-                isActive ? "text-orange-500" : "text-white-500"
-              )}
-            >
+            <span className={clsx("text-[13px]", isActive ? "text-orange-500" : "text-white-500")}>
               {item.name}
             </span>
             <span
