@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import { ClerkProvider } from "@clerk/nextjs";
-import "./globals.css";
+import "@/themes/globals.css";
 
 import { localization } from "@/utils";
 import { abel, acme } from "@/config";
 import { Footer, Header } from "@/components";
+import { ThemeProvider } from "@/themes";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,20 +25,25 @@ export default function RootLayout({
       appearance={{
         cssLayerName: "clerk",
       }}
-      waitlistUrl="/waitlist"
       afterSignOutUrl="/sign-in"
-      // clerkJSVariant="headless"
     >
-      <html lang="en" className={`${abel.variable} ${acme.variable}`}>
+      <html lang="en" suppressHydrationWarning>
         <Head>
           <link rel="icon" href="/favicon.ico" type="image/png" />
           <meta name="theme-color" content="#ffffff" />
           <meta name="description" content="Travel Landing Page" />
         </Head>
         <body className={`${abel.variable} ${acme.variable} antialiased`}>
-          <Header />
-          <div className="flex flex-col items-center justify-center h-fit">{children}</div>
-          <Footer />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            <div className="flex flex-col items-center justify-center h-fit">{children}</div>
+            <Footer />
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

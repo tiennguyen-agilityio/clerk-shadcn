@@ -2,11 +2,12 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./src/components/**/*.{ts,tsx}", "./src/app/**/*.{ts,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        abel: ["var(--font-abel)", "sans-serif"],
-        acme: ["var(--font-acme)", "sans-serif"],
+        primary: ["var(--font-primary)", "sans-serif"],
+        secondary: ["var(--font-secondary)", "sans-serif"],
       },
     },
   },
