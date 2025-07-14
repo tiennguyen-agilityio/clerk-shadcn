@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import clsx from "clsx";
 import * as Clerk from "@clerk/elements/common";
 import * as SignUp from "@clerk/elements/sign-up";
@@ -16,6 +16,18 @@ const SignUpPage = () => {
 
   const handleToggleVisible = () => setIsPasswordVisible((prev) => !prev);
 
+  const handleDayChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setDay(e.target.value);
+  };
+
+  const handleMonthChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setMonth(e.target.value);
+  };
+
+  const handleYearChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setYear(e.target.value);
+  };
+
   return (
     <div className="font-acme text-sm">
       <SignUp.Root fallback={<Loading />}>
@@ -23,28 +35,26 @@ const SignUpPage = () => {
           {(isGlobalLoading) => (
             <div className="flex-col justify-center items-center content-center w-[545px]">
               <SignUp.Step name="start" className="w-full">
-                <h1 className="font-abel text-center text-[70px] text-black">Create Account</h1>
+                <h1 className="font-abel text-center text-[70px]">Create Account</h1>
 
                 <div className="flex justify-between mt-12.5 h-12.5 gap-2.5 text-white">
-                  <Clerk.Connection
-                    name="facebook"
-                    className="flex justify-center items-center gap-5 w-1/2  bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300 rounded-sm"
-                  >
-                    <FacebookIcon />
-                    <div className="border-l-[1px] h-5 border-foreground" />
-                    <Clerk.Loading scope="provider:facebook">
-                      {(isLoading) => (isLoading ? "Loading..." : "Sign in with Facebook")}
-                    </Clerk.Loading>
+                  <Clerk.Connection asChild name="facebook">
+                    <Button className="gap-2.5 w-1/2  bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300">
+                      <FacebookIcon />
+                      <div className="border-l-[1px] h-5 border-foreground" />
+                      <Clerk.Loading scope="provider:facebook">
+                        {(isLoading) => (isLoading ? "Loading..." : "Sign in with Facebook")}
+                      </Clerk.Loading>
+                    </Button>
                   </Clerk.Connection>
-                  <Clerk.Connection
-                    name="google"
-                    className="flex justify-center items-center gap-2.5 w-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300 rounded-sm"
-                  >
-                    <GoogleIcon />
-                    <div className="border-l-[1px] h-5 border-foreground" />
-                    <Clerk.Loading scope="provider:google">
-                      {(isLoading) => (isLoading ? "Loading..." : "Sign in with Google")}
-                    </Clerk.Loading>
+                  <Clerk.Connection asChild name="google">
+                    <Button className=" gap-2.5 w-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300">
+                      <GoogleIcon />
+                      <div className="border-l-[1px] h-5 border-foreground" />
+                      <Clerk.Loading scope="provider:google">
+                        {(isLoading) => (isLoading ? "Loading..." : "Sign in with Google")}
+                      </Clerk.Loading>
+                    </Button>
                   </Clerk.Connection>
                 </div>
                 <div className="flex flex-col gap-7.5">
@@ -95,13 +105,13 @@ const SignUpPage = () => {
                         placeholder="Enter Password"
                         className="w-full rounded border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
                       />
-                      <button
-                        type="button"
-                        className="absolute right-3 h-full text-[#4a90e2] hover:text-blue-900"
+                      <Button
+                        variant="ghost"
+                        className="absolute right-3 h-full px-1 text-[#4a90e2] hover:text-blue-900 hover:bg-transparent"
                         onClick={handleToggleVisible}
                       >
                         {isPasswordVisible ? "Hide Password" : "Show Password"}
-                      </button>
+                      </Button>
                     </div>
                     <Clerk.FieldError className="block text-sm text-red-400" />
                   </Clerk.Field>
@@ -112,7 +122,7 @@ const SignUpPage = () => {
                       {/* Day */}
                       <select
                         value={day}
-                        onChange={(e) => setDay(e.target.value)}
+                        onChange={handleDayChange}
                         className={clsx(
                           "w-1/3 rounded border border-gray-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500",
                           !day && "text-gray-400"
@@ -129,7 +139,7 @@ const SignUpPage = () => {
                       {/* Month */}
                       <select
                         value={month}
-                        onChange={(e) => setMonth(e.target.value)}
+                        onChange={handleMonthChange}
                         className={clsx(
                           "w-1/3 rounded border border-gray-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500",
                           !month && "text-gray-400"
@@ -146,7 +156,7 @@ const SignUpPage = () => {
                       {/* Year */}
                       <select
                         value={year}
-                        onChange={(e) => setYear(e.target.value)}
+                        onChange={handleYearChange}
                         className={clsx(
                           "w-1/3 rounded border border-gray-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500",
                           !year && "text-gray-400"
@@ -162,11 +172,18 @@ const SignUpPage = () => {
                     </div>
                   </div>
 
-                  <div id="clerk-captcha" />
+                  <div className="flex gap-2.5">
+                    <input id="remember" type="checkbox" />
+                    <label htmlFor="remember">
+                      I have read and agree to the Terms and Conditions
+                    </label>
+                  </div>
+
+                  <SignUp.Captcha />
                   <Clerk.GlobalError className="block text-sm text-red-400" />
 
                   <SignUp.Action submit asChild disabled={isGlobalLoading}>
-                    <Button className="rounded-sm w-full text-center items-center justify-center text-sm">
+                    <Button className="text-sm">
                       <Clerk.Loading>
                         {(isLoading) => (isLoading ? "Submitting..." : " Sign Up")}
                       </Clerk.Loading>
@@ -174,7 +191,10 @@ const SignUpPage = () => {
                   </SignUp.Action>
                   <div className="flex justify-center text-center gap">
                     Already have an Account?&nbsp;
-                    <Clerk.Link navigate="sign-in" className="text-[#4a90e2] hover:text-blue-900">
+                    <Clerk.Link
+                      navigate="sign-in"
+                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
+                    >
                       Sign In
                     </Clerk.Link>
                   </div>
@@ -199,10 +219,11 @@ const SignUpPage = () => {
                       <Clerk.FieldError className="block text-sm text-red-400" />
                     </Clerk.Field>
 
-                    <div id="clerk-captcha" />
+                    <SignUp.Captcha />
+
                     <Clerk.GlobalError className="block text-sm text-red-400" />
                     <SignUp.Action submit asChild disabled={isGlobalLoading}>
-                      <Button className="rounded-sm w-full text-center items-center justify-center text-sm">
+                      <Button className="text-sm">
                         <Clerk.Loading>
                           {(isLoading) => (isLoading ? "Submitting..." : " Verify")}
                         </Clerk.Loading>
@@ -212,7 +233,10 @@ const SignUpPage = () => {
 
                   <div className="flex justify-center text-center gap">
                     Already have an Account?&nbsp;
-                    <Clerk.Link navigate="sign-in" className="text-[#4a90e2] hover:text-blue-900">
+                    <Clerk.Link
+                      navigate="sign-in"
+                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
+                    >
                       Sign In
                     </Clerk.Link>
                   </div>
@@ -238,11 +262,11 @@ const SignUpPage = () => {
                     <Clerk.FieldError className="block text-sm text-red-400" />
                   </Clerk.Field>
 
-                  <div id="clerk-captcha" />
+                  <SignUp.Captcha />
                   <Clerk.GlobalError className="block text-sm text-red-400" />
 
                   <SignUp.Action submit asChild disabled={isGlobalLoading}>
-                    <Button className="rounded-sm w-full text-center items-center justify-center text-sm">
+                    <Button className="text-sm">
                       <Clerk.Loading>
                         {(isLoading) => (isLoading ? "Submitting..." : " Continue")}
                       </Clerk.Loading>
@@ -251,7 +275,10 @@ const SignUpPage = () => {
 
                   <div className="flex justify-center text-center gap">
                     Already have an Account?&nbsp;
-                    <Clerk.Link navigate="sign-in" className="text-[#4a90e2] hover:text-blue-900">
+                    <Clerk.Link
+                      navigate="sign-in"
+                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
+                    >
                       Log In
                     </Clerk.Link>
                   </div>

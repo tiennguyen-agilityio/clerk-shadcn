@@ -17,27 +17,25 @@ const SignInPage = () => {
           {(isGlobalLoading) => (
             <SignIn.Step name="start">
               <div className="flex-col justify-center align-middle items-center content-center w-[545px]">
-                <h1 className="font-abel text-center text-[70px] text-black">Sign In</h1>
+                <h1 className="font-abel text-center text-[70px]">Sign In</h1>
                 <div className="flex justify-between mt-12.5 h-12.5 gap-2.5 text-white">
-                  <Clerk.Connection
-                    name="facebook"
-                    className="flex justify-center items-center gap-5 w-1/2  bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300 rounded-sm"
-                  >
-                    <FacebookIcon />
-                    <div className="border-l-[1px] h-5 border-foreground" />
-                    <Clerk.Loading scope="provider:facebook">
-                      {(isLoading) => (isLoading ? "Loading..." : "Sign in with Facebook")}
-                    </Clerk.Loading>
+                  <Clerk.Connection asChild name="facebook">
+                    <Button className="gap-2.5 w-1/2  bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300">
+                      <FacebookIcon />
+                      <div className="border-l-[1px] h-5 border-foreground" />
+                      <Clerk.Loading scope="provider:facebook">
+                        {(isLoading) => (isLoading ? "Loading..." : "Sign in with Facebook")}
+                      </Clerk.Loading>
+                    </Button>
                   </Clerk.Connection>
-                  <Clerk.Connection
-                    name="google"
-                    className="flex justify-center items-center gap-2.5 w-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300 rounded-sm"
-                  >
-                    <GoogleIcon />
-                    <div className="border-l-[1px] h-5 border-foreground" />
-                    <Clerk.Loading scope="provider:google">
-                      {(isLoading) => (isLoading ? "Loading..." : "Sign in with Google")}
-                    </Clerk.Loading>
+                  <Clerk.Connection asChild name="google">
+                    <Button className=" gap-2.5 w-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300">
+                      <GoogleIcon />
+                      <div className="border-l-[1px] h-5 border-foreground" />
+                      <Clerk.Loading scope="provider:google">
+                        {(isLoading) => (isLoading ? "Loading..." : "Sign in with Google")}
+                      </Clerk.Loading>
+                    </Button>
                   </Clerk.Connection>
                 </div>
 
@@ -68,33 +66,33 @@ const SignInPage = () => {
                         placeholder="Enter password"
                         className="w-full rounded border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
                       />
-                      <button
-                        type="button"
-                        className="absolute right-3 h-full text-[#4a90e2] hover:text-blue-900"
+                      <Button
+                        variant="ghost"
+                        className="absolute right-3 h-full px-1 text-[#4a90e2] hover:text-blue-900 hover:bg-transparent"
                         onClick={handleToggleVisible}
                       >
                         {isPasswordVisible ? "Hide Password" : "Show Password"}
-                      </button>
+                      </Button>
                     </div>
                     <Clerk.FieldError className="text-red-500" />
                   </Clerk.Field>
 
                   <div className="flex justify-between">
-                    <div className="flex gap-2.5">
+                    <div className="flex items-center gap-2.5">
                       <input id="remember" type="checkbox" />
                       <label htmlFor="remember">Remember me</label>
                     </div>
 
                     <SignIn.Action
                       navigate="forgot-password"
-                      className="text-[#4a90e2] hover:text-blue-900"
+                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
                     >
                       Forgot password?
                     </SignIn.Action>
                   </div>
 
                   <SignIn.Action submit asChild disabled={isGlobalLoading}>
-                    <Button className="rounded-sm w-full text-center items-center justify-center text-sm">
+                    <Button className="text-sm">
                       <Clerk.Loading>
                         {(isLoading) => (isLoading ? "Submitting..." : " Sign In")}
                       </Clerk.Loading>
@@ -103,7 +101,10 @@ const SignInPage = () => {
 
                   <div className="flex justify-center text-center gap">
                     Don&#8217;t have an account?&nbsp;
-                    <Clerk.Link navigate="sign-up" className="text-[#4a90e2] hover:text-blue-900">
+                    <Clerk.Link
+                      navigate="sign-up"
+                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
+                    >
                       Sign up
                     </Clerk.Link>
                   </div>

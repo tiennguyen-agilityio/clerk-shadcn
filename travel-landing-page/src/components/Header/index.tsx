@@ -9,7 +9,7 @@ import { NAV_BAR } from "@/constants";
 
 import NavBar from "../NavBar";
 import Logo from "../Logo";
-import Button from "../Button";
+import { Button } from "../ui";
 import { BookmarkIcon, SearchIcon } from "../Icons";
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
         <Logo className="w-auto" />
         <div className="flex ml-auto mr-0 items-center">
           <NavBar list={NAV_BAR} href={pathname} />
-          <Button className="ml-20 mr-4">
+          <Button className="ml-20 mr-4 rounded-[20px]" size="sm">
             <BookmarkIcon />
             Reservations
           </Button>
