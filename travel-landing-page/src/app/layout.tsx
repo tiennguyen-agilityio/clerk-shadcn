@@ -36,7 +36,7 @@ export default function RootLayout({
         <body className={`${abel.variable} ${acme.variable} antialiased`}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
