@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`LocationCard component should render correctly 1`] = `
+<div>
+  <a
+    class="block"
+    href=""
+  >
+    <div
+      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full p-0"
+      data-slot="card"
+    >
+      <div
+        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0 h-[340]"
+        data-slot="card-header"
+      >
+        <div
+          class="font-semibold absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white"
+          data-slot="card-title"
+        >
+          Coffee Farm Tour, From Seedling to Cup
+        </div>
+        <img
+          alt="Coffee Farm"
+          class="h-[340px] object-cover"
+          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2023/07/anh-phong-canh-dep-7.jpg.webp"
+        />
+      </div>
+      <div
+        class="px-7.5 pt-4 pb-6"
+        data-slot="card-content"
+      >
+        <p
+          class="font-bold text-lg"
+        >
+          From $
+          60
+          /person · 
+          2 hours 30 minutes
+        </p>
+        <div
+          class="flex items-center gap-1.25 mt-3 text-ring"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-map-pin"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+            />
+            <circle
+              cx="12"
+              cy="10"
+              r="3"
+            />
+          </svg>
+          <p
+            class="text-sm truncate"
+          >
+            Mombasa road, Nextgen Mall
+          </p>
+        </div>
+        <div
+          class="flex items-center gap-1.25 mt-4 text-chart-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-star"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+            />
+          </svg>
+          <span>
+            4.8
+          </span>
+          <span
+            class="text-ring"
+          >
+            (
+            89
+            )
+          </span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`LocationCard component should render with default value 1`] = `
+<div>
+  <a
+    class="block"
+    href=""
+  >
+    <div
+      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full p-0"
+      data-slot="card"
+    >
+      <div
+        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0 h-[340]"
+        data-slot="card-header"
+      >
+        <div
+          class="font-semibold absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white"
+          data-slot="card-title"
+        />
+        <img
+          alt=""
+          class="h-[340px] object-cover"
+        />
+      </div>
+      <div
+        class="px-7.5 pt-4 pb-6"
+        data-slot="card-content"
+      >
+        <p
+          class="font-bold text-lg"
+        >
+          From $
+          0
+          /person · 
+          0 minutes
+        </p>
+        <div
+          class="flex items-center gap-1.25 mt-3 text-ring"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-map-pin"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+            />
+            <circle
+              cx="12"
+              cy="10"
+              r="3"
+            />
+          </svg>
+          <p
+            class="text-sm truncate"
+          />
+        </div>
+        <div
+          class="flex items-center gap-1.25 mt-4 text-chart-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-star"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+            />
+          </svg>
+          <span>
+            0
+          </span>
+          <span
+            class="text-ring"
+          >
+            (
+            0
+            )
+          </span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+`;
