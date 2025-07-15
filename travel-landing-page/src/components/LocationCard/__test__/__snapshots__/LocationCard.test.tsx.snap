@@ -11,8 +11,9 @@ exports[`LocationCard component should render correctly 1`] = `
       data-slot="card"
     >
       <div
-        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0 h-[340]"
+        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0"
         data-slot="card-header"
+        style="height: 340px;"
       >
         <div
           class="font-semibold absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white"
@@ -22,8 +23,9 @@ exports[`LocationCard component should render correctly 1`] = `
         </div>
         <img
           alt="Coffee Farm"
-          class="h-[340px] object-cover"
+          class="object-cover"
           src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2023/07/anh-phong-canh-dep-7.jpg.webp"
+          style="height: 340px;"
         />
       </div>
       <div
@@ -117,8 +119,9 @@ exports[`LocationCard component should render with default value 1`] = `
       data-slot="card"
     >
       <div
-        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0 h-[340]"
+        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0"
         data-slot="card-header"
+        style="height: 340px;"
       >
         <div
           class="font-semibold absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white"
@@ -126,7 +129,8 @@ exports[`LocationCard component should render with default value 1`] = `
         />
         <img
           alt=""
-          class="h-[340px] object-cover"
+          class="object-cover"
+          style="height: 340px;"
         />
       </div>
       <div
