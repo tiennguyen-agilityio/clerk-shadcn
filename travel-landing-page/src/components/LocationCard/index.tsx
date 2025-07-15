@@ -34,11 +34,11 @@ const LocationCard = ({ item, href = "", imageHeight = 340 }: LocationCardProps)
   return (
     <Link href={href} className="block">
       <Card className="w-full p-0">
-        <CardHeader className={`relative p-0 h-[${imageHeight}]`}>
+        <CardHeader className="relative p-0" style={{ height: imageHeight }}>
           <CardTitle className="absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white">
             {title}
           </CardTitle>
-          <img src={image} alt={name} className={`h-[${imageHeight}px] object-cover`} />
+          <img src={image} alt={name} className="object-cover" style={{ height: imageHeight }} />
         </CardHeader>
         <CardContent className="px-7.5 pt-4 pb-6">
           <p className="font-bold text-lg">
