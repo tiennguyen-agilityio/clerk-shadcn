@@ -7,7 +7,7 @@ type InputProps = ComponentProps<typeof ShadCNInput> & {
   label?: string;
 };
 
-const Input = ({ label = "", disabled, ...props }: InputProps) => {
+const Input = ({ label = "", ...props }: InputProps) => {
   const id = useId();
 
   return (
@@ -18,7 +18,7 @@ const Input = ({ label = "", disabled, ...props }: InputProps) => {
         </Label>
       )}
 
-      <ShadCNInput id={id} disabled={disabled} {...props} />
+      <ShadCNInput id={id} {...props} />
     </div>
   );
 };
