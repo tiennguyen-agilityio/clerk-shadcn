@@ -1,22 +1,24 @@
 import React, { ComponentProps, useId } from "react";
 
 import { Input as ShadCNInput } from "@/components/ui/input";
+import { Label } from "../ui/label";
 
-type InputProps = ComponentProps<"input"> & {
+type InputProps = ComponentProps<typeof ShadCNInput> & {
   label?: string;
 };
 
-const Input = ({ label = "", ...props }: InputProps) => {
+const Input = ({ label = "", disabled, ...props }: InputProps) => {
   const id = useId();
 
   return (
     <div className="text-sm">
       {label && (
-        <label className="pb-1.25" htmlFor={id}>
+        <Label htmlFor={id} className="pb-1.25">
           {label}
-        </label>
+        </Label>
       )}
-      <ShadCNInput id={id} {...props} />
+
+      <ShadCNInput id={id} disabled={disabled} {...props} />
     </div>
   );
 };
