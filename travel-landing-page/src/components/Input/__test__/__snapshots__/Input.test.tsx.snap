@@ -6,7 +6,8 @@ exports[`Input component should render default 1`] = `
     class="text-sm"
   >
     <label
-      class="pb-1.25"
+      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 pb-1.25"
+      data-slot="label"
       for="«r0»"
     >
       Label Input

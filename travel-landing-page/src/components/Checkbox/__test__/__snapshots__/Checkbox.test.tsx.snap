@@ -16,7 +16,8 @@ exports[`Checkbox component should render correctly 1`] = `
       value="on"
     />
     <label
-      class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+      data-slot="label"
       for="«r0»"
     >
       Label checkbox
@@ -43,7 +44,8 @@ exports[`Checkbox component should render with disabled true 1`] = `
       value="on"
     />
     <label
-      class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+      data-slot="label"
       for="«r1»"
     >
       Label checkbox
@@ -87,7 +89,8 @@ exports[`Checkbox component should render with size large 1`] = `
       value="on"
     />
     <label
-      class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+      data-slot="label"
       for="«r3»"
     >
       Label checkbox
