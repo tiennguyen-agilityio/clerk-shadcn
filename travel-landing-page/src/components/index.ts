@@ -11,3 +11,4 @@ export { default as LocationCard } from "./LocationCard";
 export { default as Checkbox } from "./Checkbox";
 export { default as Carousel } from "./Carousel";
 export { default as Input } from "./Input";
+export { default as InputOTP } from "./InputOTP";
