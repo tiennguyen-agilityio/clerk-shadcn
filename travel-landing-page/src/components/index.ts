@@ -9,3 +9,4 @@ export { default as AlertDialog } from "./AlertDialog";
 export { default as Avatar } from "./Avatar";
 export { default as LocationCard } from "./LocationCard";
 export { default as Checkbox } from "./Checkbox";
+export { default as Carousel } from "./Carousel";

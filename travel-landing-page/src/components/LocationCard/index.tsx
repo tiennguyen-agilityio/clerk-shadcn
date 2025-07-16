@@ -22,7 +22,7 @@ interface LocationCardProps {
 const LocationCard = ({ item, href = "", imageHeight = 340 }: LocationCardProps) => {
   const {
     title = "",
-    image = "",
+    image,
     name = "",
     time = 0,
     fee = 0,
