@@ -15,3 +15,4 @@ export { default as Input } from "./Input";
 export { default as InputOTP } from "./InputOTP";
 export { default as NavigationMenu } from "./NavigationMenu";
 export { default as Select } from "./Select";
+export { default as ExperienceItem } from "./ExperienceItem";
