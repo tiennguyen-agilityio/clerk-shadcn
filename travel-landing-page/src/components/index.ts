@@ -8,6 +8,7 @@ export { default as Button } from "./Button";
 export { default as AlertDialog } from "./AlertDialog";
 export { default as Avatar } from "./Avatar";
 export { default as LocationCard } from "./LocationCard";
+export { default as SkeletonLocationCard } from "./SkeletonLocationCard";
 export { default as Checkbox } from "./Checkbox";
 export { default as Carousel } from "./Carousel";
 export { default as Input } from "./Input";
