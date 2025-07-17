@@ -9,6 +9,12 @@ const config: Config = {
         primary: ["var(--font-primary)", "sans-serif"],
         secondary: ["var(--font-secondary)", "sans-serif"],
       },
+      color: {
+        success: "var(--success)",
+        error: "var(--error)",
+        info: "var(--info)",
+        warning: "var(--warning)",
+      },
     },
   },
   plugins: [],

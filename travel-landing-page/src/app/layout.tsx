@@ -3,6 +3,7 @@ import Head from "next/head";
 import { ClerkProvider } from "@clerk/nextjs";
 import "@/themes/globals.css";
 
+import { Toaster } from "@/components/ui/sonner";
 import { localization } from "@/utils";
 import { abel, acme } from "@/config";
 import { Footer, Header } from "@/components";
@@ -43,6 +44,7 @@ export default function RootLayout({
             <Header />
             <div className="flex flex-col items-center justify-center h-fit">{children}</div>
             <Footer />
+            <Toaster theme="light" closeButton richColors />
           </ThemeProvider>
         </body>
       </html>
