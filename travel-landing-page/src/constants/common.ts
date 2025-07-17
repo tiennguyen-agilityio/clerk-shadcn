@@ -1,4 +1,4 @@
-export const DAYS = Array.from({ length: 31 }, (_, i) => i + 1);
+export const DAYS = Array.from({ length: 31 }, (_, i) => `${i + 1}`);
 
 export const MONTHS = [
   "January",
