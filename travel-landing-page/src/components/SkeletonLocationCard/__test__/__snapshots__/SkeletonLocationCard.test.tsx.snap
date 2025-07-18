@@ -7,7 +7,7 @@ exports[`SkeletonLocationCard component should render correctly 1`] = `
     data-slot="card"
   >
     <div
-      class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0"
+      class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 p-0"
       data-slot="card-header"
       style="height: 340px;"
     >
@@ -21,30 +21,18 @@ exports[`SkeletonLocationCard component should render correctly 1`] = `
       class="px-7.5 pt-4 pb-6"
       data-slot="card-content"
     >
-      <p
-        class="font-bold text-lg"
-      >
-        <div
-          class="bg-accent animate-pulse overflow-hidden w-full h-7"
-          data-slot="skeleton"
-        />
-      </p>
       <div
-        class="flex items-center gap-1.25 mt-3 text-ring"
-      >
-        <div
-          class="bg-accent animate-pulse overflow-hidden w-full h-6"
-          data-slot="skeleton"
-        />
-      </div>
+        class="bg-accent animate-pulse overflow-hidden w-full h-7"
+        data-slot="skeleton"
+      />
       <div
-        class="flex items-center gap-1.25 mt-4 text-chart-2"
-      >
-        <div
-          class="bg-accent animate-pulse overflow-hidden w-full h-6"
-          data-slot="skeleton"
-        />
-      </div>
+        class="bg-accent animate-pulse overflow-hidden w-full h-6 mt-3"
+        data-slot="skeleton"
+      />
+      <div
+        class="bg-accent animate-pulse overflow-hidden w-full h-6 mt-4"
+        data-slot="skeleton"
+      />
     </div>
   </div>
 </div>
@@ -57,7 +45,7 @@ exports[`SkeletonLocationCard component should render with custom height for ima
     data-slot="card"
   >
     <div
-      class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0"
+      class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 p-0"
       data-slot="card-header"
       style="height: 300px;"
     >
@@ -71,30 +59,18 @@ exports[`SkeletonLocationCard component should render with custom height for ima
       class="px-7.5 pt-4 pb-6"
       data-slot="card-content"
     >
-      <p
-        class="font-bold text-lg"
-      >
-        <div
-          class="bg-accent animate-pulse overflow-hidden w-full h-7"
-          data-slot="skeleton"
-        />
-      </p>
       <div
-        class="flex items-center gap-1.25 mt-3 text-ring"
-      >
-        <div
-          class="bg-accent animate-pulse overflow-hidden w-full h-6"
-          data-slot="skeleton"
-        />
-      </div>
+        class="bg-accent animate-pulse overflow-hidden w-full h-7"
+        data-slot="skeleton"
+      />
       <div
-        class="flex items-center gap-1.25 mt-4 text-chart-2"
-      >
-        <div
-          class="bg-accent animate-pulse overflow-hidden w-full h-6"
-          data-slot="skeleton"
-        />
-      </div>
+        class="bg-accent animate-pulse overflow-hidden w-full h-6 mt-3"
+        data-slot="skeleton"
+      />
+      <div
+        class="bg-accent animate-pulse overflow-hidden w-full h-6 mt-4"
+        data-slot="skeleton"
+      />
     </div>
   </div>
 </div>
