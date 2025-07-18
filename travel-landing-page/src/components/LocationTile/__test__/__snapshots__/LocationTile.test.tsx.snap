@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`LocationTile component should render correctly 1`] = `
+<div>
+  <a
+    href=""
+  >
+    <div
+      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md w-full relative cursor-pointer overflow-hidden rounded-[3px] group p-0"
+      data-slot="card"
+    >
+      <img
+        alt="Nairobi"
+        class="h-auto w-full object-cover rounded-[3px] transform transition-transform duration-300 ease-in-out group-hover:scale-105"
+        src="https://i.ibb.co/hxbHQJf8/Rectangle.png"
+      />
+      <div
+        class="absolute bottom-0 left-0 right-0 px-7.5 pb-3 text-primary-foreground text-shadow-lg/30"
+        data-slot="card-content"
+      >
+        <h3
+          class="text-2xl font-secondary"
+        >
+          Nairobi
+        </h3>
+        <p
+          class="mt-1"
+        >
+          <span
+            class="text-2xl "
+          >
+            23
+          </span>
+          <span
+            class="text-sm"
+          >
+             Locations
+          </span>
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`LocationTile component should render correctly with link 1`] = `
+<div>
+  <a
+    href="/link"
+  >
+    <div
+      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md w-full relative cursor-pointer overflow-hidden rounded-[3px] group p-0"
+      data-slot="card"
+    >
+      <img
+        alt="Nairobi"
+        class="h-auto w-full object-cover rounded-[3px] transform transition-transform duration-300 ease-in-out group-hover:scale-105"
+        src="https://i.ibb.co/hxbHQJf8/Rectangle.png"
+      />
+      <div
+        class="absolute bottom-0 left-0 right-0 px-7.5 pb-3 text-primary-foreground text-shadow-lg/30"
+        data-slot="card-content"
+      >
+        <h3
+          class="text-2xl font-secondary"
+        >
+          Nairobi
+        </h3>
+        <p
+          class="mt-1"
+        >
+          <span
+            class="text-2xl "
+          >
+            0
+          </span>
+          <span
+            class="text-sm"
+          >
+             Locations
+          </span>
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+`;

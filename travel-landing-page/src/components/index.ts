@@ -18,3 +18,4 @@ export { default as Select } from "./Select";
 export { default as Experiences } from "./Experiences";
 export { default as ExperienceItem } from "./ExperienceItem";
 export { default as Post } from "./Post";
+export { default as LocationTile } from "./LocationTile";
