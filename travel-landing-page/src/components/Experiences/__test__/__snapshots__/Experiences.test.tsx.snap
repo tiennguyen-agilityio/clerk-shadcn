@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Experiences component should render correctly 1`] = `
+<div>
+  <div
+    class="flex w-full items-center gap-10"
+  >
+    <div
+      class="w-auto"
+    >
+      <p
+        class="uppercase text-sm text-ring mb-1.5"
+      >
+        CHECK OUT
+      </p>
+      <button
+        class="capitalize w-auto border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+      >
+        Top Camping Sites
+      </button>
+    </div>
+    <div
+      class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px rotate-20"
+      data-orientation="vertical"
+      data-slot="separator"
+      role="none"
+      style="height: 70px;"
+    />
+    <div
+      class="w-auto"
+    >
+      <p
+        class="uppercase text-sm text-ring mb-1.5"
+      >
+        CHECK OUT
+      </p>
+      <button
+        class="capitalize w-auto border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+      >
+        Top National Parks
+      </button>
+    </div>
+    <div
+      class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px rotate-20"
+      data-orientation="vertical"
+      data-slot="separator"
+      role="none"
+      style="height: 70px;"
+    />
+    <div
+      class="w-auto"
+    >
+      <p
+        class="uppercase text-sm text-ring mb-1.5"
+      >
+        CHECK OUT
+      </p>
+      <button
+        class="capitalize w-auto border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+      >
+        Top Weekend Gate-aways
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Experiences component should render with empty label 1`] = `
+<div>
+  <div
+    class="flex w-full items-center gap-10"
+  >
+    <div
+      class="w-auto"
+    >
+      <button
+        class="capitalize w-auto border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+      >
+        Top Camping Sites
+      </button>
+    </div>
+  </div>
+</div>
+`;

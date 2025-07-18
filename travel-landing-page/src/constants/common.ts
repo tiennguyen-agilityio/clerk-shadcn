@@ -16,3 +16,18 @@ export const MONTHS = [
 ];
 
 export const YEARS = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i);
+
+export const EXPERIENCES = [
+  {
+    title: "Top Camping Sites",
+    label: "CHECK OUT",
+  },
+  {
+    title: "Top National Parks",
+    label: "CHECK OUT",
+  },
+  {
+    title: "Top Weekend Gate-aways",
+    label: "CHECK OUT",
+  },
+];
