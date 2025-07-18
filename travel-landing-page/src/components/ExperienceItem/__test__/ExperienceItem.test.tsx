@@ -17,4 +17,9 @@ describe("ExperienceItem component", () => {
     const { container } = render(<ExperienceItem title="Top Camping Sites" />);
     expect(container).toMatchSnapshot();
   });
+
+  it("should render with active true", () => {
+    const { container } = render(<ExperienceItem {...props} isActive />);
+    expect(container).toMatchSnapshot();
+  });
 });
