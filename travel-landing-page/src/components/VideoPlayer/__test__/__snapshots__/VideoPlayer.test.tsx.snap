@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`VideoPlayer component should render correctly 1`] = `
+<div>
+  <div
+    class="relative w-full min-w-full"
+  >
+    <video
+      class="w-full"
+      poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
+    >
+      <source
+        src="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_large.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div
+      class="w-21.25 h-21.25 absolute p-3 rounded-full border border-accent z-40 inset-0 m-auto"
+    >
+      <button
+        aria-label="Play video"
+        class="flex items-center justify-center w-15 h-15 rounded-full bg-accent transition-colors cursor-pointer"
+        data-testid="btn-icon"
+      >
+        <svg
+          class="w-10 h-10"
+          fill="currentColor"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+        >
+          <path
+            d="M8 5v14l11-7z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`VideoPlayer component should render with auto play 1`] = `
+<div>
+  <div
+    class="relative w-full min-w-full"
+  >
+    <video
+      autoplay=""
+      class="w-full"
+      poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
+    >
+      <source
+        src="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_large.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+</div>
+`;
+
+exports[`VideoPlayer component should render with position icon bottom left 1`] = `
+<div>
+  <div
+    class="relative w-full min-w-full"
+  >
+    <video
+      autoplay=""
+      class="w-full"
+      poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
+    >
+      <source
+        src="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_large.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div
+      class="w-21.25 h-21.25 absolute p-3 rounded-full border border-accent z-40 bottom-[33%] left-[25%]"
+    >
+      <button
+        aria-label="Pause video"
+        class="flex items-center justify-center w-15 h-15 rounded-full bg-accent transition-colors cursor-pointer"
+        data-testid="btn-icon"
+      >
+        <svg
+          class="lucide lucide-pause-icon lucide-pause"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+        >
+          <rect
+            height="16"
+            rx="1"
+            width="4"
+            x="14"
+            y="4"
+          />
+          <rect
+            height="16"
+            rx="1"
+            width="4"
+            x="6"
+            y="4"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`VideoPlayer component should render with position icon bottom right 1`] = `
+<div>
+  <div
+    class="relative w-full min-w-full"
+  >
+    <video
+      autoplay=""
+      class="w-full"
+      poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
+    >
+      <source
+        src="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_large.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div
+      class="w-21.25 h-21.25 absolute p-3 rounded-full border border-accent z-40 bottom-[33%] right-[25%]"
+    >
+      <button
+        aria-label="Pause video"
+        class="flex items-center justify-center w-15 h-15 rounded-full bg-accent transition-colors cursor-pointer"
+        data-testid="btn-icon"
+      >
+        <svg
+          class="lucide lucide-pause-icon lucide-pause"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+        >
+          <rect
+            height="16"
+            rx="1"
+            width="4"
+            x="14"
+            y="4"
+          />
+          <rect
+            height="16"
+            rx="1"
+            width="4"
+            x="6"
+            y="4"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`VideoPlayer component should render with position icon top left 1`] = `
+<div>
+  <div
+    class="relative w-full min-w-full"
+  >
+    <video
+      autoplay=""
+      class="w-full"
+      poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
+    >
+      <source
+        src="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_large.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div
+      class="w-21.25 h-21.25 absolute p-3 rounded-full border border-accent z-40 top-[33%] left-[33%]"
+    >
+      <button
+        aria-label="Pause video"
+        class="flex items-center justify-center w-15 h-15 rounded-full bg-accent transition-colors cursor-pointer"
+        data-testid="btn-icon"
+      >
+        <svg
+          class="lucide lucide-pause-icon lucide-pause"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+        >
+          <rect
+            height="16"
+            rx="1"
+            width="4"
+            x="14"
+            y="4"
+          />
+          <rect
+            height="16"
+            rx="1"
+            width="4"
+            x="6"
+            y="4"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`VideoPlayer component should render with position icon top right 1`] = `
+<div>
+  <div
+    class="relative w-full min-w-full"
+  >
+    <video
+      autoplay=""
+      class="w-full"
+      poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
+    >
+      <source
+        src="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_large.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div
+      class="w-21.25 h-21.25 absolute p-3 rounded-full border border-accent z-40 top-[33%] right-[33%]"
+    >
+      <button
+        aria-label="Pause video"
+        class="flex items-center justify-center w-15 h-15 rounded-full bg-accent transition-colors cursor-pointer"
+        data-testid="btn-icon"
+      >
+        <svg
+          class="lucide lucide-pause-icon lucide-pause"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+        >
+          <rect
+            height="16"
+            rx="1"
+            width="4"
+            x="14"
+            y="4"
+          />
+          <rect
+            height="16"
+            rx="1"
+            width="4"
+            x="6"
+            y="4"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
