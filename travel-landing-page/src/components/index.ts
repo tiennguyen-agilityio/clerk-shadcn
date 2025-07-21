@@ -21,3 +21,4 @@ export { default as Post } from "./Post";
 export { default as LocationTile } from "./LocationTile";
 export { default as VideoPlayer } from "./VideoPlayer";
 export { default as Heading } from "./Heading";
+export { default as StatisticsCard } from "./StatisticsCard";

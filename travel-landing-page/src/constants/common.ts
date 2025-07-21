@@ -31,3 +31,22 @@ export const EXPERIENCES = [
     label: "CHECK OUT",
   },
 ];
+
+export const STATISTICS_BY_SERVICES = [
+  {
+    title: "Camping Locations",
+    value: "68+",
+  },
+  {
+    title: "Hotels",
+    value: "102+",
+  },
+  {
+    title: "Activities",
+    value: "84+",
+  },
+  {
+    title: "Equipment Providers",
+    value: "35+",
+  },
+];
