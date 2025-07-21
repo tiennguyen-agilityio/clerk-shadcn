@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Card, CardContent, CardHeader } from "../ui/card";
+import Heading from "../Heading";
 
 interface CarouselItem {
   id?: string;
@@ -20,11 +21,13 @@ const CarouselCard = ({ item, isActive = false, imageHeight = "475px" }: Carouse
   const { title, description, image, alt } = item || {};
 
   return (
-    <Card className="p-0 border-none hover:shadow-none">
+    <Card className="p-0 border-none hover:shadow-none gap-12 bg-transparent">
       <CardHeader className="flex justify-between items-center h-25 p-0 gap-5">
         {isActive && (
           <>
-            <h3 className="w-1/2 font-secondary text-3xl animate-fade-in">{title}</h3>
+            <Heading as="h4" className="w-1/2 font-secondary animate-fade-in">
+              {title}
+            </Heading>
             <p className="w-1/2 text-sm line-clamp-5 animate-fade-in pr-2">{description}</p>
           </>
         )}

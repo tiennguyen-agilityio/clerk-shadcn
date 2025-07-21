@@ -11,7 +11,7 @@ exports[`ExperienceItem component should render correctly 1`] = `
       Check out
     </h6>
     <button
-      class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+      class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
     >
       Top Camping Sites
     </button>
@@ -30,7 +30,7 @@ exports[`ExperienceItem component should render with active true 1`] = `
       Check out
     </h6>
     <button
-      class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground text-accent-foreground border-b-accent-foreground"
+      class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground text-accent-foreground border-b-accent-foreground"
     >
       Top Camping Sites
     </button>
@@ -44,7 +44,7 @@ exports[`ExperienceItem component should render with only title 1`] = `
     class="w-auto"
   >
     <button
-      class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+      class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
     >
       Top Camping Sites
     </button>

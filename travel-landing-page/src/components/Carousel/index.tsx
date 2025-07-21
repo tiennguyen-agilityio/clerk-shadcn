@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ComponentProps, useState, useEffect } from "react";
+import clsx from "clsx";
 
 import { CarouselItem } from "@/types";
 
@@ -15,9 +16,10 @@ import CarouselCard from "./CarouselCard";
 
 interface CarouselProps extends ComponentProps<"div"> {
   list: CarouselItem[];
+  className?: string;
 }
 
-const Carousel = ({ list }: CarouselProps) => {
+const Carousel = ({ list, className = "" }: CarouselProps) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -40,13 +42,13 @@ const Carousel = ({ list }: CarouselProps) => {
       }}
       setApi={setApi}
       orientation="horizontal"
-      className="h-full max-h-xs"
+      className={clsx("h-full max-h-xs", className)}
     >
-      <CarouselContent className="flex gap-0">
+      <CarouselContent className="flex gap-0 mb-4">
         {list.map((item, index) => {
           const isActive = index + 1 === current;
           return (
-            <ShadCNCarouselItem key={index} className="flex flex-col basis-2/3">
+            <ShadCNCarouselItem key={index} className="flex flex-col md:basis-3/4">
               <CarouselCard item={item} isActive={isActive} />
             </ShadCNCarouselItem>
           );

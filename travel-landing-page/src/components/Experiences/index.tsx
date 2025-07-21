@@ -18,7 +18,7 @@ const Experiences = ({ list, onChange }: ExperiencesProps) => {
   const length = list.length;
 
   return (
-    <div className="flex min-w-full items-center justify-between">
+    <div className="flex min-w-full items-center justify-between pr-3 lg:pr-10">
       {list?.map(({ label = "", title }, index) => {
         const isActive = indexActive === index;
 
