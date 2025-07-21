@@ -6,10 +6,10 @@ exports[`Post component should render correctly 1`] = `
     class="flex flex-start gap-5 md:gap-0 md:flex-col"
   >
     <div
-      class="w-1/2 md:w-full text-sm h-38"
+      class="w-1/2 md:w-full h-38"
     >
       <p
-        class="line-clamp-4"
+        class="text-sm line-clamp-4"
       >
         Because the rock was laid down in layers, there is a variation in the hardness of the rock formed. When water runoff trickles across the rock, some areas erode rapidly whereas others hold firm. This variation in erosion speed causes the formation of pinnacles, or “hoodoos” of stable rock.
       </p>
@@ -60,10 +60,10 @@ exports[`Post component should render with onReadMore is not provided 1`] = `
     class="flex flex-start gap-5 md:gap-0 md:flex-col"
   >
     <div
-      class="w-1/2 md:w-full text-sm h-38"
+      class="w-1/2 md:w-full h-38"
     >
       <p
-        class="line-clamp-4"
+        class="text-sm line-clamp-4"
       >
         Because the rock was laid down in layers, there is a variation in the hardness of the rock formed. When water runoff trickles across the rock, some areas erode rapidly whereas others hold firm. This variation in erosion speed causes the formation of pinnacles, or “hoodoos” of stable rock.
       </p>

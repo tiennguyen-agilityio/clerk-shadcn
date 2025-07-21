@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import Button from "../Button";
 import { MoveRight } from "lucide-react";
 import clsx from "clsx";
+
+import Button from "../Button";
 
 interface PostProps {
   text: string;
@@ -16,8 +17,8 @@ interface PostProps {
 const Post = ({ text, image, alt = "", className = "", onReadMore }: PostProps) => {
   return (
     <div className={clsx("flex flex-start gap-5 md:gap-0 md:flex-col", className)}>
-      <div className="w-1/2 md:w-full text-sm h-38">
-        <p className="line-clamp-4">{text}</p>
+      <div className="w-1/2 md:w-full h-38">
+        <p className="text-sm line-clamp-4">{text}</p>
       </div>
       <div className="relative w-1/2 md:w-full h-auto">
         <img src={image} alt={alt} className="min-w-full min-h-auto object-cover" />

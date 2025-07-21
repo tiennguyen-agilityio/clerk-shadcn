@@ -2,7 +2,7 @@ import React from "react";
 
 const CopyRight = () => {
   return (
-    <div className="flex justify-between items-center max-w-7xl mx-auto h-28 font-acme">
+    <div className="container flex justify-between items-center mx-auto h-28 font-acme">
       <div className="text-xs text-center">
         © {new Date().getFullYear()} Travelsy Ltd. All rights reserved.
       </div>
