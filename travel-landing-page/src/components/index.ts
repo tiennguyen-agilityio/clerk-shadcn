@@ -20,3 +20,4 @@ export { default as ExperienceItem } from "./ExperienceItem";
 export { default as Post } from "./Post";
 export { default as LocationTile } from "./LocationTile";
 export { default as VideoPlayer } from "./VideoPlayer";
+export { default as Heading } from "./Heading";
