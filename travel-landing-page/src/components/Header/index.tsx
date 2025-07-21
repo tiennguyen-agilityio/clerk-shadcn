@@ -19,12 +19,18 @@ const Header = () => {
   const isHasBorder = ["/sign-in", "/sign-up", "/wait-list"].includes(pathname);
 
   return (
-    <header className={clsx("w-full", isHasBorder && "border-b-1 border-[#d8d8d8]")}>
-      <div className="flex items-center content-center mx-auto h-25 max-w-7xl">
+    <header
+      className={clsx(
+        "w-full absolute z-2 text-accent",
+        isHasBorder && "border-b-1 border-ring",
+        isHasBorder ? "text-foreground" : "text-white"
+      )}
+    >
+      <div className="container flex items-center content-center mx-auto h-25">
         <Logo className="w-auto" />
         <div className="flex ml-auto mr-0 items-center">
           <NavBar list={NAV_BAR} href={pathname} />
-          <Button className="ml-20 mr-4 rounded-[20px]" size="sm">
+          <Button className="ml-20 mr-4 rounded-[20px] text-white" size="sm">
             <BookmarkIcon />
             Reservations
           </Button>
@@ -33,13 +39,13 @@ const Header = () => {
             <SignedOut>
               <div className="flex items-center font-acme text-[13px]">
                 <SignInButton>
-                  <span className={clsx("cursor-pointer", isActiveSignIn && "text-orange-500")}>
+                  <span className={clsx("cursor-pointer", isActiveSignIn && "text-primary")}>
                     Sign In
                   </span>
                 </SignInButton>
                 /
                 <SignUpButton>
-                  <span className={clsx("cursor-pointer", isActiveSignUp && "text-orange-500")}>
+                  <span className={clsx("cursor-pointer", isActiveSignUp && "text-primary")}>
                     Sign Up
                   </span>
                 </SignUpButton>

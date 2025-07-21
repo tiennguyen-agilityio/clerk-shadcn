@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Button from "../Button";
 
 const TopNav = () => {
   return (
@@ -32,13 +33,13 @@ const TopNav = () => {
             Nairobi, Kenya
           </p>
           <div className="flex space-x-3 mt-3 text-[10px]">
-            <button className="w-8 h-8 border rounded-full flex items-center justify-center hover:bg-gray-200">
+            <button className="w-8 h-8 border rounded-full flex items-center justify-center hover:bg-sidebar-accent">
               Tw
             </button>
-            <button className="w-8 h-8 border rounded-full flex items-center justify-center hover:bg-gray-200">
+            <button className="w-8 h-8 border rounded-full flex items-center justify-center hover:bg-sidebar-accent">
               Ins
             </button>
-            <button className="w-8 h-8 border rounded-full flex items-center justify-center hover:bg-gray-200">
+            <button className="w-8 h-8 border rounded-full flex items-center justify-center hover:bg-sidebar-accent">
               You
             </button>
           </div>
@@ -48,34 +49,22 @@ const TopNav = () => {
           <h3 className="font-bold text-[13px] mb-3">Company</h3>
           <ul className="space-y-2 text-xs">
             <li>
-              <Link href="/about" className="hover:text-orange-500">
-                About Us
-              </Link>
+              <Link href="/about">About Us</Link>
             </li>
             <li>
-              <Link href="/careers" className="hover:text-orange-500">
-                Careers
-              </Link>
+              <Link href="/careers">Careers</Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:text-orange-500">
-                Terms Of Use
-              </Link>
+              <Link href="/terms">Terms Of Use</Link>
             </li>
             <li>
-              <Link href="/privacy" className="hover:text-orange-500">
-                Privacy Statement
-              </Link>
+              <Link href="/privacy">Privacy Statement</Link>
             </li>
             <li>
-              <Link href="/feedback" className="hover:text-orange-500">
-                Give Us Feedback
-              </Link>
+              <Link href="/feedback">Give Us Feedback</Link>
             </li>
             <li>
-              <Link href="/partners" className="hover:text-orange-500">
-                Partner With Us
-              </Link>
+              <Link href="/partners">Partner With Us</Link>
             </li>
           </ul>
         </div>
@@ -84,29 +73,19 @@ const TopNav = () => {
           <h3 className="font-bold text-[13px] mb-3">Other Services & Support</h3>
           <ul className="space-y-2 text-xs">
             <li>
-              <Link href="/rewards" className="hover:text-orange-500">
-                Rewards Program
-              </Link>
+              <Link href="/rewards">Rewards Program</Link>
             </li>
             <li>
-              <Link href="/partners" className="hover:text-orange-500">
-                Partners
-              </Link>
+              <Link href="/partners">Partners</Link>
             </li>
             <li>
-              <Link href="/legal" className="hover:text-orange-500">
-                Legal
-              </Link>
+              <Link href="/legal">Legal</Link>
             </li>
             <li>
-              <Link href="/privacy" className="hover:text-orange-500">
-                Privacy Policy
-              </Link>
+              <Link href="/privacy">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/support" className="hover:text-orange-500">
-                Customer Service Help
-              </Link>
+              <Link href="/support">Customer Service Help</Link>
             </li>
           </ul>
         </div>
@@ -115,29 +94,19 @@ const TopNav = () => {
           <h3 className="font-bold text-[13px] mb-3">Quick Links</h3>
           <ul className="space-y-2 text-xs">
             <li>
-              <Link href="/account" className="hover:text-orange-500">
-                Your Account
-              </Link>
+              <Link href="/account">Your Account</Link>
             </li>
             <li>
-              <Link href="/camping" className="hover:text-orange-500">
-                Camping Locations
-              </Link>
+              <Link href="/camping">Camping Locations</Link>
             </li>
             <li>
-              <Link href="/activities" className="hover:text-orange-500">
-                Activities
-              </Link>
+              <Link href="/activities">Activities</Link>
             </li>
             <li>
-              <Link href="/equipment" className="hover:text-orange-500">
-                Hire Equipment
-              </Link>
+              <Link href="/equipment">Hire Equipment</Link>
             </li>
             <li>
-              <Link href="/blog" className="hover:text-orange-500">
-                Blogs
-              </Link>
+              <Link href="/blog">Blogs</Link>
             </li>
           </ul>
         </div>
@@ -154,9 +123,9 @@ const TopNav = () => {
               placeholder="Your Email"
               className="p-2 border border-gray-300 rounded-l-md w-full"
             />
-            <button className="bg-orange-500 text-white px-4 rounded-r-md hover:bg-orange-600">
+            <Button className=" px-4 rounded-r-md rounded-tl-none rounded-bl-none">
               Subscribe
-            </button>
+            </Button>
           </div>
         </div>
       </div>
