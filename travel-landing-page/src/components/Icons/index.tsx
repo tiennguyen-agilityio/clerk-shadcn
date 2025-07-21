@@ -9,3 +9,5 @@ export { default as USAFlagIcon } from "./USAFlagIcon";
 export { default as ArrowIcon } from "./ArrowIcon";
 export { default as FacebookIcon } from "./FacebookIcon";
 export { default as GoogleIcon } from "./GoogleIcon";
+export { default as PlayIcon } from "./PlayIcon";
+export { default as PauseIcon } from "./PauseIcon";
