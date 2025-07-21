@@ -8,9 +8,9 @@ const Footer = () => {
     <footer className="w-full">
       <Testimonials />
       <TopNav />
-      <div className="border-t border-ring" />
+      <div className="border-t border-border" />
       <SettingLanguage />
-      <div className="border-t border-ring" />
+      <div className="border-t border-border" />
       <CopyRight />
     </footer>
   );

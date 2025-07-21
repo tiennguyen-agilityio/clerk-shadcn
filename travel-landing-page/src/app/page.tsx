@@ -46,7 +46,7 @@ export default function Home() {
             </div>
             <Button
               onClick={handleFindExperience}
-              className="flex-none h-16 text-sx lg:text-sm md:h-20 lg:h-30 w-40 md:w-50 lg:w-65.5 rounded-none rounded-tr-[20px] z-30"
+              className="flex-none h-16 text-sx lg:text-sm text-white md:h-20 lg:h-30 w-40 md:w-50 lg:w-65.5 rounded-none rounded-tr-[20px] z-30"
             >
               FIND AN EXPERIENCE
               <MoveRight />

@@ -25,7 +25,7 @@ const TESTIMONIALS = [
 const Testimonials = () => {
   return (
     <div className="w-full bg-sidebar-accent">
-      <div className="flex justify-between items-stretch max-w-7xl mx-auto font-acme py-8 sm:py-12 lg:py-25 gap-2 lg:gap-5">
+      <div className="container flex justify-between items-stretch mx-auto font-acme py-8 sm:py-12 lg:py-25 gap-2 lg:gap-5">
         <div className="flex-col w-1/3 ">
           <p className="text-ring text-sm">Testimonials</p>
           <p className="text-[50px] mt-11 leading-none">

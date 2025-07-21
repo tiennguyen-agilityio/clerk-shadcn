@@ -5,7 +5,7 @@ import { DiscoverIcon, MasterCardIcon, MPesaIcon, PaypalIcon, VisaIcon } from ".
 
 const SettingLanguage = () => {
   return (
-    <div className="flex items-center max-w-7xl mx-auto h-24 ">
+    <div className="container flex items-center mx-auto h-24 ">
       <Logo className="text-teal-600 text-xl lg:text-2xl" />
 
       <div className="flex gap-7.5 ml-auto mr-5">
