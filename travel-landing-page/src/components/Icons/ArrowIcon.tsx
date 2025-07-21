@@ -9,7 +9,7 @@ interface ArrowIconProps extends SVGProps {
 }
 
 const ArrowIcon = ({
-  color = "#9b9b9b",
+  color = "currentColor",
   width = 17,
   height = 9,
   direction = DIRECTION.DOWN,

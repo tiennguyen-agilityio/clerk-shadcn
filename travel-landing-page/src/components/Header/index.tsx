@@ -8,7 +8,7 @@ import {
   SignedOut,
   SignInButton,
   SignUpButton,
-  UserButton,
+  // UserButton,
 } from "@clerk/nextjs";
 import clsx from "clsx";
 
@@ -17,7 +17,9 @@ import { NAV_BAR } from "@/constants";
 import NavBar from "../NavBar";
 import Logo from "../Logo";
 import { Button } from "../ui";
+import UserDropdown from "../UserDropdown";
 import { BookmarkIcon, SearchIcon } from "../Icons";
+
 import { ModalToggleTheme } from "@/themes";
 
 const HAS_BORDER_BOTTOM = ["/sign-in", "/sign-up", "/wait-list", "/user/profile"];
@@ -46,7 +48,7 @@ const Header = () => {
             Reservations
           </Button>
           <SearchIcon />
-          <div className="flex justify-end min-w-20 ml-5">
+          <div className="flex justify-end w-20 min-w-20 ml-5">
             <ClerkLoaded>
               <SignedOut>
                 <div className="flex items-center font-acme text-[13px]">
@@ -64,7 +66,8 @@ const Header = () => {
                 </div>
               </SignedOut>
               <SignedIn>
-                <UserButton
+                <UserDropdown />
+                {/* <UserButton
                   userProfileMode="navigation"
                   userProfileUrl="/user/profile"
                   appearance={{
@@ -74,7 +77,7 @@ const Header = () => {
                       userButtonOuterIdentifier: "text-white pr-2",
                     },
                   }}
-                />
+                /> */}
               </SignedIn>
             </ClerkLoaded>
           </div>

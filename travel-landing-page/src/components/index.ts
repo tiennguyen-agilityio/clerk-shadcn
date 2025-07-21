@@ -22,3 +22,4 @@ export { default as LocationTile } from "./LocationTile";
 export { default as VideoPlayer } from "./VideoPlayer";
 export { default as Heading } from "./Heading";
 export { default as StatisticsCard } from "./StatisticsCard";
+export { default as UserDropdown } from "./UserDropdown";
