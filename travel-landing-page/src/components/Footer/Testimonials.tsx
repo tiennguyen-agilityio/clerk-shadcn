@@ -24,18 +24,18 @@ const TESTIMONIALS = [
 
 const Testimonials = () => {
   return (
-    <div className="w-full bg-gray-50">
+    <div className="w-full bg-sidebar-accent">
       <div className="flex justify-between items-stretch max-w-7xl mx-auto font-acme py-8 sm:py-12 lg:py-25 gap-2 lg:gap-5">
         <div className="flex-col w-1/3 ">
-          <p className="text-gray-500 text-sm">Testimonials</p>
+          <p className="text-ring text-sm">Testimonials</p>
           <p className="text-[50px] mt-11 leading-none">
             What customers
             <br />
-            <span className="font-abel text-[50px] leading-none text-orange-500">say about us</span>
+            <span className="font-abel text-[50px] leading-none text-primary">say about us</span>
           </p>
-          <div className="flex items-center justify-around h-15 w-31 mt-28.5 bg-white">
+          <div className="flex items-center justify-around h-15 w-31 mt-28.5 bg-background">
             <ArrowIcon direction={DIRECTION.LEFT} />
-            <div className="w-[1px] h-10 bg-gray-400 rotate-15" />
+            <div className="w-[1px] h-10 bg-ring rotate-15" />
             <ArrowIcon direction={DIRECTION.RIGHT} />
           </div>
         </div>

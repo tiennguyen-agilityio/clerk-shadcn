@@ -16,6 +16,12 @@ const config: Config = {
         warning: "var(--warning)",
       },
     },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "15px",
+      },
+    },
   },
   plugins: [],
 };

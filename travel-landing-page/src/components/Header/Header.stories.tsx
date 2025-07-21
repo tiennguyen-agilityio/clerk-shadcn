@@ -5,6 +5,11 @@ import Header from ".";
 const meta: Meta<typeof Header> = {
   title: "Components/Header",
   component: Header,
+  render: () => (
+    <div className="w-full h-25">
+      <Header />
+    </div>
+  ),
 };
 
 export default meta;
