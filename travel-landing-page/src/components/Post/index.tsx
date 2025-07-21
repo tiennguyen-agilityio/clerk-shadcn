@@ -1,27 +1,31 @@
+"use client";
+
 import React from "react";
 import Button from "../Button";
 import { MoveRight } from "lucide-react";
+import clsx from "clsx";
 
 interface PostProps {
   text: string;
   image: string;
   alt?: string;
   onReadMore?: () => void;
+  className?: string;
 }
 
-const Post = ({ text, image, alt = "", onReadMore }: PostProps) => {
+const Post = ({ text, image, alt = "", className = "", onReadMore }: PostProps) => {
   return (
-    <div>
-      <p className="text-sm h-38 line-clamp-4">{text}</p>
-      <div className="relative">
-        <img src={image} alt={alt} className="min-w-full h-auto object-cover" />
+    <div className={clsx("flex flex-start gap-5 md:gap-0 md:flex-col", className)}>
+      <div className="w-1/2 md:w-full text-sm h-38 line-clamp-4">{text}</div>
+      <div className="relative w-1/2 md:w-full h-auto">
+        <img src={image} alt={alt} className="min-w-full min-h-auto object-cover" />
 
         {onReadMore && (
           <Button
             data-testid="readMore"
             variant="ghost"
             onClick={onReadMore}
-            className="text-accent-foreground gap-6 absolute bottom-0 right-0 h-15 w-57 bg-white rounded-none"
+            className="text-accent-foreground gap-6 absolute bottom-0 right-0 text-sx md:text-sm h-12 md:h-15 md:w-57 bg-background rounded-none"
           >
             Read More
             <MoveRight />
