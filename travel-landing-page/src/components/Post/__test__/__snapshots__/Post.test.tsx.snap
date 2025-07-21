@@ -2,22 +2,24 @@
 
 exports[`Post component should render correctly 1`] = `
 <div>
-  <div>
-    <p
-      class="text-sm h-38 line-clamp-4"
+  <div
+    class="flex flex-start gap-5 md:gap-0 md:flex-col"
+  >
+    <div
+      class="w-1/2 md:w-full text-sm h-38 line-clamp-4"
     >
       Because the rock was laid down in layers, there is a variation in the hardness of the rock formed. When water runoff trickles across the rock, some areas erode rapidly whereas others hold firm. This variation in erosion speed causes the formation of pinnacles, or “hoodoos” of stable rock.
-    </p>
+    </div>
     <div
-      class="relative"
+      class="relative w-1/2 md:w-full h-auto"
     >
       <img
         alt="Mountain Vacations"
-        class="min-w-full h-auto object-cover"
+        class="min-w-full min-h-auto object-cover"
         src="https://i.ibb.co/MFjB1W7/Rectangle-Copy-2.png"
       />
       <button
-        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 px-4 py-2 has-[>svg]:px-3 text-accent-foreground gap-6 absolute bottom-0 right-0 h-15 w-57 bg-white rounded-none"
+        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 px-4 py-2 has-[>svg]:px-3 gap-6 absolute bottom-0 right-0 text-sx md:text-sm h-12 md:h-15 md:w-57 bg-background rounded-none"
         data-slot="button"
         data-testid="readMore"
       >
@@ -50,18 +52,20 @@ exports[`Post component should render correctly 1`] = `
 
 exports[`Post component should render with onReadMore is not provided 1`] = `
 <div>
-  <div>
-    <p
-      class="text-sm h-38 line-clamp-4"
+  <div
+    class="flex flex-start gap-5 md:gap-0 md:flex-col"
+  >
+    <div
+      class="w-1/2 md:w-full text-sm h-38 line-clamp-4"
     >
       Because the rock was laid down in layers, there is a variation in the hardness of the rock formed. When water runoff trickles across the rock, some areas erode rapidly whereas others hold firm. This variation in erosion speed causes the formation of pinnacles, or “hoodoos” of stable rock.
-    </p>
+    </div>
     <div
-      class="relative"
+      class="relative w-1/2 md:w-full h-auto"
     >
       <img
         alt=""
-        class="min-w-full h-auto object-cover"
+        class="min-w-full min-h-auto object-cover"
         src="https://i.ibb.co/MFjB1W7/Rectangle-Copy-2.png"
       />
     </div>

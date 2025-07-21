@@ -18,7 +18,7 @@ const Experiences = ({ list, onChange }: ExperiencesProps) => {
   const length = list.length;
 
   return (
-    <div className="flex w-full items-center gap-10">
+    <div className="flex min-w-full items-center justify-between">
       {list?.map(({ label = "", title }, index) => {
         const isActive = indexActive === index;
 
@@ -33,7 +33,7 @@ const Experiences = ({ list, onChange }: ExperiencesProps) => {
           <Fragment key={index}>
             <ExperienceItem label={label} title={title} isActive={isActive} onClick={hanChange} />
             {index < length - 1 && (
-              <Separator orientation="vertical" className="rotate-20" style={{ height: "70px" }} />
+              <Separator orientation="vertical" className="rotate-20 max-h-12 lg:max-h-17.5" />
             )}
           </Fragment>
         );

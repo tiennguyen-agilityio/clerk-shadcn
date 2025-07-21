@@ -3,60 +3,58 @@
 exports[`Experiences component should render correctly 1`] = `
 <div>
   <div
-    class="flex w-full items-center gap-10"
+    class="flex min-w-full items-center justify-between"
   >
     <div
       class="w-auto"
     >
-      <p
-        class="uppercase text-sm text-ring mb-1.5"
+      <h6
+        class="text-sm font-secondary uppercase font-bold text-xs text-center lg:text-left md:text-sm text-ring mb-1.5"
       >
         CHECK OUT
-      </p>
+      </h6>
       <button
-        class="capitalize w-auto border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+        class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
       >
         Top Camping Sites
       </button>
     </div>
     <div
-      class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px rotate-20"
+      class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px rotate-20 max-h-12 lg:max-h-17.5"
       data-orientation="vertical"
       data-slot="separator"
       role="none"
-      style="height: 70px;"
     />
     <div
       class="w-auto"
     >
-      <p
-        class="uppercase text-sm text-ring mb-1.5"
+      <h6
+        class="text-sm font-secondary uppercase font-bold text-xs text-center lg:text-left md:text-sm text-ring mb-1.5"
       >
         CHECK OUT
-      </p>
+      </h6>
       <button
-        class="capitalize w-auto border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+        class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
       >
         Top National Parks
       </button>
     </div>
     <div
-      class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px rotate-20"
+      class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px rotate-20 max-h-12 lg:max-h-17.5"
       data-orientation="vertical"
       data-slot="separator"
       role="none"
-      style="height: 70px;"
     />
     <div
       class="w-auto"
     >
-      <p
-        class="uppercase text-sm text-ring mb-1.5"
+      <h6
+        class="text-sm font-secondary uppercase font-bold text-xs text-center lg:text-left md:text-sm text-ring mb-1.5"
       >
         CHECK OUT
-      </p>
+      </h6>
       <button
-        class="capitalize w-auto border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+        class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
       >
         Top Weekend Gate-aways
       </button>
@@ -68,13 +66,13 @@ exports[`Experiences component should render correctly 1`] = `
 exports[`Experiences component should render with empty label 1`] = `
 <div>
   <div
-    class="flex w-full items-center gap-10"
+    class="flex min-w-full items-center justify-between"
   >
     <div
       class="w-auto"
     >
       <button
-        class="capitalize w-auto border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
+        class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
       >
         Top Camping Sites
       </button>

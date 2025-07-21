@@ -15,7 +15,7 @@ exports[`LocationTile component should render correctly 1`] = `
         src="https://i.ibb.co/hxbHQJf8/Rectangle.png"
       />
       <div
-        class="absolute bottom-0 left-0 right-0 px-7.5 pb-3 text-primary-foreground text-shadow-lg/30"
+        class="absolute bottom-0 left-0 right-0 px-7.5 pb-3 text-white text-shadow-lg/30"
         data-slot="card-content"
       >
         <h3
@@ -58,7 +58,7 @@ exports[`LocationTile component should render correctly with link 1`] = `
         src="https://i.ibb.co/hxbHQJf8/Rectangle.png"
       />
       <div
-        class="absolute bottom-0 left-0 right-0 px-7.5 pb-3 text-primary-foreground text-shadow-lg/30"
+        class="absolute bottom-0 left-0 right-0 px-7.5 pb-3 text-white text-shadow-lg/30"
         data-slot="card-content"
       >
         <h3
