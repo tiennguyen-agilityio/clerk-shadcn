@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 
 import { Filter } from "@/types";
 import { CAROUSELS, HOME_VIDEO } from "@/constants";
 import { LOCATIONS } from "@/mocks";
 
-import { VideoPlayer, Heading, FilterSection, LocationCard, Carousel, Button } from "@/components";
+import { VideoPlayer, Heading, FilterSection, LocationCard, Carousel, Loading } from "@/components";
 
-const CampingPage = () => {
+import LoadMore from "./LoadMore";
+
+const CampingLocationsPage = () => {
   const [filter, setFilter] = useState<Filter>({
     budget: [1200, 10000],
     locations: [],
@@ -21,7 +23,6 @@ const CampingPage = () => {
       ...value,
     }));
   };
-  const handleLoadMore = () => {};
 
   return (
     <div className="w-full overflow-hidden">
@@ -59,7 +60,7 @@ const CampingPage = () => {
         </div>
       </section>
 
-      <section className="bg-sidebar-accent py-24 mb-20">
+      <section className="bg-sidebar-accent py-24">
         <div className="container mx-auto">
           <Heading as="h6" className="font-bold text-ring mb-5">
             DISCOVER
@@ -68,43 +69,13 @@ const CampingPage = () => {
         </div>
       </section>
 
-      <section className="container mx-auto my-10 md:my-20 lg:my-25">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {LOCATIONS.slice(4, 10).map((item, index) => {
-            return (
-              <div key={item?.id || index} className="md:col-span-1">
-                <LocationCard item={item} href="" />
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      <VideoPlayer hasPlayed {...HOME_VIDEO} />
 
-      <section className="mt-10">
-        <div className="container relative mx-auto bg-amber-100 ">
-          <div className="absolute"></div>
-        </div>
-        <VideoPlayer hasPlayed {...HOME_VIDEO} />
-      </section>
-
-      <section className="container mx-auto my-10 md:my-20 lg:my-25">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {LOCATIONS.slice(0, 3).map((item, index) => {
-            return (
-              <div key={item?.id || index} className="md:col-span-1">
-                <LocationCard item={item} href="" />
-              </div>
-            );
-          })}
-        </div>
-        <div className="flex justify-center mt-25">
-          <Button className="w-37.5" onClick={handleLoadMore}>
-            Load More
-          </Button>
-        </div>
-      </section>
+      <Suspense fallback={<Loading />}>
+        <LoadMore initialLocation={LOCATIONS.slice(0, 3)} />
+      </Suspense>
     </div>
   );
 };
 
-export default CampingPage;
+export default CampingLocationsPage;

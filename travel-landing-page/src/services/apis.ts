@@ -14,6 +14,7 @@ const get = async (url: string) => {
     return data;
   } catch (error) {
     console.error(`❌ Fetch data failed with ${url} from MockAPI:`, error);
+    return [];
   }
 };
 
