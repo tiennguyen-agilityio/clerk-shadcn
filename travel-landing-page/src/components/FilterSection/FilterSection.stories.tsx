@@ -1,0 +1,27 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+import { Filter } from "@/types";
+
+import FilterSection from ".";
+
+const meta: Meta<typeof FilterSection> = {
+  title: "Components/FilterSection",
+  component: FilterSection,
+};
+
+export default meta;
+
+type Story = StoryObj<typeof FilterSection>;
+
+export const Default: Story = {
+  args: {
+    defaultValue: {
+      budget: [1200, 10000],
+      locations: [],
+      categories: [],
+    },
+    onChange: (value: Filter) => {
+      alert(`Change Value: ${JSON.stringify(value)}`);
+    },
+  },
+};

@@ -50,3 +50,61 @@ export const STATISTICS_BY_SERVICES = [
     value: "35+",
   },
 ];
+
+export const LOCATIONS = [
+  {
+    text: "Anywhere",
+    value: "all",
+  },
+  {
+    text: "Camp Kadolta",
+    value: "camp kadolta",
+  },
+  {
+    text: "Mombasa",
+    value: "mombasa",
+  },
+  {
+    text: "Suswa Conservancy",
+    value: "suswa conservancy",
+  },
+  {
+    text: "Lewa Conservancy",
+    value: "lewa conservancy",
+  },
+  {
+    text: "Ol Dubai Campsite",
+    value: "ol dubai campsite",
+  },
+];
+
+export const CATEGORIES = [
+  {
+    text: "Anywhere",
+    value: "all",
+  },
+  {
+    text: "Historic Site",
+    value: "historic site",
+  },
+  {
+    text: "Monument",
+    value: "monument",
+  },
+  {
+    text: "Archaeological Site",
+    value: "archaeological site",
+  },
+  {
+    text: "Marine Reserve",
+    value: "marine reserve",
+  },
+  {
+    text: "Notable Building",
+    value: "notable building",
+  },
+  {
+    text: "Hot Springs",
+    value: "hot springs",
+  },
+];
