@@ -1,7 +1,7 @@
 import { NavFooter } from "@/types";
 
 export const NAV_BAR = [
-  { name: "Camping Locations", href: "/camping" },
+  { name: "Camping Locations", href: "/camping-locations" },
   { name: "Activities", href: "/activities" },
   { name: "Equipment", href: "/equipment" },
   { name: "Blogs", href: "/blogs" },
