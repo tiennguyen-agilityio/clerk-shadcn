@@ -219,8 +219,6 @@ const SignUpPage = () => {
                       <Clerk.FieldError className="block text-sm text-red-400" />
                     </Clerk.Field>
 
-                    <SignUp.Captcha />
-
                     <Clerk.GlobalError className="block text-sm text-red-400" />
                     <SignUp.Action submit asChild disabled={isGlobalLoading}>
                       <Button className="text-sm">
@@ -262,7 +260,6 @@ const SignUpPage = () => {
                     <Clerk.FieldError className="block text-sm text-red-400" />
                   </Clerk.Field>
 
-                  <SignUp.Captcha />
                   <Clerk.GlobalError className="block text-sm text-red-400" />
 
                   <SignUp.Action submit asChild disabled={isGlobalLoading}>
