@@ -17,3 +17,9 @@ export interface NavFooter {
   label: string;
   links: LinkItem[];
 }
+
+export interface Filter {
+  budget?: number[];
+  locations?: string[];
+  categories?: string[];
+}

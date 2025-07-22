@@ -1,0 +1,132 @@
+"use client";
+
+import React, { useState } from "react";
+
+import { LOCATIONS, CATEGORIES } from "@/constants";
+
+import { Filter } from "@/types";
+
+import { formatAmount } from "@/utils";
+
+import { Slider, Label, Toggle } from "../ui";
+
+interface FilterSectionProps {
+  defaultValue?: Filter;
+  onChange: (value: Filter) => void;
+}
+
+const FilterSection = ({ defaultValue, onChange }: FilterSectionProps) => {
+  const [budget, setBudget] = useState<number[]>(defaultValue?.budget || []);
+
+  const [locations, setLocation] = useState<string[]>(defaultValue?.locations || []);
+  const [categories, setCategories] = useState<string[]>(defaultValue?.categories || []);
+
+  const handleChangeBudget = (value: number[]) => {
+    setBudget(value);
+  };
+
+  const handleBudgetCommit = (value: number[]) => {
+    onChange({ budget: value });
+  };
+
+  const handleChangeLocation = (value: string, isAdd = false) => {
+    let newLocations = [...locations];
+    if (isAdd) {
+      if (!locations.includes(value)) {
+        newLocations = [...locations, value];
+      }
+    } else {
+      newLocations = locations.filter((item) => item !== value);
+    }
+
+    onChange({ locations: newLocations });
+    setLocation(newLocations);
+  };
+
+  const handleChangeCategory = (value: string, isAdd = false) => {
+    let newCategories = [...categories];
+    if (isAdd) {
+      if (!categories.includes(value)) {
+        newCategories = [...categories, value];
+      }
+    } else {
+      newCategories = categories.filter((item) => item !== value);
+    }
+
+    onChange({ categories: newCategories });
+    setCategories(newCategories);
+  };
+
+  return (
+    <div className="w-full">
+      <p className="text-2xl w-fit pb-3 mb-5 border-b-[3px] border-chart-2">Filter By</p>
+      <div className="w-full bg-sidebar-accent p-5">
+        <div>
+          <Label className="mb-4">Budget Per Night</Label>
+          <Slider
+            min={0}
+            max={11000}
+            step={100}
+            value={budget}
+            onValueChange={handleChangeBudget}
+            onValueCommit={handleBudgetCommit}
+          />
+          <div className="flex justify-between mt-3">
+            <span>KES. {formatAmount(budget[0])}</span>
+            <span>KES. {formatAmount(budget[1])}</span>
+          </div>
+        </div>
+        <div className="w-full border-t border-dashed border-border my-4" />
+        <div className="mt-1">
+          <Label>Location</Label>
+          <div className="flex flex-wrap mt-3 gap-2.5">
+            {LOCATIONS.map(({ text, value }) => {
+              const isPressed = locations.includes(value);
+
+              const handleChange = (pressed: boolean) => {
+                handleChangeLocation(value, pressed);
+              };
+
+              return (
+                <Toggle
+                  key={value}
+                  variant="outline"
+                  pressed={isPressed}
+                  onPressedChange={handleChange}
+                >
+                  {text}
+                </Toggle>
+              );
+            })}
+          </div>
+        </div>
+        <div className="w-full border-t border-dashed border-border my-4" />
+        <div className="mt-1">
+          <Label>Category</Label>
+          <div className="flex flex-wrap mt-3 gap-2.5">
+            {CATEGORIES.map(({ text, value }) => {
+              const isPressed = categories.includes(value);
+
+              const handleChange = (pressed: boolean) => {
+                handleChangeCategory(value, pressed);
+              };
+
+              return (
+                <Toggle
+                  key={value}
+                  variant="outline"
+                  pressed={isPressed}
+                  onPressedChange={handleChange}
+                >
+                  {text}
+                </Toggle>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FilterSection;
