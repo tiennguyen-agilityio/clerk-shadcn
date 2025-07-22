@@ -3,33 +3,31 @@
 exports[`LocationCard component should render correctly 1`] = `
 <div>
   <a
-    class="block"
+    class="block h-full group"
     href=""
   >
     <div
-      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full p-0"
+      class="bg-card text-card-foreground gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full h-full p-0 flex flex-row md:flex-col justify-between"
       data-slot="card"
     >
       <div
-        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0"
+        class="@container/card-header auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 block w-1/2 md:w-full relative p-0 grow-1 bg-muted overflow-hidden"
         data-slot="card-header"
-        style="height: 340px;"
       >
         <div
-          class="font-semibold absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white"
+          class="font-semibold absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white text-shadow-sm line-clamp-2"
           data-slot="card-title"
         >
           Coffee Farm Tour, From Seedling to Cup
         </div>
         <img
           alt="Coffee Farm"
-          class="object-cover"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2023/07/anh-phong-canh-dep-7.jpg.webp"
-          style="height: 340px;"
+          class="object-cover h-full w-full transform transition-transform duration-300 ease-in-out group-hover:scale-105"
+          src="https://i.ibb.co/1JR5vmjd/Rectangle-Copy-21.png"
         />
       </div>
       <div
-        class="px-7.5 pt-4 pb-6"
+        class="w-1/2 md:w-full px-7.5 pt-4 mb-0 pb-6"
         data-slot="card-content"
       >
         <p
@@ -111,30 +109,28 @@ exports[`LocationCard component should render correctly 1`] = `
 exports[`LocationCard component should render with default value 1`] = `
 <div>
   <a
-    class="block"
+    class="block h-full group"
     href=""
   >
     <div
-      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full p-0"
+      class="bg-card text-card-foreground gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full h-full p-0 flex flex-row md:flex-col justify-between"
       data-slot="card"
     >
       <div
-        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 relative p-0"
+        class="@container/card-header auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 block w-1/2 md:w-full relative p-0 grow-1 bg-muted overflow-hidden"
         data-slot="card-header"
-        style="height: 340px;"
       >
         <div
-          class="font-semibold absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white"
+          class="font-semibold absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white text-shadow-sm line-clamp-2"
           data-slot="card-title"
         />
         <img
           alt=""
-          class="object-cover"
-          style="height: 340px;"
+          class="object-cover h-full w-full transform transition-transform duration-300 ease-in-out group-hover:scale-105"
         />
       </div>
       <div
-        class="px-7.5 pt-4 pb-6"
+        class="w-1/2 md:w-full px-7.5 pt-4 mb-0 pb-6"
         data-slot="card-content"
       >
         <p
