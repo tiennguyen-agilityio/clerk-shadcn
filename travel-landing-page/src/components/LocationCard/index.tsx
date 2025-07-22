@@ -16,10 +16,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 interface LocationCardProps {
   item: LocationItem;
   href?: string;
-  imageHeight?: number;
 }
 
-const LocationCard = ({ item, href = "", imageHeight = 340 }: LocationCardProps) => {
+const LocationCard = ({ item, href = "" }: LocationCardProps) => {
   const {
     title = "",
     image,
@@ -32,15 +31,19 @@ const LocationCard = ({ item, href = "", imageHeight = 340 }: LocationCardProps)
   } = item;
 
   return (
-    <Link href={href} className="block">
-      <Card className="w-full p-0">
-        <CardHeader className="relative p-0" style={{ height: imageHeight }}>
-          <CardTitle className="absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white">
+    <Link href={href} className="block h-full group">
+      <Card className="w-full h-full p-0 flex flex-row md:flex-col justify-between ">
+        <CardHeader className="block w-1/2 md:w-full relative p-0 grow-1 bg-muted overflow-hidden">
+          <CardTitle className="absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white text-shadow-sm line-clamp-2">
             {title}
           </CardTitle>
-          <img src={image} alt={name} className="object-cover" style={{ height: imageHeight }} />
+          <img
+            src={image}
+            alt={name}
+            className="object-cover h-full w-full transform transition-transform duration-300 ease-in-out group-hover:scale-105"
+          />
         </CardHeader>
-        <CardContent className="px-7.5 pt-4 pb-6">
+        <CardContent className="w-1/2 md:w-full px-7.5 pt-4 mb-0 pb-6">
           <p className="font-bold text-lg">
             From ${fee}/person · {formatMinutes(time)}
           </p>
