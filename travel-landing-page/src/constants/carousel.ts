@@ -25,7 +25,7 @@ export const CAROUSELS = [
   },
   {
     id: "04",
-    title: "A Guide To Rocky Mountain Vacations",
+    title: "Rocky Mountain Vacations",
     description:
       "Because the rock was laid down in layers, there is a variation in the hardness of the rock formed. When water runoff trickles across the rock, some areas erode rapidly whereas others hold firm. This variation in erosion speed causes the formation of pinnacles, or “hoodoos” of stable rock.",
     image: "https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg",
