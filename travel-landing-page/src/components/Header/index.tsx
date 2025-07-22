@@ -28,7 +28,7 @@ const Header = () => {
   const pathname = usePathname() || "";
   const isActiveSignIn = pathname.startsWith("/sign-in");
   const isActiveSignUp = pathname.startsWith("/sign-up");
-  const isHasBorder = HAS_BORDER_BOTTOM.includes(pathname);
+  const isHasBorder = HAS_BORDER_BOTTOM.some((prefix) => pathname.startsWith(prefix));
 
   return (
     <header
