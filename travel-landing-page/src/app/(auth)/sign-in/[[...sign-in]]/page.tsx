@@ -51,7 +51,7 @@ const SignInPage = () => {
                       required
                       type="text"
                       placeholder="Enter Email"
-                      className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full rounded border border-input p-3 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                     <Clerk.FieldError className="text-error" />
                   </Clerk.Field>
@@ -64,7 +64,7 @@ const SignInPage = () => {
                         required
                         validatePassword
                         placeholder="Enter password"
-                        className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="w-full rounded border border-input p-3 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       />
                       <Button
                         variant="ghost"

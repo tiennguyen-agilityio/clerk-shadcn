@@ -2,9 +2,12 @@
 
 import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+
+import { DIRECTION } from "@/types";
+
+import { ChevronIcon, CheckIcon, CircleIcon } from "../Icons";
 
 function DropdownMenu({ ...props }: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {
   return <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
@@ -188,7 +191,7 @@ function DropdownMenuSubTrigger({
       {...props}
     >
       {children}
-      <ChevronRightIcon className="ml-auto size-4" />
+      <ChevronIcon direction={DIRECTION.RIGHT} className="ml-auto size-2.5" />
     </DropdownMenuPrimitive.SubTrigger>
   );
 }

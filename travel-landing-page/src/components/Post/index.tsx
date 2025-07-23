@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { MoveRight } from "lucide-react";
 import clsx from "clsx";
 
+import { ArrowIcon } from "../Icons";
 import Button from "../Button";
 
 interface PostProps {
@@ -28,10 +28,10 @@ const Post = ({ text, image, alt = "", className = "", onReadMore }: PostProps) 
             data-testid="readMore"
             variant="ghost"
             onClick={onReadMore}
-            className="text-accent-foreground gap-6 absolute bottom-0 right-0 text-sx md:text-sm h-12 md:h-15 md:w-57 bg-background rounded-none"
+            className="text-accent-foreground md:gap-6 absolute bottom-0 right-0 text-sx md:text-sm h-12 md:h-15 md:w-57 bg-background rounded-none"
           >
             Read More
-            <MoveRight />
+            <ArrowIcon />
           </Button>
         )}
       </div>

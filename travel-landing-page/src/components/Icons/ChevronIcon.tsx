@@ -2,21 +2,22 @@ import React from "react";
 
 import { DIRECTION, SVGProps } from "@/types";
 
-interface ArrowIconProps extends SVGProps {
+interface ChevronIconProps extends SVGProps {
   direction?: DIRECTION;
   rotate?: number;
   duration?: number;
 }
 
-const ArrowIcon = ({
+const ChevronIcon = ({
   color = "currentColor",
-  width = 20,
-  height = 6,
+  width = 17,
+  height = 9,
   direction = DIRECTION.DOWN,
   rotate,
   duration = 0,
+  className,
   onClick,
-}: ArrowIconProps) => {
+}: ChevronIconProps) => {
   const rotateValue = (): number => {
     switch (direction) {
       case DIRECTION.DOWN:
@@ -38,7 +39,8 @@ const ArrowIcon = ({
     <svg
       width={width}
       height={height}
-      viewBox="0 0 20 6"
+      className={className}
+      viewBox="0 0  17 9"
       fill="none"
       onClick={onClick}
       style={{
@@ -46,13 +48,14 @@ const ArrowIcon = ({
         transition: duration ? `transform ${duration}ms ease` : undefined,
         cursor: onClick ? "pointer" : undefined,
       }}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M19.6508 2.31454L16.6308 0.154296C16.0836 -0.237068 15.3273 0.161455 15.3273 0.840035V2.16128H0.826947C0.370282 2.16128 0 2.53693 0 3.00034C0 3.46374 0.370282 3.83933 0.826947 3.83933H15.3272V5.16052C15.3272 5.84358 16.0875 6.23466 16.6306 5.84626L19.6506 3.68602C20.1118 3.35635 20.1211 2.65171 19.6508 2.31454Z"
+        d="M16.8261 0.173913C16.5918 -0.057971 16.211 -0.057971 15.9767 0.173913L8.50822 7.57971L1.02509 0.173913C0.790781 -0.057971 0.410035 -0.057971 0.175729 0.173913C-0.0585764 0.405797 -0.0585764 0.782609 0.175729 1.01449L8.06889 8.82609C8.18605 8.94203 8.33249 9 8.49357 9C8.64001 9 8.8011 8.94203 8.91825 8.82609L16.8114 1.01449C17.0604 0.782609 17.0604 0.405797 16.8261 0.173913Z"
         fill={color}
       />
     </svg>
   );
 };
 
-export default ArrowIcon;
+export default ChevronIcon;

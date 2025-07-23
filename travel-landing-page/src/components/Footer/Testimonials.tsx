@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowIcon } from "../Icons";
+import ChevronIcon from "../Icons/ChevronIcon";
 import { DIRECTION } from "@/types";
 import TestimonialItem from "./TestimonialItem";
 
@@ -34,9 +34,9 @@ const Testimonials = () => {
             <span className="font-abel text-[50px] leading-none text-primary">say about us</span>
           </p>
           <div className="flex items-center justify-around h-15 w-31 mt-28.5 bg-background">
-            <ArrowIcon direction={DIRECTION.LEFT} />
+            <ChevronIcon direction={DIRECTION.LEFT} />
             <div className="w-[1px] h-10 bg-ring rotate-15" />
-            <ArrowIcon direction={DIRECTION.RIGHT} />
+            <ChevronIcon direction={DIRECTION.RIGHT} />
           </div>
         </div>
 
