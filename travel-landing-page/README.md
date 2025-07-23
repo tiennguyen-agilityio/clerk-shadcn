@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clerk, Shadcn practice
 
-## Getting Started
+## Overview
 
-First, run the development server:
+- This document provides information about Clerk, Shadcn practice
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech stacks
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Dev tools
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [React](https://react.dev/versions#react-19)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [NextJS](https://nextjs.org/)
 
-## Learn More
+- [Storybook](https://storybook.js.org/blog/get-started-with-storybook-and-next-js/)
 
-To learn more about Next.js, take a look at the following resources:
+- [Husky](https://typicode.github.io/husky/get-started.html)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Prettier](https://prettier.io/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ESLint](https://eslint.org/)
 
-## Deploy on Vercel
+### Programming Languages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [TypeScript](https://www.typescriptlang.org/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Unit Testing (UT) Tools
+
+- [Jest](https://jestjs.io/docs/29.6/expect)
+
+- [React Testing Library](https://testing-library.com/)
+
+### UI Frameworks
+
+- [Clerk](https://clerk.com/)
+
+- [Shadcn](https://v3.shadcn.com/docs/installation)
+
+
+## Timeline
+
+- Estimated time: 3 weeks
+
+	- Read and apply Clerk: 8 days
+	
+	- Read and apply Shadcn: 7 days
+
+## Time size
+
+- 1 dev
+
+## Editor
+
+- [Visual studio code](https://code.visualstudio.com/)
+
+## Targets
+
+- Understand and practice with [Clerk](https://clerk.com/docs), [Shadcn UI](https://ui.shadcn.com/docs)
+
+- Using Clerk to Practice Authentication Flow
+
+- Using Shadcn to build your component library
+
+- Deploy on [Vercel](https://vercel.com)
+
+
+## Features
+
+- Users can sign in.
+
+- Users can sign up.
+
+- Users can sign out.
+
+- Users can see home page.
+
+- Users can see Camping locations page and load more locations.
+
+- Users can change the theme mode
+
+## Design
+
+- [Figma](https://www.figma.com/design/utPDksH8lgHwCYYfA7Q5UT/travel-landing-page-travelsy-sid_ralak?node-id=0-1&p=f&t=g3uSFyRexyVGo3Y9-0)
+
+## Requirements
+
+- [Node](https://nodejs.org/en/ "Node") >= 20.0.0 / [pnpm](https://pnpm.io/) >= 8.6.1
+
+## Getting started
+
+#### Step by step to run this app in your local:
+
+| Command                                                                     | Action                                         |
+|:----------------------------------------------------------------------------|:-----------------------------------------------|
+| `git clone git@gitlab.asoft-python.com:tien.nguyen/nextjs-training.git`     | Download source code                           |
+| `cd nextjs-training`                                                        | Move to folder                                 |
+| `git checkout feature/apply-shadcn`                                         | Move branch                                    |
+| `cd travel-landing-page`                                                    | Move to the folder containing the source code  |
+| `pnpm install`                                                              | Installs dependencies                          |
+| `pnpm test`                                                                 | Run test                                       |
+| `pnpm storybook`                                                            | Preview UI component: `http://localhost:6006`  |
+| `pnpm dev`                                                                  | Starts local dev server at `localhost:3000`    |
+| `pnpm start`                                                                | Preview your build locally: `localhost:3000`   |
+
+> Note: Before running `pnpm dev` or `pnpm start`: create .env.local with .env.example (contact to me to get information of environment variable - Email: tien.nguyen@asnet.com.vn)
