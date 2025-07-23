@@ -1,12 +1,11 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
-import clsx from "clsx";
+import { useState } from "react";
 import * as Clerk from "@clerk/elements/common";
 import * as SignUp from "@clerk/elements/sign-up";
 
 import { DAYS, MONTHS, YEARS } from "@/constants";
-import { Button, FacebookIcon, GoogleIcon, Heading, Loading } from "@/components";
+import { Button, Checkbox, FacebookIcon, GoogleIcon, Heading, Loading, Select } from "@/components";
 
 const SignUpPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -16,24 +15,24 @@ const SignUpPage = () => {
 
   const handleToggleVisible = () => setIsPasswordVisible((prev) => !prev);
 
-  const handleDayChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setDay(e.target.value);
+  const handleDayChange = (value: string) => {
+    setDay(value);
   };
 
-  const handleMonthChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setMonth(e.target.value);
+  const handleMonthChange = (value: string) => {
+    setMonth(value);
   };
 
-  const handleYearChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setYear(e.target.value);
+  const handleYearChange = (value: string) => {
+    setYear(value);
   };
 
   return (
-    <div className="font-acme text-sm mx-auto">
+    <div className="font-acme text-sm justify-center mx-auto ">
       <SignUp.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (
-            <div className="flex-col justify-center items-center content-center w-[545px]">
+            <div className="flex-col justify-center items-center content-center min-w-[545px]">
               <SignUp.Step name="start" className="w-full">
                 <Heading as="h4" className="font-abel text-center">
                   Create Account
@@ -41,7 +40,7 @@ const SignUpPage = () => {
 
                 <div className="flex justify-between mt-12.5 h-12.5 gap-2.5 text-white">
                   <Clerk.Connection asChild name="facebook">
-                    <Button className="gap-2.5 w-1/2  bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300">
+                    <Button className="gap-2.5 flex-1/2  bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300">
                       <FacebookIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:facebook">
@@ -50,7 +49,7 @@ const SignUpPage = () => {
                     </Button>
                   </Clerk.Connection>
                   <Clerk.Connection asChild name="google">
-                    <Button className=" gap-2.5 w-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300">
+                    <Button className=" gap-2.5 flex-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300">
                       <GoogleIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:google">
@@ -61,8 +60,8 @@ const SignUpPage = () => {
                 </div>
                 <div className="flex flex-col gap-7.5">
                   <div className="flex flex-col justify-center items-center h-10 relative pt-5">
-                    <div className="h-[1px] bg-[#d8d8d8] absolute z-1 w-full" />
-                    <span className="flex items-center h-2.5 px-3 bg-white z-2">OR</span>
+                    <div className="h-[1px] bg-input absolute z-1 w-full" />
+                    <span className="flex items-center h-2.5 px-3 bg-background z-2">OR</span>
                   </div>
 
                   <div className="flex gap-5">
@@ -71,9 +70,9 @@ const SignUpPage = () => {
                       <Clerk.Input
                         required
                         placeholder="Enter first name"
-                        className="w-full rounded border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                        className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                       />
-                      <Clerk.FieldError className="text-red-500" />
+                      <Clerk.FieldError className="text-error" />
                     </Clerk.Field>
 
                     <Clerk.Field name="lastName" className="w-1/2">
@@ -81,9 +80,9 @@ const SignUpPage = () => {
                       <Clerk.Input
                         required
                         placeholder="Enter last name"
-                        className="w-full rounded border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                        className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                       />
-                      <Clerk.FieldError className="text-red-500" />
+                      <Clerk.FieldError className="text-error" />
                     </Clerk.Field>
                   </div>
                   <Clerk.Field name="emailAddress">
@@ -92,9 +91,9 @@ const SignUpPage = () => {
                       required
                       type="text"
                       placeholder="Enter Email"
-                      className="w-full rounded border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                      className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                     />
-                    <Clerk.FieldError className="text-red-500" />
+                    <Clerk.FieldError className="text-error" />
                   </Clerk.Field>
 
                   <Clerk.Field name="password">
@@ -105,7 +104,7 @@ const SignUpPage = () => {
                         required
                         validatePassword
                         placeholder="Enter Password"
-                        className="w-full rounded border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                        className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                       />
                       <Button
                         variant="ghost"
@@ -121,71 +120,36 @@ const SignUpPage = () => {
                   <div className="flex flex-col space-y-2">
                     <label className="mb-1.25">Date of Birth</label>
                     <div className="flex gap-5">
-                      {/* Day */}
-                      <select
+                      <Select
+                        placeholder="Day"
                         value={day}
-                        onChange={handleDayChange}
-                        className={clsx(
-                          "w-1/3 rounded border border-gray-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500",
-                          !day && "text-gray-400"
-                        )}
-                      >
-                        <option value="">Day</option>
-                        {DAYS.map((d) => (
-                          <option key={d} value={d}>
-                            {d}
-                          </option>
-                        ))}
-                      </select>
+                        list={DAYS}
+                        onValueChange={handleDayChange}
+                      />
 
-                      {/* Month */}
-                      <select
+                      <Select
+                        placeholder="Month"
                         value={month}
-                        onChange={handleMonthChange}
-                        className={clsx(
-                          "w-1/3 rounded border border-gray-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500",
-                          !month && "text-gray-400"
-                        )}
-                      >
-                        <option value="">Month</option>
-                        {MONTHS.map((m, index) => (
-                          <option key={index} value={index + 1}>
-                            {m}
-                          </option>
-                        ))}
-                      </select>
+                        list={MONTHS}
+                        onValueChange={handleMonthChange}
+                      />
 
-                      {/* Year */}
-                      <select
+                      <Select
+                        placeholder="Year"
                         value={year}
-                        onChange={handleYearChange}
-                        className={clsx(
-                          "w-1/3 rounded border border-gray-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500",
-                          !year && "text-gray-400"
-                        )}
-                      >
-                        <option value="">Year</option>
-                        {YEARS.map((y) => (
-                          <option key={y} value={y}>
-                            {y}
-                          </option>
-                        ))}
-                      </select>
+                        list={YEARS}
+                        onValueChange={handleYearChange}
+                      />
                     </div>
                   </div>
 
-                  <div className="flex gap-2.5">
-                    <input id="remember" type="checkbox" />
-                    <label htmlFor="remember">
-                      I have read and agree to the Terms and Conditions
-                    </label>
-                  </div>
+                  <Checkbox label="I have read and agree to the Terms and Conditions" />
 
                   <SignUp.Captcha />
                   <Clerk.GlobalError className="block text-sm text-error" />
 
                   <SignUp.Action submit asChild disabled={isGlobalLoading}>
-                    <Button className="text-sm">
+                    <Button className="text-sm" disabled={isGlobalLoading}>
                       <Clerk.Loading>
                         {(isLoading) => (isLoading ? "Submitting..." : " Sign Up")}
                       </Clerk.Loading>
@@ -202,14 +166,11 @@ const SignUpPage = () => {
                   </div>
                 </div>
               </SignUp.Step>
-              <SignUp.Step
-                name="verifications"
-                className="w-full space-y-6 rounded-2xl bg-white px-4 py-10 shadow-md ring-1 ring-black/5 sm:w-96 sm:px-8"
-              >
+              <SignUp.Step name="verifications" className="w-full">
                 <Heading as="h4" className="font-abel text-center">
                   Verify email code
                 </Heading>
-                <div className="flex flex-col gap-7.5">
+                <div className="w-full flex flex-col gap-7.5">
                   <SignUp.Strategy name="email_code">
                     <Clerk.Field name="code" className="space-y-2">
                       <Clerk.Label className="text-sm font-medium text-zinc-950">
@@ -218,14 +179,14 @@ const SignUpPage = () => {
                       <Clerk.Input
                         type="otp"
                         required
-                        className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400"
+                        className="w-full rounded border border-input px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                       />
                       <Clerk.FieldError className="block text-sm text-error" />
                     </Clerk.Field>
 
                     <Clerk.GlobalError className="block text-sm text-error" />
                     <SignUp.Action submit asChild disabled={isGlobalLoading}>
-                      <Button className="text-sm">
+                      <Button className="text-sm" disabled={isGlobalLoading}>
                         <Clerk.Loading>
                           {(isLoading) => (isLoading ? "Submitting..." : " Verify")}
                         </Clerk.Loading>
@@ -244,14 +205,11 @@ const SignUpPage = () => {
                   </div>
                 </div>
               </SignUp.Step>
-              <SignUp.Step
-                name="continue"
-                className="w-full mx-auto space-y-6 rounded-2xl px-4 py-10 shadow-md ring-1 ring-black/5 sm:w-96 sm:px-8"
-              >
+              <SignUp.Step name="continue" className="w-full">
                 <Heading as="h4" className="font-abel text-center">
                   Continue registration
                 </Heading>
-                <div className="flex flex-col gap-7.5">
+                <div className="w-full flex flex-col mt-12.5 gap-7.5">
                   <Clerk.Field name="username" className="space-y-2">
                     <Clerk.Label className="text-sm font-medium text-zinc-950">
                       Username
@@ -259,7 +217,7 @@ const SignUpPage = () => {
                     <Clerk.Input
                       type="text"
                       required
-                      className="w-full rounded-md px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400"
+                      className="w-full rounded border border-input px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                     />
                     <Clerk.FieldError className="block text-sm text-error" />
                   </Clerk.Field>
@@ -267,7 +225,7 @@ const SignUpPage = () => {
                   <Clerk.GlobalError className="block text-sm text-error" />
 
                   <SignUp.Action submit asChild disabled={isGlobalLoading}>
-                    <Button className="text-sm">
+                    <Button className="text-sm" disabled={isGlobalLoading}>
                       <Clerk.Loading>
                         {(isLoading) => (isLoading ? "Submitting..." : " Continue")}
                       </Clerk.Loading>
