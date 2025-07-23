@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { MONTHS } from "@/constants";
 
@@ -22,7 +22,7 @@ export const Default: Story = {
   args: {
     label: "Label Select",
     placeholder: "Placeholder",
-    list: MONTHS,
+    options: MONTHS,
   },
 };
 
@@ -30,14 +30,14 @@ export const EmptyLabel: Story = {
   args: {
     label: "",
     placeholder: "Placeholder",
-    list: MONTHS,
+    options: MONTHS,
   },
 };
 
 export const Disabled: Story = {
   args: {
     label: "Label Select",
-    list: MONTHS,
+    options: MONTHS,
     defaultValue: MONTHS[2],
     disabled: true,
   },
@@ -46,7 +46,7 @@ export const Disabled: Story = {
 export const SmallSize: Story = {
   args: {
     label: "Label Select",
-    list: MONTHS,
+    options: MONTHS,
     size: "sm",
   },
 };

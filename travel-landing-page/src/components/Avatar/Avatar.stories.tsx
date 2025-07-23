@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import Avatar from ".";
 
@@ -28,7 +28,7 @@ export const Activity: Story = {
   args: {
     src: "https://github.com/shadcn.png",
     name: "TN",
-    isNewActivity: true,
+    isActive: true,
   },
 };
 
@@ -41,7 +41,7 @@ export const Fallback: Story = {
 export const FallbackActivity: Story = {
   args: {
     name: "TN",
-    isNewActivity: true,
+    isActive: true,
   },
 };
 

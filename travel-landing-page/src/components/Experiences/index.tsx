@@ -8,30 +8,30 @@ import { Separator } from "../ui/separator";
 import ExperienceItem from "../ExperienceItem";
 
 interface ExperiencesProps {
-  list: Experience[];
-  onChange: (index: number) => void;
+  data: Experience[];
+  onItemClick: (index: number) => void;
 }
 
-const Experiences = ({ list, onChange }: ExperiencesProps) => {
+const Experiences = ({ data, onItemClick }: ExperiencesProps) => {
   const [indexActive, setIndexActive] = useState<number>();
 
-  const length = list.length;
+  const length = data.length;
 
   return (
     <div className="flex min-w-full items-center justify-between pr-3 lg:pr-10">
-      {list?.map(({ label = "", title }, index) => {
+      {data?.map(({ label = "", title }, index) => {
         const isActive = indexActive === index;
 
-        const hanChange = () => {
+        const handleClick = () => {
           if (indexActive === index) return;
 
           setIndexActive(index);
-          onChange(index);
+          onItemClick(index);
         };
 
         return (
           <Fragment key={index}>
-            <ExperienceItem label={label} title={title} isActive={isActive} onClick={hanChange} />
+            <ExperienceItem label={label} title={title} isActive={isActive} onClick={handleClick} />
             {index < length - 1 && (
               <Separator orientation="vertical" className="rotate-20 max-h-12 lg:max-h-17.5" />
             )}

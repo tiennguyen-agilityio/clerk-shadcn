@@ -7,7 +7,7 @@ describe("Select component", () => {
   const props = {
     label: "Label Select",
     placeholder: "Placeholder",
-    list: MONTHS,
+    options: MONTHS,
   };
   it("should render correctly", () => {
     const { container } = render(<Select {...props} />);
@@ -20,7 +20,7 @@ describe("Select component", () => {
   });
 
   it("should render with label empty", () => {
-    const { container } = render(<Select list={MONTHS} label={undefined} />);
+    const { container } = render(<Select options={MONTHS} label={undefined} />);
     expect(container).toMatchSnapshot();
   });
 

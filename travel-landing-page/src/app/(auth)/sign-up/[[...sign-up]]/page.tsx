@@ -123,21 +123,21 @@ const SignUpPage = () => {
                       <Select
                         placeholder="Day"
                         value={day}
-                        list={DAYS}
+                        options={DAYS}
                         onValueChange={handleDayChange}
                       />
 
                       <Select
                         placeholder="Month"
                         value={month}
-                        list={MONTHS}
+                        options={MONTHS}
                         onValueChange={handleMonthChange}
                       />
 
                       <Select
                         placeholder="Year"
                         value={year}
-                        list={YEARS}
+                        options={YEARS}
                         onValueChange={handleYearChange}
                       />
                     </div>

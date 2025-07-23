@@ -6,7 +6,7 @@ exports[`Experiences component should render correctly 1`] = `
     class="flex min-w-full items-center justify-between pr-3 lg:pr-10"
   >
     <div
-      class="w-auto"
+      class="max-w-fit"
     >
       <h6
         class="text-sm font-secondary uppercase font-bold text-xs text-center lg:text-left md:text-sm text-ring mb-1.5"
@@ -26,7 +26,7 @@ exports[`Experiences component should render correctly 1`] = `
       role="none"
     />
     <div
-      class="w-auto"
+      class="max-w-fit"
     >
       <h6
         class="text-sm font-secondary uppercase font-bold text-xs text-center lg:text-left md:text-sm text-ring mb-1.5"
@@ -46,7 +46,7 @@ exports[`Experiences component should render correctly 1`] = `
       role="none"
     />
     <div
-      class="w-auto"
+      class="max-w-fit"
     >
       <h6
         class="text-sm font-secondary uppercase font-bold text-xs text-center lg:text-left md:text-sm text-ring mb-1.5"
@@ -69,7 +69,7 @@ exports[`Experiences component should render with empty label 1`] = `
     class="flex min-w-full items-center justify-between pr-3 lg:pr-10"
   >
     <div
-      class="w-auto"
+      class="max-w-fit"
     >
       <button
         class="capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground"
