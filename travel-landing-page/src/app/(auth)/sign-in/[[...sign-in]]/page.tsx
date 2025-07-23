@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button, FacebookIcon, GoogleIcon, Loading } from "@/components";
+import { Button, Checkbox, FacebookIcon, GoogleIcon, Loading } from "@/components";
 import * as SignIn from "@clerk/elements/sign-in";
 import * as Clerk from "@clerk/elements/common";
 
@@ -16,11 +16,11 @@ const SignInPage = () => {
         <Clerk.Loading>
           {(isGlobalLoading) => (
             <SignIn.Step name="start">
-              <div className="flex-col justify-center align-middle items-center content-center w-[545px]">
+              <div className="flex-col justify-center align-middle items-center content-center min-w-[545px]">
                 <h1 className="font-abel text-center text-[70px]">Sign In</h1>
-                <div className="flex justify-between mt-12.5 h-12.5 gap-2.5 text-white">
+                <div className="flex justify-between mt-12.5 h-12.5 gap-2.5">
                   <Clerk.Connection asChild name="facebook">
-                    <Button className="gap-2.5 w-1/2  bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300">
+                    <Button className="gap-2.5 flex-1/2 bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300">
                       <FacebookIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:facebook">
@@ -29,7 +29,7 @@ const SignInPage = () => {
                     </Button>
                   </Clerk.Connection>
                   <Clerk.Connection asChild name="google">
-                    <Button className=" gap-2.5 w-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300">
+                    <Button className="gap-2.5 flex-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300">
                       <GoogleIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:google">
@@ -41,8 +41,8 @@ const SignInPage = () => {
 
                 <div className="flex flex-col gap-7.5">
                   <div className="flex flex-col justify-center items-center h-10 relative pt-5">
-                    <div className="h-[1px] bg-[#d8d8d8] absolute z-1 w-full" />
-                    <span className="flex items-center h-2.5 px-3 bg-white z-2">OR</span>
+                    <div className="h-[1px] bg-input absolute z-1 w-full" />
+                    <span className="flex items-center h-2.5 px-3 bg-background z-2">OR</span>
                   </div>
 
                   <Clerk.Field name="identifier">
@@ -51,9 +51,9 @@ const SignInPage = () => {
                       required
                       type="text"
                       placeholder="Enter Email"
-                      className="w-full rounded border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                      className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
-                    <Clerk.FieldError className="text-red-500" />
+                    <Clerk.FieldError className="text-error" />
                   </Clerk.Field>
 
                   <Clerk.Field name="password">
@@ -64,7 +64,7 @@ const SignInPage = () => {
                         required
                         validatePassword
                         placeholder="Enter password"
-                        className="w-full rounded border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                        className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       />
                       <Button
                         variant="ghost"
@@ -74,15 +74,11 @@ const SignInPage = () => {
                         {isPasswordVisible ? "Hide Password" : "Show Password"}
                       </Button>
                     </div>
-                    <Clerk.FieldError className="text-red-500" />
+                    <Clerk.FieldError className="text-error" />
                   </Clerk.Field>
 
                   <div className="flex justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <input id="remember" type="checkbox" />
-                      <label htmlFor="remember">Remember me</label>
-                    </div>
-
+                    <Checkbox label="Remember me" />
                     <SignIn.Action
                       navigate="forgot-password"
                       className="text-[#4a90e2] hover:text-blue-900 hover:underline"

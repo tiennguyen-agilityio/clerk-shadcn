@@ -17,7 +17,9 @@ export const MONTHS = [
   "December",
 ];
 
-export const YEARS = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i);
+export const YEARS = Array.from({ length: 100 }, (_, i) =>
+  (new Date().getFullYear() - i).toString()
+);
 
 export const EXPERIENCES = [
   {
