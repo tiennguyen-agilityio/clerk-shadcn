@@ -14,7 +14,7 @@ import { Label } from "../ui/label";
 
 type SelectProps = ComponentProps<typeof ShadCNSelect> &
   SelectTriggerProps & {
-    list: string[];
+    options: string[];
     label?: string;
     placeholder?: string;
   };
@@ -23,7 +23,7 @@ const Select = ({
   label = "",
   placeholder = "",
   size = "default",
-  list,
+  options,
   ...props
 }: SelectProps) => {
   const id = useId();
@@ -40,7 +40,7 @@ const Select = ({
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>
-          {list?.map((item, index) => (
+          {options?.map((item, index) => (
             <SelectItem key={index} value={item} size={size} className="">
               {item}
             </SelectItem>

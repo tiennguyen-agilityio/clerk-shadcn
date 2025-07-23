@@ -42,7 +42,7 @@ export default function Home() {
           <div className="container flex items-center mx-auto">
             <div className="h-full min-w-screen absolute right-100 bg-background z-1" />
             <div className="flex flex-1 align-center br-5 h-16 md:h-20 lg:h-30 z-30 bg-background">
-              <Experiences list={EXPERIENCES} onChange={handleChange} />
+              <Experiences data={EXPERIENCES} onItemClick={handleChange} />
             </div>
             <Button
               onClick={handleFindExperience}

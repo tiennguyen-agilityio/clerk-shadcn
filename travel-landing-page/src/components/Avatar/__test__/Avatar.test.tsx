@@ -13,7 +13,7 @@ describe("Avatar component", () => {
   });
 
   it("should render correctly has new activity", () => {
-    const { container } = render(<Avatar {...props} isNewActivity alt="Avatar Image" />);
+    const { container } = render(<Avatar {...props} isActive alt="Avatar Image" />);
     expect(container).toMatchSnapshot();
   });
 
@@ -23,7 +23,7 @@ describe("Avatar component", () => {
   });
 
   it("should render correctly with fallback has new activity", () => {
-    const { container } = render(<Avatar {...props} src="" isNewActivity />);
+    const { container } = render(<Avatar {...props} src="" isActive />);
     expect(container).toMatchSnapshot();
   });
 

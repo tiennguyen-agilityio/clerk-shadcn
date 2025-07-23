@@ -32,7 +32,7 @@ exports[`Avatar component should render correctly has new activity 1`] = `
       class="absolute top-1 right-0 z-2 w-2.75 h-2.75 bg-white flex flex-col items-center justify-center rounded-full"
     >
       <div
-        class="w-2.25 h-2.25 bg-red-500 rounded-full"
+        class="w-2.25 h-2.25 bg-error rounded-full"
       />
     </div>
   </span>
@@ -71,7 +71,7 @@ exports[`Avatar component should render correctly with fallback has new activity
       class="absolute top-1 right-0 z-2 w-2.75 h-2.75 bg-white flex flex-col items-center justify-center rounded-full"
     >
       <div
-        class="w-2.25 h-2.25 bg-red-500 rounded-full"
+        class="w-2.25 h-2.25 bg-error rounded-full"
       />
     </div>
   </span>

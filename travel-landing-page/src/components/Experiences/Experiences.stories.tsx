@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { EXPERIENCES } from "@/constants";
 
@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Experiences>;
 
 export const Default: Story = {
   args: {
-    list: EXPERIENCES,
-    onChange: () => alert("This is an alert message!"),
+    data: EXPERIENCES,
+    onItemClick: (index: number) => alert(`Index item: ${index}`),
   },
 };

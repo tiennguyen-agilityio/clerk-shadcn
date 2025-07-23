@@ -11,7 +11,7 @@ interface ExperienceItem extends Experience {
 
 const ExperienceItem = ({ title, label = "", isActive = false, onClick }: ExperienceItem) => {
   return (
-    <div className="w-auto">
+    <div className="max-w-fit">
       {label && (
         <Heading
           as="h6"
