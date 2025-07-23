@@ -70,7 +70,7 @@ const SignUpPage = () => {
                       <Clerk.Input
                         required
                         placeholder="Enter first name"
-                        className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
+                        className="w-full rounded border border-input p-3 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                       />
                       <Clerk.FieldError className="text-error" />
                     </Clerk.Field>
@@ -80,7 +80,7 @@ const SignUpPage = () => {
                       <Clerk.Input
                         required
                         placeholder="Enter last name"
-                        className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
+                        className="w-full rounded border border-input p-3 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                       />
                       <Clerk.FieldError className="text-error" />
                     </Clerk.Field>
@@ -91,7 +91,7 @@ const SignUpPage = () => {
                       required
                       type="text"
                       placeholder="Enter Email"
-                      className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
+                      className="w-full rounded border border-input p-3 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                     />
                     <Clerk.FieldError className="text-error" />
                   </Clerk.Field>
@@ -104,7 +104,7 @@ const SignUpPage = () => {
                         required
                         validatePassword
                         placeholder="Enter Password"
-                        className="w-full rounded border border-input px-3 py-2 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
+                        className="w-full rounded border border-input p-3 text-sm placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                       />
                       <Button
                         variant="ghost"
@@ -179,7 +179,7 @@ const SignUpPage = () => {
                       <Clerk.Input
                         type="otp"
                         required
-                        className="w-full rounded border border-input px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
+                        className="w-full rounded border border-input p-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                       />
                       <Clerk.FieldError className="block text-sm text-error" />
                     </Clerk.Field>
@@ -217,7 +217,7 @@ const SignUpPage = () => {
                     <Clerk.Input
                       type="text"
                       required
-                      className="w-full rounded border border-input px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
+                      className="w-full rounded border border-input p-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary data-[invalid]:ring-error"
                     />
                     <Clerk.FieldError className="block text-sm text-error" />
                   </Clerk.Field>

@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import Avatar from "../Avatar";
-import { ArrowIcon } from "../Icons";
+import ChevronIcon from "../Icons/ChevronIcon";
 import { Separator } from "../ui/separator";
 
 const DROPDOWN_MENUS = [
@@ -63,8 +63,8 @@ const UserDropdown = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div className="flex items-center gap-3.5 w-35">
-          <Avatar src={imageUrl || ""} name={displayName} isNewActivity />
-          <ArrowIcon direction={DIRECTION.DOWN} />
+          <Avatar src={imageUrl || ""} name={displayName} isActive />
+          <ChevronIcon direction={DIRECTION.DOWN} />
         </div>
       </DropdownMenuTrigger>
 

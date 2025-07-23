@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { MoveRight } from "lucide-react";
 import React from "react";
 
 import { CAROUSELS, HOME_VIDEO, EXPERIENCES, STATISTICS_BY_SERVICES } from "@/constants";
@@ -16,6 +15,7 @@ import {
   Button,
   Carousel,
   StatisticsCard,
+  ArrowIcon,
 } from "@/components";
 
 export default function Home() {
@@ -46,10 +46,10 @@ export default function Home() {
             </div>
             <Button
               onClick={handleFindExperience}
-              className="flex-none h-16 text-sx lg:text-sm text-white md:h-20 lg:h-30 w-40 md:w-50 lg:w-65.5 rounded-none rounded-tr-[20px] z-30"
+              className="flex-none h-16 md:gap-5 text-sx lg:text-sm text-white md:h-20 lg:h-30 w-40 md:w-50 lg:w-65.5 rounded-none rounded-tr-[20px] z-30"
             >
               FIND AN EXPERIENCE
-              <MoveRight />
+              <ArrowIcon />
             </Button>
           </div>
         </div>

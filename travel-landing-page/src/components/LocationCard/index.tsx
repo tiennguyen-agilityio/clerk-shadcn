@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { MapPin, Star } from "lucide-react";
 
 // Types
 import { LocationItem } from "@/types";
@@ -11,6 +10,7 @@ import { LocationItem } from "@/types";
 import { formatMinutes } from "@/utils";
 
 // Components
+import { AddressIcon, StarIcon } from "../Icons";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface LocationCardProps {
@@ -49,11 +49,11 @@ const LocationCard = ({ item, href = "" }: LocationCardProps) => {
           </p>
 
           <div className="flex items-center gap-1.25 mt-3 text-ring">
-            <MapPin />
+            <AddressIcon />
             <p className="text-sm truncate">{address}</p>
           </div>
           <div className="flex items-center gap-1.25 mt-4 text-chart-2">
-            <Star />
+            <StarIcon />
             <span>{rating}</span>
             <span className="text-ring">({reviews})</span>
           </div>

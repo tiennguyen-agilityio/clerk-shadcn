@@ -23,29 +23,21 @@ exports[`Post component should render correctly 1`] = `
         src="https://i.ibb.co/MFjB1W7/Rectangle-Copy-2.png"
       />
       <button
-        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 px-4 py-2 has-[>svg]:px-3 gap-6 absolute bottom-0 right-0 text-sx md:text-sm h-12 md:h-15 md:w-57 bg-background rounded-none"
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 px-4 py-2 has-[>svg]:px-3 md:gap-6 absolute bottom-0 right-0 text-sx md:text-sm h-12 md:h-15 md:w-57 bg-background rounded-none"
         data-slot="button"
         data-testid="readMore"
       >
         Read More
         <svg
-          aria-hidden="true"
-          class="lucide lucide-move-right"
           fill="none"
-          height="24"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          height="6"
+          style="transform: rotate(0deg);"
+          viewBox="0 0 20 6"
+          width="20"
         >
           <path
-            d="M18 8L22 12L18 16"
-          />
-          <path
-            d="M2 12H22"
+            d="M19.6508 2.31454L16.6308 0.154296C16.0836 -0.237068 15.3273 0.161455 15.3273 0.840035V2.16128H0.826947C0.370282 2.16128 0 2.53693 0 3.00034C0 3.46374 0.370282 3.83933 0.826947 3.83933H15.3272V5.16052C15.3272 5.84358 16.0875 6.23466 16.6306 5.84626L19.6506 3.68602C20.1118 3.35635 20.1211 2.65171 19.6508 2.31454Z"
+            fill="currentColor"
           />
         </svg>
       </button>
