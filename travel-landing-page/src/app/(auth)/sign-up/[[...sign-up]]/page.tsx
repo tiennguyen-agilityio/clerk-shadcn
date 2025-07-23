@@ -6,7 +6,7 @@ import * as Clerk from "@clerk/elements/common";
 import * as SignUp from "@clerk/elements/sign-up";
 
 import { DAYS, MONTHS, YEARS } from "@/constants";
-import { Button, FacebookIcon, GoogleIcon, Loading } from "@/components";
+import { Button, FacebookIcon, GoogleIcon, Heading, Loading } from "@/components";
 
 const SignUpPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -29,13 +29,15 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="font-acme text-sm">
+    <div className="font-acme text-sm mx-auto">
       <SignUp.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (
             <div className="flex-col justify-center items-center content-center w-[545px]">
               <SignUp.Step name="start" className="w-full">
-                <h1 className="font-abel text-center text-[70px]">Create Account</h1>
+                <Heading as="h4" className="font-abel text-center">
+                  Create Account
+                </Heading>
 
                 <div className="flex justify-between mt-12.5 h-12.5 gap-2.5 text-white">
                   <Clerk.Connection asChild name="facebook">
@@ -113,7 +115,7 @@ const SignUpPage = () => {
                         {isPasswordVisible ? "Hide Password" : "Show Password"}
                       </Button>
                     </div>
-                    <Clerk.FieldError className="block text-sm text-red-400" />
+                    <Clerk.FieldError className="block text-sm text-error" />
                   </Clerk.Field>
 
                   <div className="flex flex-col space-y-2">
@@ -180,7 +182,7 @@ const SignUpPage = () => {
                   </div>
 
                   <SignUp.Captcha />
-                  <Clerk.GlobalError className="block text-sm text-red-400" />
+                  <Clerk.GlobalError className="block text-sm text-error" />
 
                   <SignUp.Action submit asChild disabled={isGlobalLoading}>
                     <Button className="text-sm">
@@ -204,7 +206,9 @@ const SignUpPage = () => {
                 name="verifications"
                 className="w-full space-y-6 rounded-2xl bg-white px-4 py-10 shadow-md ring-1 ring-black/5 sm:w-96 sm:px-8"
               >
-                <h1 className="font-abel text-center text-[70px] text-black">Verify email code</h1>
+                <Heading as="h4" className="font-abel text-center">
+                  Verify email code
+                </Heading>
                 <div className="flex flex-col gap-7.5">
                   <SignUp.Strategy name="email_code">
                     <Clerk.Field name="code" className="space-y-2">
@@ -216,10 +220,10 @@ const SignUpPage = () => {
                         required
                         className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400"
                       />
-                      <Clerk.FieldError className="block text-sm text-red-400" />
+                      <Clerk.FieldError className="block text-sm text-error" />
                     </Clerk.Field>
 
-                    <Clerk.GlobalError className="block text-sm text-red-400" />
+                    <Clerk.GlobalError className="block text-sm text-error" />
                     <SignUp.Action submit asChild disabled={isGlobalLoading}>
                       <Button className="text-sm">
                         <Clerk.Loading>
@@ -242,11 +246,11 @@ const SignUpPage = () => {
               </SignUp.Step>
               <SignUp.Step
                 name="continue"
-                className="w-full space-y-6 rounded-2xl bg-white px-4 py-10 shadow-md ring-1 ring-black/5 sm:w-96 sm:px-8"
+                className="w-full mx-auto space-y-6 rounded-2xl px-4 py-10 shadow-md ring-1 ring-black/5 sm:w-96 sm:px-8"
               >
-                <h1 className="font-abel text-center text-[70px] text-black">
+                <Heading as="h4" className="font-abel text-center">
                   Continue registration
-                </h1>
+                </Heading>
                 <div className="flex flex-col gap-7.5">
                   <Clerk.Field name="username" className="space-y-2">
                     <Clerk.Label className="text-sm font-medium text-zinc-950">
@@ -255,12 +259,12 @@ const SignUpPage = () => {
                     <Clerk.Input
                       type="text"
                       required
-                      className="w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400"
+                      className="w-full rounded-md px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400"
                     />
-                    <Clerk.FieldError className="block text-sm text-red-400" />
+                    <Clerk.FieldError className="block text-sm text-error" />
                   </Clerk.Field>
 
-                  <Clerk.GlobalError className="block text-sm text-red-400" />
+                  <Clerk.GlobalError className="block text-sm text-error" />
 
                   <SignUp.Action submit asChild disabled={isGlobalLoading}>
                     <Button className="text-sm">
