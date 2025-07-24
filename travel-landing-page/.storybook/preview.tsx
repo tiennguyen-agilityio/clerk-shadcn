@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { AppRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 import { acme, abel } from "../src/config";
-import "../src/themes/globals.css";
+import "../src/themes/theme.css";
 
 const preview: Preview = {
   parameters: {

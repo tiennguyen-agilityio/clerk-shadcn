@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import { ClerkProvider } from "@clerk/nextjs";
-import "@/themes/globals.css";
+import "@/themes/theme.css";
 
 import { localization } from "@/utils/localization";
 import { abel, acme } from "@/config/fonts";
