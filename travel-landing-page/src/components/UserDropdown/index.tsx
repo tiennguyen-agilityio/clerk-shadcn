@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { SignOutButton, useUser } from "@clerk/nextjs";
 import { Fragment } from "react";
 
-import { DIRECTION } from "@/types";
+import { DIRECTION } from "@/types/svg";
 
 import {
   DropdownMenu,

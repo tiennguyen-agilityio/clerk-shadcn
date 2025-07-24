@@ -1,4 +1,4 @@
-import { SVGProps } from "@/types";
+import { SVGProps } from "@/types/svg";
 
 const BookmarkIcon = ({ color = "currentColor", width = 13, height = 14 }: SVGProps) => {
   return (

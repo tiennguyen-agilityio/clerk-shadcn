@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import { Experience } from "@/types";
+import { Experience } from "@/types/common";
 import Heading from "../Heading";
 
 interface ExperienceItem extends Experience {

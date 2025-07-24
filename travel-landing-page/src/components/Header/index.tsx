@@ -12,13 +12,14 @@ import {
 } from "@clerk/nextjs";
 import clsx from "clsx";
 
-import { NAV_BAR } from "@/constants";
+import { NAV_BAR } from "@/constants/nav";
 
 import NavBar from "../NavBar";
 import Logo from "../Logo";
 import { Button } from "../ui";
 import UserDropdown from "../UserDropdown";
-import { BookmarkIcon, SearchIcon } from "../Icons";
+import BookmarkIcon from "../Icons/BookmarkIcon";
+import SearchIcon from "../Icons/SearchIcon";
 
 import { ModalToggleTheme } from "@/themes";
 

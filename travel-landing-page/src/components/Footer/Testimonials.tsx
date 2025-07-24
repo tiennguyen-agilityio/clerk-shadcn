@@ -1,6 +1,6 @@
 import React from "react";
 import ChevronIcon from "../Icons/ChevronIcon";
-import { DIRECTION } from "@/types";
+import { DIRECTION } from "@/types/svg";
 import TestimonialItem from "./TestimonialItem";
 
 const TESTIMONIALS = [

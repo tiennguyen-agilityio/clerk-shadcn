@@ -1,9 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Checkbox, FacebookIcon, GoogleIcon, Loading } from "@/components";
 import * as SignIn from "@clerk/elements/sign-in";
 import * as Clerk from "@clerk/elements/common";
+
+import Button from "@/components/Button";
+import Checkbox from "@/components/Checkbox";
+import Loading from "@/components/Loading";
+import FacebookIcon from "@/components/Icons/FacebookIcon";
+import GoogleIcon from "@/components/Icons/GoogleIcon";
 
 const SignInPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);

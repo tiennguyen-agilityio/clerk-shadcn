@@ -1,8 +1,9 @@
 import React from "react";
 
-import { HOME_VIDEO } from "@/constants";
+import { HOME_VIDEO } from "@/constants/video";
 
-import { VideoPlayer, Heading } from "@/components";
+import Heading from "@/components/Heading";
+import VideoPlayer from "@/components/VideoPlayer";
 
 const ActivitiesPage = () => {
   return (

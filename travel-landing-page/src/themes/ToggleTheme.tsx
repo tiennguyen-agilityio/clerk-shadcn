@@ -10,7 +10,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui";
-import { MoonIcon, SunIcon } from "@/components/Icons";
+import MoonIcon from "@/components/Icons/MoonIcon";
+import SunIcon from "@/components/Icons/SunIcon";
 
 const ModeToggleTheme = () => {
   const { setTheme, theme } = useTheme();

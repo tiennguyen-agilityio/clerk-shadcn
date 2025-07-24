@@ -1,7 +1,11 @@
 import React from "react";
 
 import Logo from "../Logo";
-import { DiscoverIcon, MasterCardIcon, MPesaIcon, PaypalIcon, VisaIcon } from "../Icons";
+import DiscoverIcon from "../Icons/DiscoverIcon";
+import MasterCardIcon from "../Icons/MasterCardIcon";
+import MPesaIcon from "../Icons/MPesaIcon";
+import PaypalIcon from "../Icons/PaypalIcon";
+import VisaIcon from "../Icons/VisaIcon";
 
 const SettingLanguage = () => {
   return (

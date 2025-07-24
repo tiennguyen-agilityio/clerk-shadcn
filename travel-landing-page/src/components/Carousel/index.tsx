@@ -3,7 +3,7 @@
 import React, { ComponentProps, useState, useEffect } from "react";
 import clsx from "clsx";
 
-import { CarouselItem } from "@/types";
+import { CarouselItem } from "@/types/carousel";
 
 import {
   Carousel as ShadCNCarousel,

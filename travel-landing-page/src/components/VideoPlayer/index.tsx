@@ -3,7 +3,8 @@
 import React, { useRef, useState } from "react";
 import clsx from "clsx";
 
-import { PauseIcon, PlayIcon } from "../Icons";
+import PauseIcon from "../Icons/PauseIcon";
+import PlayIcon from "../Icons/PlayIcon";
 
 interface VideoPlayerProps {
   src: string;

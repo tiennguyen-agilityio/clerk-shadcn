@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SVGProps } from "@/types";
+import { SVGProps } from "@/types/svg";
 
 const DiscoverIcon = ({ width = 76, height = 16, onClick }: SVGProps) => {
   return (

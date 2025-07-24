@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DIRECTION, SVGProps } from "@/types";
+import { DIRECTION, SVGProps } from "@/types/svg";
 
 interface ChevronIconProps extends SVGProps {
   direction?: DIRECTION;

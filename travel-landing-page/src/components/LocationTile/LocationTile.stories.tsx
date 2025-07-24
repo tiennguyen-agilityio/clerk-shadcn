@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import LocationTile from ".";
-import { LOCATION_TILES } from "@/mocks";
+import { LOCATION_TILES } from "@/mocks/location";
 
 const meta: Meta<typeof LocationTile> = {
   title: "Components/LocationTile",

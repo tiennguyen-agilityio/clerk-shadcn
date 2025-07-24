@@ -3,20 +3,20 @@
 import clsx from "clsx";
 import React from "react";
 
-import { CAROUSELS, HOME_VIDEO, EXPERIENCES, STATISTICS_BY_SERVICES } from "@/constants";
+import { EXPERIENCES, STATISTICS_BY_SERVICES } from "@/constants/common";
+import { HOME_VIDEO } from "@/constants/video";
+import { CAROUSELS } from "@/constants/carousel";
 import { LOCATION_TILES } from "@/mocks";
 
-import {
-  Experiences,
-  Post,
-  LocationTile,
-  VideoPlayer,
-  Heading,
-  Button,
-  Carousel,
-  StatisticsCard,
-  ArrowIcon,
-} from "@/components";
+import Experiences from "@/components/Experiences";
+import Post from "@/components/Post";
+import LocationTile from "@/components/LocationTile";
+import VideoPlayer from "@/components/VideoPlayer";
+import Heading from "@/components/Heading";
+import Button from "@/components/Button";
+import Carousel from "@/components/Carousel";
+import StatisticsCard from "@/components/StatisticsCard";
+import ArrowIcon from "@/components/Icons/ArrowIcon";
 
 export default function Home() {
   const handleChange = () => {};

@@ -2,12 +2,17 @@
 
 import React, { Suspense, useState } from "react";
 
-import { Filter } from "@/types";
-import { CAROUSELS, HOME_VIDEO } from "@/constants";
+import { Filter } from "@/types/common";
+import { HOME_VIDEO } from "@/constants/video";
+import { CAROUSELS } from "@/constants/carousel";
 import { LOCATIONS } from "@/mocks";
 
-import { VideoPlayer, Heading, FilterSection, LocationCard, Carousel, Loading } from "@/components";
-
+import Heading from "@/components/Heading";
+import VideoPlayer from "@/components/VideoPlayer";
+import FilterSection from "@/components/FilterSection";
+import LocationCard from "@/components/LocationCard";
+import Carousel from "@/components/Carousel";
+import Loading from "@/components/Loading";
 import LoadMore from "./LoadMore";
 
 const CampingLocationsPage = () => {

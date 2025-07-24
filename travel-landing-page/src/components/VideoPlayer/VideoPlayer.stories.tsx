@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import VideoPlayer from ".";
-import { HOME_VIDEO } from "@/constants";
+import { HOME_VIDEO } from "@/constants/video";
 
 const meta: Meta<typeof VideoPlayer> = {
   title: "Components/VideoPlayer",
