@@ -3,7 +3,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import { ArrowIcon } from "../Icons";
+import ArrowIcon from "../Icons/ArrowIcon";
 import Button from "../Button";
 
 interface PostProps {

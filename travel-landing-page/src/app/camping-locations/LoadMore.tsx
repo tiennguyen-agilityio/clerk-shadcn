@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-import { LocationItem } from "@/types";
+import { LocationItem } from "@/types/location";
 
-import { API_ROUTES, PAGE_SIZE } from "@/constants";
+import { PAGE_SIZE } from "@/constants/common";
+import { API_ROUTES } from "@/constants/routes";
 
-import { Button, LocationCard } from "@/components";
+import Button from "@/components/Button";
+import LocationCard from "@/components/LocationCard";
 
 interface Props {
   initialLocation: LocationItem[];

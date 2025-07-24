@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SVGProps } from "@/types";
+import { SVGProps } from "@/types/svg";
 
 const GoogleIcon = ({ width = 16, height = 16, color = "white", onClick }: SVGProps) => {
   return (

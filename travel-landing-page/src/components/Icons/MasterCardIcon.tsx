@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SVGProps } from "@/types";
+import { SVGProps } from "@/types/svg";
 
 const MasterCardIcon = ({ width = 34, height = 27, onClick }: SVGProps) => {
   return (

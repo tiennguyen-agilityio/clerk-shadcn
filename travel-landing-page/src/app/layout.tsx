@@ -3,11 +3,13 @@ import Head from "next/head";
 import { ClerkProvider } from "@clerk/nextjs";
 import "@/themes/globals.css";
 
+import { localization } from "@/utils/localization";
+import { abel, acme } from "@/config/fonts";
 import { Toaster } from "@/components/ui/sonner";
-import { localization } from "@/utils";
-import { abel, acme } from "@/config";
-import { Footer, Header } from "@/components";
-import { ThemeProvider } from "@/themes";
+
+import { ThemeProvider } from "@/themes/ThemeProvider";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",

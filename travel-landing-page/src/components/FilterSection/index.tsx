@@ -2,13 +2,15 @@
 
 import React, { useState } from "react";
 
-import { LOCATIONS, CATEGORIES } from "@/constants";
+import { LOCATIONS, CATEGORIES } from "@/constants/common";
 
-import { Filter } from "@/types";
+import { Filter } from "@/types/common";
 
-import { formatAmount } from "@/utils";
+import { formatAmount } from "@/utils/common";
 
-import { Slider, Label, Toggle } from "../ui";
+import { Label } from "../ui/label";
+import { Slider } from "../ui/slider";
+import { Toggle } from "../ui/toggle";
 
 interface FilterSectionProps {
   defaultValue?: Filter;

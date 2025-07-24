@@ -5,7 +5,14 @@ import * as Clerk from "@clerk/elements/common";
 import * as SignUp from "@clerk/elements/sign-up";
 
 import { DAYS, MONTHS, YEARS } from "@/constants";
-import { Button, Checkbox, FacebookIcon, GoogleIcon, Heading, Loading, Select } from "@/components";
+
+import Button from "@/components/Button";
+import Loading from "@/components/Loading";
+import Checkbox from "@/components/Checkbox";
+import Heading from "@/components/Heading";
+import Select from "@/components/Select";
+import FacebookIcon from "@/components/Icons/FacebookIcon";
+import GoogleIcon from "@/components/Icons/GoogleIcon";
 
 const SignUpPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -44,7 +51,7 @@ const SignUpPage = () => {
                       <FacebookIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:facebook">
-                        {(isLoading) => (isLoading ? "Loading..." : "Sign in with Facebook")}
+                        {(isLoading) => (isLoading ? "Loading..." : "Sign up with Facebook")}
                       </Clerk.Loading>
                     </Button>
                   </Clerk.Connection>
@@ -53,7 +60,7 @@ const SignUpPage = () => {
                       <GoogleIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:google">
-                        {(isLoading) => (isLoading ? "Loading..." : "Sign in with Google")}
+                        {(isLoading) => (isLoading ? "Loading..." : "Sign up with Google")}
                       </Clerk.Loading>
                     </Button>
                   </Clerk.Connection>

@@ -5,9 +5,11 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
 import { cn } from "@/lib/utils";
 
-import { DIRECTION } from "@/types";
+import { DIRECTION } from "@/types/svg";
 
-import { ChevronIcon, CheckIcon, CircleIcon } from "../Icons";
+import ChevronIcon from "../Icons/ChevronIcon";
+import CheckIcon from "../Icons/CheckIcon";
+import CircleIcon from "../Icons/CircleIcon";
 
 function DropdownMenu({ ...props }: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {
   return <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />;

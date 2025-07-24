@@ -4,13 +4,14 @@ import React from "react";
 import Link from "next/link";
 
 // Types
-import { LocationItem } from "@/types";
+import { LocationItem } from "@/types/location";
 
 // Utils
-import { formatMinutes } from "@/utils";
+import { formatMinutes } from "@/utils/time";
 
 // Components
-import { AddressIcon, StarIcon } from "../Icons";
+import AddressIcon from "../Icons/AddressIcon";
+import StarIcon from "../Icons/StarIcon";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface LocationCardProps {

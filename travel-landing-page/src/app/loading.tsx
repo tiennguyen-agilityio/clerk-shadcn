@@ -1,5 +1,7 @@
-import { Loading } from "@/components";
+import Loading from "@/components/Loading";
 
-export default function LoadingPage() {
+const LoadingPage = () => {
   return <Loading />;
-}
+};
+
+export default LoadingPage;

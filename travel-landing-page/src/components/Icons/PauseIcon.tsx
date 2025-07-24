@@ -1,4 +1,4 @@
-import { SVGProps } from "@/types";
+import { SVGProps } from "@/types/svg";
 
 const PauseIcon = ({ color = "currentColor", width = 24, height = 24, ...props }: SVGProps) => {
   return (

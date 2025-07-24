@@ -1,4 +1,4 @@
-import { NavFooter } from "@/types";
+import { NavFooter } from "@/types/common";
 
 export const NAV_BAR = [
   { name: "Camping Locations", href: "/camping-locations" },

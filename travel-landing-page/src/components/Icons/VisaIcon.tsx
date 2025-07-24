@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SVGProps } from "@/types";
+import { SVGProps } from "@/types/svg";
 
 const VisaIcon = ({ width = 42, height = 13, onClick }: SVGProps) => {
   return (

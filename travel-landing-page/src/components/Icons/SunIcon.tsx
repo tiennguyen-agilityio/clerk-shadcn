@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SVGProps } from "@/types";
+import { SVGProps } from "@/types/svg";
 
 const SunIcon = ({
   color = "currentColor",
@@ -11,14 +11,14 @@ const SunIcon = ({
 }: SVGProps) => {
   return (
     <svg
-      width={width}
-      height={height}
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      width={width}
+      height={height}
       className={className}
       onClick={onClick}
     >
