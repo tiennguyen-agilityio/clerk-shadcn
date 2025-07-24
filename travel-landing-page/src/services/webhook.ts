@@ -2,8 +2,7 @@ import { Webhook } from "svix";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 
-import { API_ROUTES } from "@/constants";
-import { APIS } from "@/services";
+import { createUser, deleteUser, fetchUserById, updateUser, UserJSON } from "./user";
 
 const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
 
@@ -12,29 +11,30 @@ const handleEvent = async (event: WebhookEvent) => {
 
   switch (type) {
     case "user.created": {
-      await APIS.post(API_ROUTES.USERS, {
+      await createUser({
         userId: data.id,
         ...data,
-      });
+      } as UserJSON);
 
       break;
     }
 
     case "user.updated": {
-      const user = (await APIS.get(`${API_ROUTES.USERS}?userId=${data.id}`))[0];
+      const { user } = await fetchUserById(data.id);
 
       if (user?.id) {
-        await APIS.put(`${API_ROUTES.USERS}${user?.id}`, data);
+        await updateUser(user?.id, data);
       }
 
       break;
     }
 
     case "user.deleted": {
-      const user = (await APIS.get(`${API_ROUTES.USERS}?userId=${data.id}`))[0];
-
-      if (user?.id) {
-        await APIS.delete(`${API_ROUTES.USERS}${user?.id}`);
+      if (data.id) {
+        const { user } = await fetchUserById(data.id);
+        if (user?.id) {
+          await deleteUser(user?.id);
+        }
       }
 
       break;
