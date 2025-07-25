@@ -1,8 +1,9 @@
-import React from "react";
 import clsx from "clsx";
 
 import { Experience } from "@/types/common";
+
 import Heading from "../Heading";
+import Button from "../Button";
 
 interface ExperienceItem extends Experience {
   isActive?: boolean;
@@ -20,15 +21,16 @@ const ExperienceItem = ({ title, label = "", isActive = false, onClick }: Experi
           {label}
         </Heading>
       )}
-      <button
+      <Button
+        variant="link"
         className={clsx(
-          "capitalize w-full mx-1 text-sm md:text-base text-center lg:text-left border-b-1 pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground",
+          "capitalize w-fit h-fit text-sm rounded-none text-current md:text-base text-center lg:text-left border-b-1 pt-0 pb-0 pl-0 pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground hover:no-underline",
           isActive && "text-accent-foreground border-b-accent-foreground"
         )}
         onClick={onClick}
       >
         {title}
-      </button>
+      </Button>
     </div>
   );
 };
