@@ -12,7 +12,7 @@ import {
 
 const Home = () => {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <HeroSection />
       <CarouselSection />
       <AboutSection />

@@ -13,7 +13,8 @@ const LocationsSection = () => {
     onLoadMore,
     isLoading,
     hasMore,
-  } = useLoadMore<LocationItem>({ fetcher: fetchLocations, limit: 6 });
+    error,
+  } = useLoadMore<LocationItem>({ fetcher: fetchLocations, limit: 3 });
 
   return (
     <section className="container mx-auto my-10 md:my-20 lg:my-25">
@@ -34,6 +35,8 @@ const LocationsSection = () => {
           </Button>
         </div>
       )}
+
+      {error && <p className="text-error">{error}</p>}
     </section>
   );
 };
