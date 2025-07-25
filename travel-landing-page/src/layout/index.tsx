@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "./Footer";
 import Header from "./Header";
 import React, { ReactNode } from "react";

@@ -16,6 +16,13 @@ export const fetchLocations = async ({
       },
     });
 
+    if (!response.ok) {
+      return {
+        data: [],
+        error: "Failed to fetch the Locations.",
+      };
+    }
+
     const data: LocationItem[] = await response.json();
 
     return {
