@@ -14,7 +14,7 @@ import MoonIcon from "@/components/Icons/MoonIcon";
 import SunIcon from "@/components/Icons/SunIcon";
 
 const ModeToggleTheme = () => {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme = "light" } = useTheme();
 
   return (
     <DropdownMenu>
