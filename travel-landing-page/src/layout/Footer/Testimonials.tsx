@@ -1,5 +1,5 @@
 import React from "react";
-import ChevronIcon from "../Icons/ChevronIcon";
+import ChevronIcon from "@/components/Icons/ChevronIcon";
 import { DIRECTION } from "@/types/svg";
 import TestimonialItem from "./TestimonialItem";
 

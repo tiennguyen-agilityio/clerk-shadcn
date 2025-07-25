@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { NAV_FOOTERS } from "@/constants/nav";
 
-import Button from "../Button";
+import Button from "@/components/Button";
 
 const TopNav = () => {
   return (

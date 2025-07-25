@@ -10,7 +10,7 @@ exports[`NavBar should render correctly 1`] = `
       href="/camping-locations"
     >
       <span
-        class="text-[13px] text-white-500"
+        class="text-[13px] text-current"
       >
         Camping Locations
       </span>
@@ -23,7 +23,7 @@ exports[`NavBar should render correctly 1`] = `
       href="/activities"
     >
       <span
-        class="text-[13px] text-white-500"
+        class="text-[13px] text-current"
       >
         Activities
       </span>
@@ -36,7 +36,7 @@ exports[`NavBar should render correctly 1`] = `
       href="/equipment"
     >
       <span
-        class="text-[13px] text-white-500"
+        class="text-[13px] text-current"
       >
         Equipment
       </span>
@@ -49,7 +49,7 @@ exports[`NavBar should render correctly 1`] = `
       href="/blogs"
     >
       <span
-        class="text-[13px] text-white-500"
+        class="text-[13px] text-current"
       >
         Blogs
       </span>
@@ -71,7 +71,7 @@ exports[`NavBar should render correctly Activities 1`] = `
       href="/camping-locations"
     >
       <span
-        class="text-[13px] text-white-500"
+        class="text-[13px] text-current"
       >
         Camping Locations
       </span>
@@ -84,12 +84,12 @@ exports[`NavBar should render correctly Activities 1`] = `
       href="/activities"
     >
       <span
-        class="text-[13px] text-orange-500"
+        class="text-[13px] text-primary"
       >
         Activities
       </span>
       <span
-        class="w-2 h-2 rounded-full transition-opacity opacity-100 bg-orange-500"
+        class="w-2 h-2 rounded-full transition-opacity opacity-100 bg-primary"
       />
     </a>
     <a
@@ -97,7 +97,7 @@ exports[`NavBar should render correctly Activities 1`] = `
       href="/equipment"
     >
       <span
-        class="text-[13px] text-white-500"
+        class="text-[13px] text-current"
       >
         Equipment
       </span>
@@ -110,7 +110,7 @@ exports[`NavBar should render correctly Activities 1`] = `
       href="/blogs"
     >
       <span
-        class="text-[13px] text-white-500"
+        class="text-[13px] text-current"
       >
         Blogs
       </span>

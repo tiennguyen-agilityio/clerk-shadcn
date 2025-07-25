@@ -2,44 +2,37 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import {
-  ClerkLoaded,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  // UserButton,
-} from "@clerk/nextjs";
+import { ClerkLoaded, SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 import clsx from "clsx";
 
 import { NAV_BAR } from "@/constants/nav";
 
-import NavBar from "../NavBar";
-import Logo from "../Logo";
-import { Button } from "../ui";
-import UserDropdown from "../UserDropdown";
-import BookmarkIcon from "../Icons/BookmarkIcon";
-import SearchIcon from "../Icons/SearchIcon";
+import NavBar from "@/components/NavBar";
+import Logo from "@/components/Logo";
+import { Button } from "@/components/ui";
+import UserDropdown from "@/components/UserDropdown";
+import BookmarkIcon from "@/components/Icons/BookmarkIcon";
+import SearchIcon from "@/components/Icons/SearchIcon";
 
 import { ModalToggleTheme } from "@/themes";
 
-const HAS_BORDER_BOTTOM = ["/sign-in", "/sign-up", "/wait-list", "/user/profile"];
+interface HeaderProps {
+  hasBorderBottom?: boolean;
+}
 
-const Header = () => {
+const Header = ({ hasBorderBottom = false }: HeaderProps) => {
   const pathname = usePathname() || "";
   const isActiveSignIn = pathname.startsWith("/sign-in");
   const isActiveSignUp = pathname.startsWith("/sign-up");
-  const isHasBorder = HAS_BORDER_BOTTOM.some((prefix) => pathname.startsWith(prefix));
 
   return (
     <header
       className={clsx(
-        "w-full absolute z-2 text-accent",
-        isHasBorder && "border-b-1 border-border",
-        isHasBorder ? "text-foreground" : "text-white"
+        "w-full absolute z-2",
+        hasBorderBottom ? "border-b-1 border-border text-current" : "text-white"
       )}
     >
-      <div className="container flex items-center content-center mx-auto h-25">
+      <div className="container flex items-center content-center mx-auto h-25 text-current">
         <Logo className="w-auto hover:text-white-500" />
         <div className="flex ml-auto mr-0 items-center">
           <NavBar list={NAV_BAR} href={pathname} />
@@ -68,17 +61,6 @@ const Header = () => {
               </SignedOut>
               <SignedIn>
                 <UserDropdown />
-                {/* <UserButton
-                  userProfileMode="navigation"
-                  userProfileUrl="/user/profile"
-                  appearance={{
-                    elements: {
-                      userButton: "rounded-md border border-gray-300 shadow p-2",
-                      userButtonTrigger: "bg-red-200",
-                      userButtonOuterIdentifier: "text-white pr-2",
-                    },
-                  }}
-                /> */}
               </SignedIn>
             </ClerkLoaded>
           </div>
