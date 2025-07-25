@@ -38,7 +38,7 @@ const AlertDialog = ({
   return (
     <ShadCNAlertDialog onOpenChange={onOpenChange}>
       <AlertDialogTrigger asChild className="p-0">
-        <Button variant="ghost" className="p-0 h-auto">
+        <Button data-testid="btn-confirm" variant="ghost" className="p-0 h-auto">
           {textButton}
         </Button>
       </AlertDialogTrigger>
@@ -48,10 +48,10 @@ const AlertDialog = ({
           {description && <AlertDialogDescription>{description}</AlertDialogDescription>}
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel onClick={onClickCancel} className="h-10">
+          <AlertDialogCancel data-testid="btn-cancel" onClick={onClickCancel} className="h-10">
             {textCancel}
           </AlertDialogCancel>
-          <AlertDialogAction onClick={onClickAction} className="h-10">
+          <AlertDialogAction data-testid="btn-continue" onClick={onClickAction} className="h-10">
             {textAction}
           </AlertDialogAction>
         </AlertDialogFooter>
