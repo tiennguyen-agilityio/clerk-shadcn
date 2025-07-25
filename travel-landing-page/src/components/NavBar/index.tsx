@@ -19,12 +19,12 @@ const NavBar = ({ list, href = "" }: NavBarProps) => {
 
         return (
           <Link key={item.name} href={item.href} className="flex flex-col items-center mx-4 group">
-            <span className={clsx("text-[13px]", isActive ? "text-orange-500" : "text-white-500")}>
+            <span className={clsx("text-[13px]", isActive ? "text-primary" : "text-current")}>
               {item.name}
             </span>
             <span
               className={`w-2 h-2 rounded-full transition-opacity ${
-                isActive ? "opacity-100 bg-orange-500" : "opacity-0"
+                isActive ? "opacity-100 bg-primary" : "opacity-0"
               }`}
             />
           </Link>

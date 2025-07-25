@@ -1,11 +1,11 @@
 import React from "react";
 
-import Logo from "../Logo";
-import DiscoverIcon from "../Icons/DiscoverIcon";
-import MasterCardIcon from "../Icons/MasterCardIcon";
-import MPesaIcon from "../Icons/MPesaIcon";
-import PaypalIcon from "../Icons/PaypalIcon";
-import VisaIcon from "../Icons/VisaIcon";
+import Logo from "@/components/Logo";
+import DiscoverIcon from "@/components/Icons/DiscoverIcon";
+import MasterCardIcon from "@/components/Icons/MasterCardIcon";
+import MPesaIcon from "@/components/Icons/MPesaIcon";
+import PaypalIcon from "@/components/Icons/PaypalIcon";
+import VisaIcon from "@/components/Icons/VisaIcon";
 
 const SettingLanguage = () => {
   return (

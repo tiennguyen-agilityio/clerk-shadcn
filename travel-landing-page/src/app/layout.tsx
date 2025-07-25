@@ -8,8 +8,7 @@ import { abel, acme } from "@/config/fonts";
 import { Toaster } from "@/components/ui/sonner";
 
 import { ThemeProvider } from "@/themes/ThemeProvider";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Layout from "@/layout";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -44,9 +43,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-            {children}
-            <Footer />
+            <Layout>{children}</Layout>
             <Toaster theme="light" closeButton richColors />
           </ThemeProvider>
         </body>
