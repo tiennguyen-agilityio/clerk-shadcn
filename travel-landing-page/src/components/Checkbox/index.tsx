@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useId } from "react";
+import { useId } from "react";
 
 import { Checkbox as ShadCNCheckbox, CheckBoxProps } from "../ui/checkbox";
 import { Label } from "../ui/label";
@@ -14,7 +14,7 @@ const Checkbox = ({ label, ...props }: Props) => {
 
   return (
     <div className="flex items-center space-x-2">
-      <ShadCNCheckbox id={id} {...props} />
+      <ShadCNCheckbox data-testid="checkbox" id={id} {...props} />
       {label && <Label htmlFor={id}>{label}</Label>}
     </div>
   );
