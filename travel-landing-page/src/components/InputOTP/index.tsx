@@ -7,12 +7,14 @@ import { InputOTP as ShadCNInputOTP, InputOTPGroup, InputOTPSlot } from "@/compo
 interface InputOTPProps {
   maxLength?: number;
   disabled?: boolean;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
 }
 
 const InputOTP = ({ maxLength = 0, disabled, ...props }: InputOTPProps) => {
   return (
     <ShadCNInputOTP maxLength={maxLength} disabled={disabled} size={200} {...props}>
-      <InputOTPGroup>
+      <InputOTPGroup data-testid="group">
         {Array.from({ length: maxLength }).map((_, i) => (
           <InputOTPSlot key={i} index={i} />
         ))}
