@@ -14,13 +14,14 @@ exports[`NavigationMenu should render correctly 1`] = `
       style="position: relative;"
     >
       <ul
-        class="group flex flex-1 list-none items-center justify-center gap-5"
+        class="group flex flex-1 list-none items-center justify-center gap-2 md:gp-3 lg:gap-5"
         data-orientation="horizontal"
         data-slot="navigation-menu-list"
+        data-testid="menu"
         dir="ltr"
       >
         <li
-          class="relative"
+          class="relative pt-3"
           data-slot="navigation-menu-item"
         >
           <a
@@ -40,7 +41,7 @@ exports[`NavigationMenu should render correctly 1`] = `
           </a>
         </li>
         <li
-          class="relative"
+          class="relative pt-3"
           data-slot="navigation-menu-item"
         >
           <a
@@ -60,7 +61,7 @@ exports[`NavigationMenu should render correctly 1`] = `
           </a>
         </li>
         <li
-          class="relative"
+          class="relative pt-3"
           data-slot="navigation-menu-item"
         >
           <a
@@ -80,7 +81,7 @@ exports[`NavigationMenu should render correctly 1`] = `
           </a>
         </li>
         <li
-          class="relative"
+          class="relative pt-3"
           data-slot="navigation-menu-item"
         >
           <a
@@ -122,13 +123,14 @@ exports[`NavigationMenu should render correctly Activities 1`] = `
       style="position: relative;"
     >
       <ul
-        class="group flex flex-1 list-none items-center justify-center gap-5"
+        class="group flex flex-1 list-none items-center justify-center gap-2 md:gp-3 lg:gap-5"
         data-orientation="horizontal"
         data-slot="navigation-menu-list"
+        data-testid="menu"
         dir="ltr"
       >
         <li
-          class="relative"
+          class="relative pt-3"
           data-slot="navigation-menu-item"
         >
           <a
@@ -148,7 +150,7 @@ exports[`NavigationMenu should render correctly Activities 1`] = `
           </a>
         </li>
         <li
-          class="relative"
+          class="relative pt-3"
           data-slot="navigation-menu-item"
         >
           <a
@@ -168,7 +170,7 @@ exports[`NavigationMenu should render correctly Activities 1`] = `
           </a>
         </li>
         <li
-          class="relative"
+          class="relative pt-3"
           data-slot="navigation-menu-item"
         >
           <a
@@ -188,7 +190,7 @@ exports[`NavigationMenu should render correctly Activities 1`] = `
           </a>
         </li>
         <li
-          class="relative"
+          class="relative pt-3"
           data-slot="navigation-menu-item"
         >
           <a
