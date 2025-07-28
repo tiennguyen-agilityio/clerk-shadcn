@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { LOCATIONS, CATEGORIES } from "@/constants/common";
 
@@ -66,6 +66,7 @@ const FilterSection = ({ defaultValue, onChange }: FilterSectionProps) => {
         <div>
           <Label className="mb-4">Budget Per Night</Label>
           <Slider
+            data-testid="slider"
             min={0}
             max={11000}
             step={100}
@@ -91,6 +92,7 @@ const FilterSection = ({ defaultValue, onChange }: FilterSectionProps) => {
 
               return (
                 <Toggle
+                  data-testid={value}
                   key={value}
                   variant="outline"
                   pressed={isPressed}
