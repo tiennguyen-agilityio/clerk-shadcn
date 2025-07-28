@@ -40,3 +40,29 @@ export const NAV_FOOTERS: NavFooter[] = [
     ],
   },
 ];
+
+export const USER_DROPDOWNS = [
+  {
+    text: "Profile",
+    href: "/user/profile",
+  },
+  {
+    text: "Favorites",
+    href: "/",
+  },
+  {
+    text: "Notifications",
+    href: "/",
+  },
+  {
+    text: "My Reservations",
+    href: "/",
+  },
+  {
+    text: "Sign out",
+    href: "/",
+    isSignOut: true,
+  },
+];
+
+export const USER_DROPDOWNS_LENGTH = USER_DROPDOWNS.length;

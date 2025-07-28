@@ -1,10 +1,21 @@
+import { useEffect } from "react";
 import type { Preview } from "@storybook/nextjs";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "next-themes";
 import { AppRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 import { acme, abel } from "../src/config";
 import "../src/themes/theme.css";
+
+const mockRouter: AppRouterInstance = {
+  push: async () => true,
+  replace: async () => true,
+  refresh: () => {},
+  forward: () => {},
+  back: () => {},
+  prefetch: async () => {},
+};
 
 const preview: Preview = {
   parameters: {
@@ -13,9 +24,6 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
-    },
-    nextRouter: {
-      Provider: AppRouterContext.Provider,
     },
     themes: {
       name: "Theme",
@@ -34,20 +42,28 @@ const preview: Preview = {
   },
   tags: ["autodocs"],
   decorators: [
-    (Story, context) => (
-      <ClerkProvider>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme={context.globals.theme || "light"}
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <div className={`${acme.variable} ${abel.variable} antialiased`}>
-            <Story />
-          </div>
-        </ThemeProvider>
-      </ClerkProvider>
-    ),
+    (Story, context) => {
+      useEffect(() => {
+        document.documentElement.classList.add(acme.variable, abel.variable);
+      }, []);
+
+      return (
+        <AppRouterContext.Provider value={mockRouter}>
+          <ClerkProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme={context.globals.theme || "light"}
+              enableSystem={false}
+              disableTransitionOnChange
+            >
+              <div className={`${acme.variable} ${abel.variable} antialiased`}>
+                <Story />
+              </div>
+            </ThemeProvider>
+          </ClerkProvider>
+        </AppRouterContext.Provider>
+      );
+    },
   ],
 };
 
