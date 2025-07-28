@@ -21,12 +21,12 @@ interface NavigationMenuProps {
 
 const NavigationMenu = ({ list, path = "" }: NavigationMenuProps) => (
   <ShadCNNavigationMenu>
-    <NavigationMenuList className="gap-5">
+    <NavigationMenuList data-testid="menu" className="gap-2 md:gp-3 lg:gap-5">
       {list?.map(({ name, href }, index) => {
         const isActive = path === href;
 
         return (
-          <NavigationMenuItem key={index}>
+          <NavigationMenuItem key={index} className="pt-3">
             <NavigationMenuLink asChild>
               <Link href={href} className={clsx("items-center ", isActive && "text-primary")}>
                 <span className={clsx(isActive && "text-primary")}>{name}</span>
