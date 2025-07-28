@@ -18,7 +18,7 @@ const Input = ({ label = "", ...props }: InputProps) => {
         </Label>
       )}
 
-      <ShadCNInput id={id} {...props} />
+      <ShadCNInput data-testid="input" id={id} {...props} />
     </div>
   );
 };
