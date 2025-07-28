@@ -30,7 +30,7 @@ exports[`Select component should render correctly 1`] = `
         data-slot="select-value"
         style="pointer-events: none;"
       >
-        Placeholder
+        Select item
       </span>
       <svg
         class="size-3 opacity-50"
@@ -175,7 +175,7 @@ exports[`Select component should render with size small 1`] = `
         data-slot="select-value"
         style="pointer-events: none;"
       >
-        Placeholder
+        Select item
       </span>
       <svg
         class="size-3 opacity-50"
