@@ -1,5 +1,12 @@
 import type { Config } from "jest";
 
+import nextJest from "next/jest.js";
+
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: "./",
+});
+
 const config: Config = {
   verbose: true,
   clearMocks: true,
@@ -11,9 +18,7 @@ const config: Config = {
     "^@root(.*)$": "<rootDir>/src/$1",
     "^@/(.*)$": "<rootDir>/src/$1",
   },
-  transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
-  },
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],
 };
-export default config;
+export default createJestConfig(config);
