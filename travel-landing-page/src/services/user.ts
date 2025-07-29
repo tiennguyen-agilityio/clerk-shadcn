@@ -46,7 +46,7 @@ export const fetchUserById = async (
   error: string | null;
 }> => {
   try {
-    const response = await fetch(`${API_ROUTES.USERS}$?userId=${userId}`, {
+    const response = await fetch(`${API_ROUTES.USERS}?userId=${userId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
