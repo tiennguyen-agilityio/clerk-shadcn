@@ -1,13 +1,7 @@
-import {
-  fetchUsers,
-  fetchUserById,
-  createUser,
-  updateUser,
-  deleteUser,
-  UserJSON,
-} from "@/services/user";
 import { API_ROUTES } from "@/constants/routes";
 import { USERS } from "@/mocks/user";
+
+import { fetchUsers, fetchUserById, createUser, updateUser, deleteUser, UserJSON } from "../user";
 
 global.fetch = jest.fn();
 
