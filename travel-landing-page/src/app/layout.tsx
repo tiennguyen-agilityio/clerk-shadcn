@@ -3,7 +3,7 @@ import Head from "next/head";
 import { ClerkProvider } from "@clerk/nextjs";
 import "@/themes/theme.css";
 
-import { localization } from "@/utils/localization";
+import { LOCALIZATION } from "@/constants/localization";
 import { abel, acme } from "@/config/fonts";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-      localization={localization}
+      localization={LOCALIZATION}
       appearance={{
         cssLayerName: "clerk",
       }}
