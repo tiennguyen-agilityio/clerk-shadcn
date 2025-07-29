@@ -4,8 +4,6 @@ import { headers } from "next/headers";
 
 import { createUser, deleteUser, fetchUserById, updateUser, UserJSON } from "./user";
 
-const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
-
 const handleEvent = async (event: WebhookEvent) => {
   const { type, data } = event;
 
@@ -46,6 +44,8 @@ const handleEvent = async (event: WebhookEvent) => {
 };
 
 export const webhookHandler = async (req: Request) => {
+  const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
+
   if (!WEBHOOK_SECRET) {
     console.error("❌ Missing Clerk Webhook Secret in .env.local");
     return new Response("Server Misconfiguration", { status: 500 });
