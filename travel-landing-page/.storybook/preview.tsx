@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import type { Preview } from "@storybook/nextjs";
-import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "next-themes";
 import { AppRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -49,18 +48,16 @@ const preview: Preview = {
 
       return (
         <AppRouterContext.Provider value={mockRouter}>
-          <ClerkProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme={context.globals.theme || "light"}
-              enableSystem={false}
-              disableTransitionOnChange
-            >
-              <div className={`${acme.variable} ${abel.variable} antialiased`}>
-                <Story />
-              </div>
-            </ThemeProvider>
-          </ClerkProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme={context.globals.theme || "light"}
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            <div className={`${acme.variable} ${abel.variable} antialiased`}>
+              <Story />
+            </div>
+          </ThemeProvider>
         </AppRouterContext.Provider>
       );
     },
