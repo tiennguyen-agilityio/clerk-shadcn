@@ -1,4 +1,4 @@
-export const localization = {
+export const LOCALIZATION = {
   unstable__errors: {
     form_param_nil: "This field is required.",
     form_param_format_invalid: "Invalid format. Please check and correct.",
