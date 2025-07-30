@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSignIn } from "@clerk/nextjs";
+import { useSignUp } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 // Types
-import { OAuthStrategy, LoginFormData } from "@/types/auth";
+import { OAuthStrategy, SignUpFormData } from "@/types/auth";
 
 // Constants
 import { SCHEMA } from "@/constants/validation";
@@ -27,15 +27,22 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import Select from "@/components/Select";
+import { DAYS, MONTHS, YEARS } from "@/constants/common";
 
-const SignInPageV2 = () => {
-  const { isLoaded, signIn, setActive } = useSignIn();
+const SignUpPageV2 = () => {
+  const { isLoaded, signUp, setActive } = useSignUp();
   const router = useRouter();
 
   const form = useForm({
     defaultValues: {
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
+      day: "",
+      month: "",
+      year: "",
     },
     mode: "onBlur",
   });
@@ -51,55 +58,72 @@ const SignInPageV2 = () => {
 
   const handleToggleVisible = () => setIsPasswordVisible((prev) => !prev);
 
-  const handleSubmit = async ({ email, password }: LoginFormData) => {
+  const handleSubmit = async (data: SignUpFormData) => {
     if (!isLoaded) return;
+    setErrorMessage("");
 
     try {
-      const attempt = await signIn.create({
-        identifier: email,
+      const { firstName, lastName, email, password, day, month, year } = data;
+
+      const attempt = await signUp.create({
+        firstName,
+        lastName,
+        emailAddress: email,
         password,
+        unsafeMetadata: {
+          dob: `${day} ${month} ${year}`,
+        },
       });
 
-      if (attempt.status === "complete") {
+      if (attempt.status === "missing_requirements") {
+        await signUp.prepareEmailAddressVerification({
+          strategy: "email_code",
+        });
+
+        router.push(`/sign-up-v2/verify?redirect_url=${encodeURIComponent(redirectUrl)}`);
+      } else if (attempt.status === "complete") {
         await setActive({ session: attempt.createdSessionId });
         router.push(redirectUrl || "/");
       }
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Failed to sign in.";
+      const message = error instanceof Error ? error.message : "Failed to sign up.";
       setErrorMessage(message);
     }
   };
 
-  const handleSocialLogin = async (provider: OAuthStrategy) => {
-    if (isLoading) return;
+  const handleSocialSignUp = async (provider: OAuthStrategy) => {
+    setErrorMessage("");
+
+    if (!isLoaded) return;
+
+    setSocialLoading(provider);
 
     try {
-      await signIn.authenticateWithRedirect({
+      await signUp.authenticateWithRedirect({
         strategy: provider,
-        redirectUrl: "/",
+        continueSignIn: true,
+        redirectUrl: `/sign-up-v2/continue?redirect_url=${encodeURIComponent(redirectUrl)}`,
         redirectUrlComplete: redirectUrl || "/",
       });
 
       setSocialLoading(null);
     } catch (error) {
-      const message = error instanceof Error ? error.message : ERROR_MESSAGES.SIGN_IN_FAILED;
+      const message = error instanceof Error ? error.message : ERROR_MESSAGES.SIGN_UP_FAILED;
       setErrorMessage(message);
       setSocialLoading(null);
     }
   };
 
   const handleSignInWithFacebook = () => {
-    setSocialLoading(OAuthStrategy.Facebook);
-    handleSocialLogin(OAuthStrategy.Facebook);
+    handleSocialSignUp(OAuthStrategy.Facebook);
   };
 
   const handleSignInWithGoogle = () => {
-    setSocialLoading(OAuthStrategy.Google);
-    handleSocialLogin(OAuthStrategy.Google);
+    handleSocialSignUp(OAuthStrategy.Google);
   };
 
-  const handleGoToSignUp = () => {
-    router.push("/sign-up-v2");
+  const handleGoToSignIn = () => {
+    router.push("/sign-in-v2");
   };
 
   useEffect(() => {
@@ -123,8 +147,8 @@ const SignInPageV2 = () => {
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <fieldset disabled={isSubmitting || !!socialLoading}>
             <div className="flex-col justify-center align-middle items-center content-center min-w-[545px]">
-              <Heading as="h2" className="font-abel text-center">
-                Sign In
+              <Heading as="h1" className="font-abel text-center">
+                Create Account
               </Heading>
               <div className="flex justify-between mt-12.5 h-12.5 gap-2.5">
                 <Button
@@ -136,7 +160,7 @@ const SignInPageV2 = () => {
                   <div className="border-l-[1px] h-5 border-foreground" />
                   {socialLoading === OAuthStrategy.Facebook
                     ? "Loading..."
-                    : "Sign in with Facebook"}
+                    : "Sign up with Facebook"}
                 </Button>
 
                 <Button
@@ -146,13 +170,58 @@ const SignInPageV2 = () => {
                 >
                   <GoogleIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
-                  {socialLoading === OAuthStrategy.Google ? "Loading..." : "Sign in with Google"}
+                  {socialLoading === OAuthStrategy.Google ? "Loading..." : "Sign up with Google"}
                 </Button>
               </div>
+              <div id="clerk-captcha" />
               <div className="flex flex-col gap-7.5">
                 <div className="flex flex-col justify-center items-center h-10 relative pt-5">
                   <div className="h-[1px] bg-input absolute z-1 w-full" />
                   <span className="flex items-center h-2.5 px-3 bg-background z-2">OR</span>
+                </div>
+                <div className="flex gap-5">
+                  <FormField
+                    control={form.control}
+                    name="firstName"
+                    rules={SCHEMA.firstName}
+                    render={({ field }) => (
+                      <FormItem className="w-1/2">
+                        <FormLabel>First Name</FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            placeholder="Enter first name"
+                            onChange={(e) => {
+                              field.onChange(e);
+                              if (errorMessage) setErrorMessage("");
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="lastName"
+                    rules={SCHEMA.lastName}
+                    render={({ field }) => (
+                      <FormItem className="w-1/2">
+                        <FormLabel>Last Name</FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            placeholder="Enter last name"
+                            onChange={(e) => {
+                              field.onChange(e);
+                              if (errorMessage) setErrorMessage("");
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
                 </div>
 
                 <FormField
@@ -195,7 +264,6 @@ const SignInPageV2 = () => {
                               if (errorMessage) setErrorMessage("");
                             }}
                           />
-
                           <Button
                             type="button"
                             variant="ghost"
@@ -210,32 +278,89 @@ const SignInPageV2 = () => {
                     </FormItem>
                   )}
                 />
-                <div className="flex justify-between -mt-4">
-                  <Checkbox label="Remember me" disabled={isLoading} />
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    className="text-[#4a90e2] p-0 hover:text-blue-900 hover:bg-transparent hover:underline"
-                  >
-                    Forgot password?
-                  </Button>
+                <div className="flex flex-col space-y-2">
+                  <label className="mb-1.25">Date of Birth</label>
+                  <div className="flex gap-5">
+                    <FormField
+                      control={form.control}
+                      name="day"
+                      render={({ field }) => (
+                        <FormItem className="w-1/3">
+                          <FormControl>
+                            <Select
+                              placeholder="Day"
+                              value={field.value}
+                              options={DAYS}
+                              onValueChange={(value) => {
+                                field.onChange(value);
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-xs" />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="month"
+                      render={({ field }) => (
+                        <FormItem className="w-1/3">
+                          <FormControl>
+                            <Select
+                              placeholder="Month"
+                              value={field.value}
+                              options={MONTHS}
+                              onValueChange={(value) => {
+                                field.onChange(value);
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-xs" />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="year"
+                      render={({ field }) => (
+                        <FormItem className="w-1/3">
+                          <FormControl>
+                            <Select
+                              placeholder="Year"
+                              value={field.value}
+                              options={YEARS}
+                              onValueChange={(value) => {
+                                field.onChange(value);
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-xs" />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
                 </div>
+
+                <Checkbox label="I have read and agree to the Terms and Conditions" />
 
                 <div className="w-full">
                   {errorMessage && <p className="text-error text-center my-2">{errorMessage}</p>}
                   <Button className="text-sm w-full">
-                    {isLoading ? "Submitting..." : " Sign In"}
+                    {isLoading ? "Submitting..." : " Sign Up"}
                   </Button>
                 </div>
-                <div className="flex justify-center items-center text-center gap">
-                  Don&#8217;t have an account?&nbsp;
+
+                <div className="flex justify-center items-center text-center">
+                  Already have an Account?&nbsp;
                   <Button
                     type="button"
                     variant="ghost"
-                    onClick={handleGoToSignUp}
+                    onClick={handleGoToSignIn}
                     className="text-[#4a90e2] p-0 hover:text-blue-900 hover:bg-transparent hover:underline gap-1"
                   >
-                    Sign up
+                    Log In
                   </Button>
                 </div>
               </div>
@@ -247,4 +372,4 @@ const SignInPageV2 = () => {
   );
 };
 
-export default SignInPageV2;
+export default SignUpPageV2;

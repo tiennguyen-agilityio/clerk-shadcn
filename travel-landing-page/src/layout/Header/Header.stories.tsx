@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 
 import Header from ".";
 
@@ -6,9 +7,11 @@ const meta: Meta<typeof Header> = {
   title: "Components/Header",
   component: Header,
   render: () => (
-    <div className="w-full h-25">
-      <Header />
-    </div>
+    <ClerkProvider>
+      <div className="w-full h-25">
+        <Header />
+      </div>
+    </ClerkProvider>
   ),
 };
 

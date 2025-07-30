@@ -4,6 +4,7 @@ export const REGEX = {
   CHECK_NUMBER: /.*[0-9].*/,
   CHECK_UPPERCASE: /[A-Z]/,
   CHECK_SYMBOL: /.*[!@#$%^&+=*].*/,
+  USERNAME: /^[a-zA-Z0-9_-]+$/,
 };
 
 export const PAGE_SIZE = 3;
