@@ -12,7 +12,7 @@ const StatisticsCard = ({ title, value }: StatisticsCardProps) => {
       <Heading as="h6" className="font-primary mb-4">
         {title}
       </Heading>
-      <span className="mt-4 text-3xl lg:text-[70px] lg:leading-[65px] font-secondary">{value}</span>
+      <span className="mt-4 text-3xl lg:text-[70px] lg:leading-[65px]">{value}</span>
     </div>
   );
 };

@@ -28,7 +28,10 @@ const NavigationMenu = ({ list, path = "" }: NavigationMenuProps) => (
         return (
           <NavigationMenuItem key={index} className="pt-3">
             <NavigationMenuLink asChild>
-              <Link href={href} className={clsx("items-center ", isActive && "text-primary")}>
+              <Link
+                href={href}
+                className={clsx("items-center font-bold", isActive && "text-primary")}
+              >
                 <span className={clsx(isActive && "text-primary")}>{name}</span>
                 <span
                   className={`w-2 h-2 rounded-full transition-opacity ${

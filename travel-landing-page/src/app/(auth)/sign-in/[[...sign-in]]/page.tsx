@@ -16,7 +16,7 @@ const SignInPage = () => {
   const handleToggleVisible = () => setIsPasswordVisible((prev) => !prev);
 
   return (
-    <div className="font-acme text-sm">
+    <div className="text-sm">
       <SignIn.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (

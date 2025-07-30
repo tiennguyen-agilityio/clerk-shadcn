@@ -12,8 +12,8 @@ const HeroSection = () => {
       <div className="absolute w-full top-10 md:top-15 lg:top-20 xl:top-34 z-1">
         <div className="container mt-10 mx-auto h-100">
           <div className="text-sm text-white">
-            <p className="mb-5 text-shadow-sm">Experience a Different Africa</p>
-            <Heading as="h1" className="text-shadow-sm">
+            <p className="mb-5 text-shadow-md/20">Experience a Different Africa</p>
+            <Heading as="h1" className="text-shadow-md/20">
               Last Minute Festive
               <br />
               Packages From

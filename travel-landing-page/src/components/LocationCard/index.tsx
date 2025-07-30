@@ -34,7 +34,7 @@ const LocationCard = ({ item, href = "" }: LocationCardProps) => {
     <Link href={href} className="block h-full group">
       <Card className="w-full h-full p-0 flex flex-row md:flex-col justify-between ">
         <CardHeader className="block w-1/2 md:w-full relative p-0 grow-1 bg-muted overflow-hidden">
-          <CardTitle className="absolute bottom-0 p-7.5 z-2 font-secondary text-2xl text-white text-shadow-sm line-clamp-2">
+          <CardTitle className="absolute bottom-0 p-7.5 z-2 text-2xl text-white text-shadow-sm line-clamp-2">
             {title}
           </CardTitle>
           <img

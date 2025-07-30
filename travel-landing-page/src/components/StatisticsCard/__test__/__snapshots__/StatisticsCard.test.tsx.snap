@@ -6,12 +6,12 @@ exports[`StatisticsCard component should render correctly 1`] = `
     class="w-full"
   >
     <h6
-      class="text-sm font-secondary font-primary mb-4"
+      class="text-sm font-primary mb-4"
     >
       Camping Locations
     </h6>
     <span
-      class="mt-4 text-3xl lg:text-[70px] lg:leading-[65px] font-secondary"
+      class="mt-4 text-3xl lg:text-[70px] lg:leading-[65px]"
     >
       68+
     </span>

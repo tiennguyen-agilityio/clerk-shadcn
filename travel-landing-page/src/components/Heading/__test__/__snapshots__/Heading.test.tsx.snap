@@ -3,7 +3,7 @@
 exports[`Heading component renders with h2 1`] = `
 <div>
   <h2
-    class="text-3xl md:text-4xl lg:text-[70px] lg:leading-[95px] font-secondary"
+    class="text-3xl md:text-4xl lg:text-[70px] lg:leading-[95px]"
   >
     Heading 2
   </h2>
@@ -13,7 +13,7 @@ exports[`Heading component renders with h2 1`] = `
 exports[`Heading component renders with h3 1`] = `
 <div>
   <h3
-    class="text-2xl md:text-3xl lg:text-[60px] font-secondary"
+    class="text-2xl md:text-3xl lg:text-[60px]"
   >
     Heading 3
   </h3>
@@ -23,7 +23,7 @@ exports[`Heading component renders with h3 1`] = `
 exports[`Heading component renders with h4 1`] = `
 <div>
   <h4
-    class="text-xl md:text-2xl lg:text-[50px] leading-[55px] font-secondary"
+    class="text-xl md:text-2xl lg:text-[50px] leading-[55px]"
   >
     Heading 4
   </h4>
@@ -33,7 +33,7 @@ exports[`Heading component renders with h4 1`] = `
 exports[`Heading component renders with h5 1`] = `
 <div>
   <h5
-    class="text-lg font-secondary"
+    class="text-lg"
   >
     Heading 5
   </h5>
@@ -43,7 +43,7 @@ exports[`Heading component renders with h5 1`] = `
 exports[`Heading component renders with h6 1`] = `
 <div>
   <h6
-    class="text-sm font-secondary"
+    class="text-sm"
   >
     Heading 6
   </h6>
@@ -53,7 +53,7 @@ exports[`Heading component renders with h6 1`] = `
 exports[`Heading component should render correctly 1`] = `
 <div>
   <h1
-    class="text-4xl md:text-5xl lg:text-[80px] lg:leading-[95px] font-secondary"
+    class="text-4xl md:text-5xl lg:text-[80px] lg:leading-[95px]"
   >
     Heading
   </h1>

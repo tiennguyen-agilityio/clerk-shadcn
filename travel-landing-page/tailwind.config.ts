@@ -7,7 +7,6 @@ const config: Config = {
     extend: {
       fontFamily: {
         primary: ["var(--font-primary)", "sans-serif"],
-        secondary: ["var(--font-secondary)", "sans-serif"],
       },
       color: {
         success: "var(--success)",

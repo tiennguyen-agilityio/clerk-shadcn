@@ -35,7 +35,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="font-acme text-sm justify-center mx-auto ">
+    <div className="text-sm justify-center mx-auto ">
       <SignUp.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (

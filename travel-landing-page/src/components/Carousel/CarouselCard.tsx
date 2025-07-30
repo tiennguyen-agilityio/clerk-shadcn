@@ -25,7 +25,7 @@ const CarouselCard = ({ item, isActive = false, imageHeight = "475px" }: Carouse
       <CardHeader className="flex justify-between items-center h-25 p-0 gap-5">
         {isActive && (
           <>
-            <Heading as="h4" className="w-1/2 font-secondary animate-fade-in">
+            <Heading as="h4" className="w-1/2 animate-fade-in">
               {title}
             </Heading>
             <p className="w-1/2 text-sm line-clamp-5 animate-fade-in pr-2">{description}</p>

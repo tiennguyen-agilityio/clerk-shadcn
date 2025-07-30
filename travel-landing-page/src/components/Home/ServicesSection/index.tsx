@@ -32,7 +32,7 @@ const ServicesSection = () => {
           ))}
         </div>
       </div>
-      <p className="mt-25 md:w-1/2 font-secondary text-2xl">
+      <p className="mt-25 md:w-1/2 text-2xl">
         We create awesome experiences by showcasing some of the best places and activities in the
         country
       </p>
