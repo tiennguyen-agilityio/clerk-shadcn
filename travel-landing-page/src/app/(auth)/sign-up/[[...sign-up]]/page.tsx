@@ -47,7 +47,7 @@ const SignUpPage = () => {
 
                 <div className="flex justify-between mt-12.5 h-12.5 gap-2.5 text-white">
                   <Clerk.Connection asChild name="facebook">
-                    <Button className="gap-2.5 flex-1/2  bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300">
+                    <Button className="gap-2.5 flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300">
                       <FacebookIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:facebook">
@@ -56,7 +56,7 @@ const SignUpPage = () => {
                     </Button>
                   </Clerk.Connection>
                   <Clerk.Connection asChild name="google">
-                    <Button className=" gap-2.5 flex-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300">
+                    <Button className=" gap-2.5 flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300">
                       <GoogleIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:google">
@@ -115,7 +115,7 @@ const SignUpPage = () => {
                       />
                       <Button
                         variant="ghost"
-                        className="absolute right-3 h-full px-1 text-[#4a90e2] hover:text-blue-900 hover:bg-transparent"
+                        className="absolute right-3 h-full px-1 text-link hover:text-link/80 hover:bg-transparent"
                         onClick={handleToggleVisible}
                       >
                         {isPasswordVisible ? "Hide Password" : "Show Password"}
@@ -166,7 +166,7 @@ const SignUpPage = () => {
                     Already have an Account?&nbsp;
                     <Clerk.Link
                       navigate="sign-in"
-                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
+                      className="text-link hover:text-link/80! font-semibold hover:underline"
                     >
                       Sign In
                     </Clerk.Link>
@@ -205,7 +205,7 @@ const SignUpPage = () => {
                     Already have an Account?&nbsp;
                     <Clerk.Link
                       navigate="sign-in"
-                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
+                      className="text-link hover:text-link/80! font-semibold hover:underline"
                     >
                       Sign In
                     </Clerk.Link>
@@ -243,7 +243,7 @@ const SignUpPage = () => {
                     Already have an Account?&nbsp;
                     <Clerk.Link
                       navigate="sign-in"
-                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
+                      className="text-link hover:text-link/80! font-semibold hover:underline"
                     >
                       Log In
                     </Clerk.Link>

@@ -130,7 +130,7 @@ const SignInPageV2 = () => {
                 <Button
                   type="button"
                   onClick={handleSignInWithFacebook}
-                  className="gap-2.5 flex-1/2 bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300"
+                  className="gap-2.5 flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300"
                 >
                   <FacebookIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
@@ -142,7 +142,7 @@ const SignInPageV2 = () => {
                 <Button
                   type="button"
                   onClick={handleSignInWithGoogle}
-                  className="gap-2.5 flex-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300"
+                  className="gap-2.5 flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300"
                 >
                   <GoogleIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
@@ -200,7 +200,7 @@ const SignInPageV2 = () => {
                             type="button"
                             variant="ghost"
                             onClick={handleToggleVisible}
-                            className="absolute top-0 right-3 h-full px-1 text-[#4a90e2] hover:text-blue-900 hover:bg-transparent"
+                            className="absolute top-0 right-3 h-full px-1 text-link hover:text-link/80 hover:bg-transparent"
                           >
                             {isPasswordVisible ? "Hide Password" : "Show Password"}
                           </Button>
@@ -215,7 +215,7 @@ const SignInPageV2 = () => {
                   <Button
                     type="button"
                     variant="ghost"
-                    className="text-[#4a90e2] p-0 hover:text-blue-900 hover:bg-transparent hover:underline"
+                    className="text-link hover:text-link/90 p-0 hover:bg-transparent hover:underline"
                   >
                     Forgot password?
                   </Button>
@@ -233,7 +233,7 @@ const SignInPageV2 = () => {
                     type="button"
                     variant="ghost"
                     onClick={handleGoToSignUp}
-                    className="text-[#4a90e2] p-0 hover:text-blue-900 hover:bg-transparent hover:underline gap-1"
+                    className="text-link hover:text-link/90 p-0 hover:bg-transparent hover:underline gap-1"
                   >
                     Sign up
                   </Button>

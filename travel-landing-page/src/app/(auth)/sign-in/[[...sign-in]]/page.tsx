@@ -25,7 +25,7 @@ const SignInPage = () => {
                 <h1 className="font-abel text-center text-[70px]">Sign In</h1>
                 <div className="flex justify-between mt-12.5 h-12.5 gap-2.5">
                   <Clerk.Connection asChild name="facebook">
-                    <Button className="gap-2.5 flex-1/2 bg-[#3b5998] hover:bg-blue-900 transition-colors duration-300">
+                    <Button className="gap-2.5 flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300">
                       <FacebookIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:facebook">
@@ -34,7 +34,7 @@ const SignInPage = () => {
                     </Button>
                   </Clerk.Connection>
                   <Clerk.Connection asChild name="google">
-                    <Button className="gap-2.5 flex-1/2 bg-[#db3236] hover:bg-red-700 transition-colors duration-300">
+                    <Button className="gap-2.5 flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300">
                       <GoogleIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:google">
@@ -73,7 +73,7 @@ const SignInPage = () => {
                       />
                       <Button
                         variant="ghost"
-                        className="absolute right-3 h-full px-1 text-[#4a90e2] hover:text-blue-900 hover:bg-transparent"
+                        className="absolute right-3 h-full px-1 text-link hover:text-link/90 hover:bg-transparent"
                         onClick={handleToggleVisible}
                       >
                         {isPasswordVisible ? "Hide Password" : "Show Password"}
@@ -86,7 +86,7 @@ const SignInPage = () => {
                     <Checkbox label="Remember me" />
                     <SignIn.Action
                       navigate="forgot-password"
-                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
+                      className="text-link hover:text-link/90 font-semibold hover:underline"
                     >
                       Forgot password?
                     </SignIn.Action>
@@ -100,11 +100,11 @@ const SignInPage = () => {
                     </Button>
                   </SignIn.Action>
 
-                  <div className="flex justify-center text-center gap">
+                  <div className="flex justify-center text-center">
                     Don&#8217;t have an account?&nbsp;
                     <Clerk.Link
                       navigate="sign-up"
-                      className="text-[#4a90e2] hover:text-blue-900 hover:underline"
+                      className="text-link hover:text-link! font-semibold hover:underline"
                     >
                       Sign up
                     </Clerk.Link>

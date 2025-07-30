@@ -121,7 +121,7 @@ const VerifySignUpPageV2 = () => {
                   type="button"
                   variant="ghost"
                   onClick={handleGoToSignIn}
-                  className="text-[#4a90e2] p-0 hover:text-blue-900 hover:bg-transparent hover:underline gap-1"
+                  className="text-link hover:text-link/80 p-0 hover:bg-transparent hover:underline gap-1"
                 >
                   Log In
                 </Button>
