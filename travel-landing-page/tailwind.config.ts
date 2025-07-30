@@ -13,6 +13,9 @@ const config: Config = {
         error: "var(--error)",
         info: "var(--info)",
         warning: "var(--warning)",
+        facebook: "var(--facebook)",
+        google: "var(--google)",
+        link: "var(--link)",
       },
     },
     container: {
