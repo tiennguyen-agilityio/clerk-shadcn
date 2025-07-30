@@ -4,7 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "@/themes/theme.css";
 
 import { LOCALIZATION } from "@/constants/localization";
-import { abel, acme } from "@/config/fonts";
+import { abel } from "@/config/fonts";
 import { Toaster } from "@/components/ui/sonner";
 
 import { ThemeProvider } from "@/themes/ThemeProvider";
@@ -36,7 +36,7 @@ export default function RootLayout({
           <meta name="description" content="Travel Landing Page" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
-        <body className={`${abel.variable} ${acme.variable} antialiased`}>
+        <body className={`${abel.variable} antialiased`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"

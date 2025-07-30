@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 
 const TopNav = () => {
   return (
-    <div className="container mx-auto py-8 sm:py-12 lg:py-25 font-acme">
+    <div className="container mx-auto py-8 sm:py-12 lg:py-25">
       <div className="flex justify-between">
         <div>
           <h3 className="font-bold text-[13px] mb-3">Need Travelsy Help?</h3>

@@ -22,11 +22,11 @@ const HeroSection = () => {
       <div className="absolute w-full top-10 md:top-15 lg:top-20 xl:top-34 z-1">
         <div className="container mt-10 mx-auto h-100">
           <div className="text-sm text-white">
-            <p className="mb-5">Welcome to Travelsy</p>
-            <Heading as="h1">
+            <p className="mb-5 text-shadow-md/20">Welcome to Travelsy</p>
+            <Heading as="h1" className="text-shadow-md/20">
               Mother Earth <br /> Hosts Our Travels
             </Heading>
-            <p className="mt-15">Camping Locations</p>
+            <p className="mt-15 text-shadow-md/20">Camping Locations</p>
           </div>
         </div>
       </div>

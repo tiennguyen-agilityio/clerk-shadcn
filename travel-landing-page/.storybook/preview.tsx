@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { AppRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
-import { acme, abel } from "../src/config";
+import { abel } from "../src/config";
 import "../src/themes/theme.css";
 
 const mockRouter: AppRouterInstance = {
@@ -43,7 +43,7 @@ const preview: Preview = {
   decorators: [
     (Story, context) => {
       useEffect(() => {
-        document.documentElement.classList.add(acme.variable, abel.variable);
+        document.documentElement.classList.add(abel.variable);
       }, []);
 
       return (
@@ -54,7 +54,7 @@ const preview: Preview = {
             enableSystem={false}
             disableTransitionOnChange
           >
-            <div className={`${acme.variable} ${abel.variable} antialiased`}>
+            <div className={`${abel.variable} antialiased`}>
               <Story />
             </div>
           </ThemeProvider>
