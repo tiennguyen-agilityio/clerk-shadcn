@@ -1,5 +1,6 @@
 export const ERROR_MESSAGES = {
   SIGN_IN_FAILED: "Sign in failed.",
+  SIGN_UP_FAILED: "Sign up failed.",
   FIELD_REQUIRED: (fieldName: string) => `${fieldName} is required`,
   FIELD_INVALID: (fieldName: string) => `Invalid format of ${fieldName}`,
   PASSWORD_NOT_LONG: "Your password must be at least 8 characters long",
@@ -8,4 +9,7 @@ export const ERROR_MESSAGES = {
   PASSWORD_NOT_HAVE_UPPERCASE: "Your password must contain at least one uppercase character",
   PASSWORD_NOT_HAVE_SYMBOL: "Your password must contain at least one special character",
   LOGIN_FAILED: "Email or password is incorrect!",
+  USERNAME_INVALID: "Username can only contain letters, numbers and - or _.",
+  CODE_INVALID: "Verification code must contain only numbers.",
+  VERIFICATION_INCOMPLETE: "Verification incomplete. Try again.",
 };

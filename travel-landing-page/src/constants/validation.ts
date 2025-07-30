@@ -35,4 +35,22 @@ export const SCHEMA = {
   lastName: {
     required: ERROR_MESSAGES.FIELD_REQUIRED("Last Name"),
   },
+  userName: {
+    required: ERROR_MESSAGES.FIELD_REQUIRED("User Name"),
+    validate: (value: string) => {
+      switch (true) {
+        case !REGEX.USERNAME.test(value):
+          return ERROR_MESSAGES.USERNAME_INVALID;
+      }
+    },
+  },
+  code: {
+    required: ERROR_MESSAGES.FIELD_REQUIRED("Code"),
+    validate: (value: string) => {
+      switch (true) {
+        case !REGEX.CHECK_NUMBER.test(value):
+          return ERROR_MESSAGES.CODE_INVALID;
+      }
+    },
+  },
 };
