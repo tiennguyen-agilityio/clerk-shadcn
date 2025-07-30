@@ -15,6 +15,7 @@ import { ERROR_MESSAGES } from "@/constants/messages";
 // Components
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import Heading from "@/components/Heading";
 import Checkbox from "@/components/Checkbox";
 import GoogleIcon from "@/components/Icons/GoogleIcon";
 import FacebookIcon from "@/components/Icons/FacebookIcon";
@@ -75,9 +76,10 @@ const SignInPageV2 = () => {
     try {
       await signIn.authenticateWithRedirect({
         strategy: provider,
-        redirectUrl,
-        redirectUrlComplete: redirectUrl,
+        redirectUrl: "/",
+        redirectUrlComplete: redirectUrl || "/",
       });
+
       setSocialLoading(null);
     } catch (error) {
       const message = error instanceof Error ? error.message : ERROR_MESSAGES.SIGN_IN_FAILED;
@@ -94,6 +96,10 @@ const SignInPageV2 = () => {
   const handleSignInWithGoogle = () => {
     setSocialLoading(OAuthStrategy.Google);
     handleSocialLogin(OAuthStrategy.Google);
+  };
+
+  const handleGoToSignUp = () => {
+    router.push("/sign-up-v2");
   };
 
   useEffect(() => {
@@ -117,7 +123,9 @@ const SignInPageV2 = () => {
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <fieldset disabled={isSubmitting || !!socialLoading}>
             <div className="flex-col justify-center align-middle items-center content-center min-w-[545px]">
-              <h1 className="font-abel text-center text-[70px]">Sign In</h1>
+              <Heading as="h2" className="font-abel text-center">
+                Sign In
+              </Heading>
               <div className="flex justify-between mt-12.5 h-12.5 gap-2.5">
                 <Button
                   type="button"
@@ -155,7 +163,14 @@ const SignInPageV2 = () => {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input {...field} placeholder="Enter Email" />
+                        <Input
+                          {...field}
+                          placeholder="Enter Email"
+                          onChange={(e) => {
+                            field.onChange(e);
+                            if (errorMessage) setErrorMessage("");
+                          }}
+                        />
                       </FormControl>
                       <FormMessage className="text-xs" />
                     </FormItem>
@@ -175,7 +190,10 @@ const SignInPageV2 = () => {
                             {...field}
                             type={isPasswordVisible ? "text" : "password"}
                             placeholder="Enter password"
-                            className=""
+                            onChange={(e) => {
+                              field.onChange(e);
+                              if (errorMessage) setErrorMessage("");
+                            }}
                           />
 
                           <Button
@@ -207,6 +225,17 @@ const SignInPageV2 = () => {
                   {errorMessage && <p className="text-error text-center my-2">{errorMessage}</p>}
                   <Button className="text-sm w-full">
                     {isLoading ? "Submitting..." : " Sign In"}
+                  </Button>
+                </div>
+                <div className="flex justify-center items-center text-center gap">
+                  Don&#8217;t have an account?&nbsp;
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={handleGoToSignUp}
+                    className="text-[#4a90e2] p-0 hover:text-blue-900 hover:bg-transparent hover:underline gap-1"
+                  >
+                    Sign up
                   </Button>
                 </div>
               </div>
