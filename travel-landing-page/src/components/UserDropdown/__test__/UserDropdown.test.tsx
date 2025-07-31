@@ -1,17 +1,20 @@
-import { ReactNode } from "react";
 import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { toast } from "sonner";
 
-import { USER_DROPDOWNS, USER_DROPDOWNS_LENGTH } from "@/constants/nav";
+import { USER_DROPDOWNS_LENGTH } from "@/constants/nav";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@/constants/messages";
 
 import UserDropdown from "..";
 
 const mockPush = jest.fn();
+const mockSignOut = jest.fn();
 
 jest.mock("next/navigation", () => ({
   useRouter: () => ({
     push: mockPush,
   }),
+  usePathname: () => "",
 }));
 
 jest.mock("@clerk/nextjs", () => ({
@@ -23,9 +26,13 @@ jest.mock("@clerk/nextjs", () => ({
       imageUrl: "https://i.ibb.co/cXVN8z3D/avatar-01.png",
     },
   }),
-  SignOutButton: ({ children }: { children: ReactNode }) => (
-    <button data-testid="signout-button">{children}</button>
-  ),
+  useClerk: () => ({
+    signOut: mockSignOut,
+  }),
+}));
+
+jest.mock("sonner", () => ({
+  toast: { success: jest.fn(), error: jest.fn() },
 }));
 
 describe("UserDropdown component", () => {
@@ -34,18 +41,6 @@ describe("UserDropdown component", () => {
   it("should render correctly", () => {
     const { container } = render(<UserDropdown />);
     expect(container).toMatchSnapshot();
-  });
-
-  it("should renders SignOutButton as last item", async () => {
-    render(<UserDropdown />);
-
-    await act(async () => {
-      userEvent.click(screen.getByTestId("btn-dropdown"));
-    });
-
-    const signOutItem = await waitFor(() => screen.getByTestId("signout-button"));
-    expect(signOutItem).toBeInTheDocument();
-    expect(signOutItem).toHaveTextContent(USER_DROPDOWNS[USER_DROPDOWNS_LENGTH - 1].text);
   });
 
   it("should open dropdown menu and render correct number of items", async () => {
@@ -58,6 +53,16 @@ describe("UserDropdown component", () => {
     const items: HTMLElement[] = await waitFor(() => screen.getAllByTestId("dropdown-menu-item"));
 
     expect(items).toHaveLength(USER_DROPDOWNS_LENGTH);
+  });
+
+  it("should render with default values when user is null", () => {
+    jest.mock("@clerk/nextjs", () => ({
+      ...jest.requireActual("@clerk/nextjs"),
+      useUser: () => ({ user: null }),
+    }));
+
+    const { container } = render(<UserDropdown />);
+    expect(container).toMatchSnapshot();
   });
 
   it("should call router.push when clicking first item", async () => {
@@ -84,5 +89,53 @@ describe("UserDropdown component", () => {
     fireEvent.click(items[USER_DROPDOWNS_LENGTH - 1]);
 
     expect(mockPush).not.toHaveBeenCalled();
+  });
+
+  it("should sign out and show success toast when confirming logout", async () => {
+    mockSignOut.mockResolvedValueOnce(undefined);
+
+    render(<UserDropdown />);
+
+    await act(async () => {
+      userEvent.click(screen.getByTestId("btn-dropdown"));
+    });
+
+    const items: HTMLElement[] = await waitFor(() => screen.getAllByTestId("dropdown-menu-item"));
+    fireEvent.click(items[USER_DROPDOWNS_LENGTH - 1]);
+
+    const confirmButton = await screen.findByText("Logout");
+    expect(confirmButton).toBeInTheDocument();
+
+    await act(async () => {
+      fireEvent.click(confirmButton);
+    });
+
+    await waitFor(() => {
+      expect(mockSignOut).toHaveBeenCalledTimes(1);
+      expect(toast.success).toHaveBeenCalledWith(SUCCESS_MESSAGES.SIGNED_OUT);
+    });
+  });
+
+  it("should show error toast when signOut fails", async () => {
+    mockSignOut.mockRejectedValueOnce(new Error("fail"));
+
+    render(<UserDropdown />);
+
+    await act(async () => {
+      userEvent.click(screen.getByTestId("btn-dropdown"));
+    });
+
+    const items: HTMLElement[] = await waitFor(() => screen.getAllByTestId("dropdown-menu-item"));
+    fireEvent.click(items[USER_DROPDOWNS_LENGTH - 1]);
+
+    const confirmButton = await screen.findByText("Logout");
+    await act(async () => {
+      fireEvent.click(confirmButton);
+    });
+
+    await waitFor(() => {
+      expect(mockSignOut).toHaveBeenCalledTimes(1);
+      expect(toast.error).toHaveBeenCalledWith(ERROR_MESSAGES.SIGN_OUT_FAILED);
+    });
   });
 });

@@ -8,7 +8,7 @@ const meta: Meta<typeof UserDropdown> = {
   component: UserDropdown,
   render: () => {
     return (
-      <ClerkProvider>
+      <ClerkProvider publishableKey="pk_test_mock">
         <UserDropdown />
       </ClerkProvider>
     );
