@@ -31,14 +31,14 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="relative sm:absolute bottom-0 left-0 w-full h-auto sm:h-20 lg:h-30">
-        <div className="@container flex flex-col sm:flex-row items-center mx-auto px-5 py-2 sm:py-0 lg:px-0 gap-2 sm:gap-0">
-          <div className="sm:h-full min-w-1/3 absolute left-0 right-100 bg-background z-1 " />
-          <div className="flex sm:flex-1 justify-center align-center sm:br-5 h-16 sm:h-20 lg:h-30 z-30 bg-background">
+        <div className="container flex flex-col sm:flex-row items-center mx-auto px-2 sm:px-5 py-2 sm:py-0 gap-2 sm:gap-0">
+          <div className="sm:h-20 lg:h-30 min-w-1/3 absolute left-0 bottom-0 right-100 bg-background z-1 " />
+          <div className="w-full flex sm:flex-1 justify-center align-center md:br-5 h-16 sm:h-20 lg:h-30 z-30 bg-background">
             <Experiences data={EXPERIENCES} onItemClick={handleExperienceClick} />
           </div>
           <Button
             onClick={handleFindExperience}
-            className="flex-none h-14 sm:gap-5 text-sx lg:text-sm text-white sm:h-20 lg:h-30 w-full sm:w-50 lg:w-65.5 sm:rounded-none sm:rounded-tr-[20px] z-30"
+            className="h-14 sm:gap-5 text-sx lg:text-sm text-white sm:h-20 lg:h-30 w-full sm:w-50 lg:w-65.5 sm:rounded-none sm:rounded-tr-[20px] z-30"
           >
             FIND AN EXPERIENCE
             <ArrowIcon />

@@ -18,7 +18,7 @@ const Experiences = ({ data, onItemClick }: ExperiencesProps) => {
   const length = data.length;
 
   return (
-    <div className="flex min-w-full items-center justify-between pr-3 lg:pr-10">
+    <div className="flex min-w-full items-center justify-between sm:pr-3 lg:pr-10">
       {data?.map(({ label = "", title }, index) => {
         const isActive = indexActive === index;
 
