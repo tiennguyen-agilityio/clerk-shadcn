@@ -19,7 +19,7 @@ const HeroSection = () => {
   return (
     <div className="relative w-full min-h-100">
       <VideoPlayer hasPlayed iconPosition="bottom-left" {...HOME_VIDEO} />
-      <div className="absolute w-full top-45 md:top-25 lg:top-20 xl:top-34 z-1">
+      <div className="absolute w-full top-45 sm:top-25 lg:top-20 xl:top-34 z-1">
         <div className="container mt-10 mx-auto h-100 px-5">
           <div className="text-sm text-white">
             <p className="mb-5 text-shadow-md/20">Welcome to Travelsy</p>
@@ -30,15 +30,15 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 w-full h-16 md:h-20 lg:h-30">
-        <div className="container flex items-center mx-auto px-5">
-          <div className="h-full min-w-screen absolute right-100 bg-background z-1" />
-          <div className="flex flex-1 align-center br-5 h-16 md:h-20 lg:h-30 z-30 bg-background">
+      <div className="relative sm:absolute bottom-0 left-0 w-full h-auto sm:h-20 lg:h-30">
+        <div className="@container flex flex-col sm:flex-row items-center mx-auto px-5 py-2 sm:py-0 lg:px-0 gap-2 sm:gap-0">
+          <div className="sm:h-full min-w-1/3 absolute left-0 right-100 bg-background z-1 " />
+          <div className="flex sm:flex-1 justify-center align-center sm:br-5 h-16 sm:h-20 lg:h-30 z-30 bg-background">
             <Experiences data={EXPERIENCES} onItemClick={handleExperienceClick} />
           </div>
           <Button
             onClick={handleFindExperience}
-            className="flex-none h-16 md:gap-5 text-sx lg:text-sm text-white md:h-20 lg:h-30 w-40 md:w-50 lg:w-65.5 rounded-none rounded-tr-[20px] z-30"
+            className="flex-none h-14 sm:gap-5 text-sx lg:text-sm text-white sm:h-20 lg:h-30 w-full sm:w-50 lg:w-65.5 sm:rounded-none sm:rounded-tr-[20px] z-30"
           >
             FIND AN EXPERIENCE
             <ArrowIcon />

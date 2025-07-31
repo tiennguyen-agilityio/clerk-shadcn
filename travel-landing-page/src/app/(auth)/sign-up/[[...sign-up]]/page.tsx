@@ -9,7 +9,6 @@ import { DAYS, MONTHS, YEARS } from "@/constants";
 import Button from "@/components/Button";
 import Loading from "@/components/Loading";
 import Checkbox from "@/components/Checkbox";
-import Heading from "@/components/Heading";
 import Select from "@/components/Select";
 import FacebookIcon from "@/components/Icons/FacebookIcon";
 import GoogleIcon from "@/components/Icons/GoogleIcon";
@@ -35,19 +34,17 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="text-sm justify-center mx-auto px-2 md:px-5">
+    <div className="container text-sm justify-center mx-auto px-2 md:px-5">
       <SignUp.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (
-            <div className="flex-col justify-center items-center content-center md:min-w-[545px]">
+            <div className="@container flex-col justify-center items-center content-center md:min-w-[545px]">
               <SignUp.Step name="start" className="w-full">
-                <Heading as="h4" className="font-abel text-center">
-                  Create Account
-                </Heading>
+                <h1 className="font-abel text-center text-[70px]">Sign Up</h1>
 
-                <div className="flex justify-between mt-12.5 h-12.5 gap-2.5 text-white">
+                <div className="flex flex-col @md:flex-row justify-between mt-12.5 gap-1.5 @md:gap-2.5">
                   <Clerk.Connection asChild name="facebook">
-                    <Button className="gap-2.5 flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300">
+                    <Button className="gap-2.5 @md:flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300">
                       <FacebookIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:facebook">
@@ -63,7 +60,7 @@ const SignUpPage = () => {
                     </Button>
                   </Clerk.Connection>
                   <Clerk.Connection asChild name="google">
-                    <Button className=" gap-2.5 flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300">
+                    <Button className=" gap-2.5 @md:flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300">
                       <GoogleIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:google">
@@ -79,6 +76,7 @@ const SignUpPage = () => {
                     </Button>
                   </Clerk.Connection>
                 </div>
+                <SignUp.Captcha className="mt-5 text-center" />
                 <div className="flex flex-col gap-7.5">
                   <div className="flex flex-col justify-center items-center h-10 relative pt-5">
                     <div className="h-[1px] bg-input absolute z-1 w-full" />
@@ -166,7 +164,6 @@ const SignUpPage = () => {
 
                   <Checkbox label="I have read and agree to the Terms and Conditions" />
 
-                  <SignUp.Captcha />
                   <Clerk.GlobalError className="block text-sm text-error" />
 
                   <SignUp.Action submit asChild disabled={isGlobalLoading}>
@@ -188,9 +185,7 @@ const SignUpPage = () => {
                 </div>
               </SignUp.Step>
               <SignUp.Step name="verifications" className="w-full">
-                <Heading as="h4" className="font-abel text-center">
-                  Verify email code
-                </Heading>
+                <h1 className="font-abel text-center text-[70px]">Verify email code</h1>
                 <div className="w-full flex flex-col gap-7.5">
                   <SignUp.Strategy name="email_code">
                     <Clerk.Field name="code" className="space-y-2">
@@ -227,9 +222,7 @@ const SignUpPage = () => {
                 </div>
               </SignUp.Step>
               <SignUp.Step name="continue" className="w-full">
-                <Heading as="h4" className="font-abel text-center">
-                  Continue registration
-                </Heading>
+                <h1 className="font-abel text-center text-[70px]">Continue registration</h1>
                 <div className="w-full flex flex-col mt-12.5 gap-7.5">
                   <Clerk.Field name="username" className="space-y-2">
                     <Clerk.Label className="text-sm font-medium text-zinc-950">

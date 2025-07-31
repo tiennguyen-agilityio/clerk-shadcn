@@ -148,40 +148,40 @@ const SignUpPageV2 = () => {
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <fieldset
             disabled={isSubmitting || !!socialLoading}
-            className="w-full mx-auto md:max-w-[545px]"
+            className="@container w-full mx-auto md:max-w-[545px] @md:px-5"
           >
             <div className="w-full flex-col justify-center items-center content-center">
               <Heading as="h1" className="font-abel text-center">
                 Create Account
               </Heading>
-              <div className="flex justify-between mt-12.5 gap-1.5 md:gap-2.5">
+              <div className="flex flex-col @md:flex-row justify-between mt-12.5 gap-1.5 @md:gap-2.5">
                 <Button
                   type="button"
                   onClick={handleSignInWithFacebook}
-                  className="gap-2.5 flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300"
+                  className="gap-2.5 @md:flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300"
                 >
-                  <FacebookIcon />
+                  <FacebookIcon className="hidden sm:block" />
                   <div className="border-l-[1px] h-5 border-foreground" />
                   Sign in with Facebook
                   {socialLoading === OAuthStrategy.Facebook && (
-                    <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                    <Loading iconOnly iconClassName="max-size-6!" wrapperClassName="w-fit!" />
                   )}
                 </Button>
 
                 <Button
                   type="button"
                   onClick={handleSignInWithGoogle}
-                  className="gap-2.5 flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300"
+                  className="gap-2.5 @md:flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300"
                 >
                   <GoogleIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
                   Sign in with Google
                   {socialLoading === OAuthStrategy.Google && (
-                    <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                    <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit! h-fit!" />
                   )}
                 </Button>
               </div>
-              <div id="clerk-captcha" />
+              <div id="clerk-captcha" className="mt-5 text-center" />
               <div className="flex flex-col gap-7.5">
                 <div className="flex flex-col justify-center items-center h-10 relative pt-5">
                   <div className="h-[1px] bg-input absolute z-1 w-full" />

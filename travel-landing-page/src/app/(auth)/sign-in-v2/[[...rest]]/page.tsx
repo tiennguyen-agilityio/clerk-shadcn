@@ -119,23 +119,23 @@ const SignInPageV2 = () => {
   }, []);
 
   return (
-    <div className="mx-auto overflow-hidden px-2 md:px-5">
+    <div className="container mx-auto overflow-hidden px-2 md:px-5">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <fieldset
             disabled={isSubmitting || !!socialLoading}
-            className="w-full mx-auto md:max-w-[545px]"
+            className="@container w-full mx-auto md:max-w-[545px]"
           >
-            <div className="flex-col justify-center align-middle items-center content-center md:min-w-[545px]">
+            <div className="flex-col justify-center align-middle items-center content-center">
               <Heading as="h2" className="font-abel text-center">
                 Sign In
               </Heading>
-              <div className="flex justify-between mt-12.5 h-12.5 gap-2.5">
+              <div className="w-full flex flex-col @md:flex-row justify-between mt-12.5 gap-1.5 @md:gap-2.5">
                 <Button
                   type="button"
                   disabled={!!socialLoading}
                   onClick={handleSignInWithFacebook}
-                  className="gap-2.5 flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300"
+                  className="gap-2.5 @md:flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300"
                 >
                   <FacebookIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
@@ -149,7 +149,7 @@ const SignInPageV2 = () => {
                   type="button"
                   disabled={!!socialLoading}
                   onClick={handleSignInWithGoogle}
-                  className="gap-2.5 flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300"
+                  className="gap-2.5 @md:flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300"
                 >
                   <GoogleIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
