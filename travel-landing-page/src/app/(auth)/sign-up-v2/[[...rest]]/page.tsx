@@ -11,11 +11,13 @@ import { OAuthStrategy, SignUpFormData } from "@/types/auth";
 // Constants
 import { SCHEMA } from "@/constants/validation";
 import { ERROR_MESSAGES } from "@/constants/messages";
+import { DAYS, MONTHS, YEARS } from "@/constants/common";
 
 // Components
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
+import Loading from "@/components/Loading";
 import Checkbox from "@/components/Checkbox";
 import GoogleIcon from "@/components/Icons/GoogleIcon";
 import FacebookIcon from "@/components/Icons/FacebookIcon";
@@ -28,7 +30,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import Select from "@/components/Select";
-import { DAYS, MONTHS, YEARS } from "@/constants/common";
 
 const SignUpPageV2 = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -158,9 +159,10 @@ const SignUpPageV2 = () => {
                 >
                   <FacebookIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
-                  {socialLoading === OAuthStrategy.Facebook
-                    ? "Loading..."
-                    : "Sign up with Facebook"}
+                  Sign in with Facebook
+                  {socialLoading === OAuthStrategy.Facebook && (
+                    <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                  )}
                 </Button>
 
                 <Button
@@ -170,7 +172,10 @@ const SignUpPageV2 = () => {
                 >
                   <GoogleIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
-                  {socialLoading === OAuthStrategy.Google ? "Loading..." : "Sign up with Google"}
+                  Sign in with Google
+                  {socialLoading === OAuthStrategy.Google && (
+                    <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                  )}
                 </Button>
               </div>
               <div id="clerk-captcha" />

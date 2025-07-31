@@ -15,6 +15,7 @@ import { ERROR_MESSAGES } from "@/constants/messages";
 // Components
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import Loading from "@/components/Loading";
 import Heading from "@/components/Heading";
 import Checkbox from "@/components/Checkbox";
 import GoogleIcon from "@/components/Icons/GoogleIcon";
@@ -129,24 +130,30 @@ const SignInPageV2 = () => {
               <div className="flex justify-between mt-12.5 h-12.5 gap-2.5">
                 <Button
                   type="button"
+                  disabled={!!socialLoading}
                   onClick={handleSignInWithFacebook}
                   className="gap-2.5 flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300"
                 >
                   <FacebookIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
-                  {socialLoading === OAuthStrategy.Facebook
-                    ? "Loading..."
-                    : "Sign in with Facebook"}
+                  Sign in with Facebook
+                  {socialLoading === OAuthStrategy.Facebook && (
+                    <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                  )}
                 </Button>
 
                 <Button
                   type="button"
+                  disabled={!!socialLoading}
                   onClick={handleSignInWithGoogle}
                   className="gap-2.5 flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300"
                 >
                   <GoogleIcon />
                   <div className="border-l-[1px] h-5 border-foreground" />
-                  {socialLoading === OAuthStrategy.Google ? "Loading..." : "Sign in with Google"}
+                  Sign in with Google
+                  {socialLoading === OAuthStrategy.Google && (
+                    <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                  )}
                 </Button>
               </div>
               <div className="flex flex-col gap-7.5">
