@@ -47,7 +47,7 @@ const AlertDialog = ({
             disabled={isLoading}
             data-testid="btn-confirm"
             variant="ghost"
-            className="p-0 h-auto"
+            className="p-0 h-auto hover:bg-transparent"
           >
             {textButton}
           </Button>

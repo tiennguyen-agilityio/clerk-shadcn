@@ -1,10 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import AlertDialog from ".";
+import { useState } from "react";
 
 const meta: Meta<typeof AlertDialog> = {
   title: "Components/AlertDialog",
   component: AlertDialog,
+  render: (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = (value = false) => setIsOpen(value);
+
+    return <AlertDialog {...props} open={isOpen} onOpenChange={handleToggle} />;
+  },
 };
 
 export default meta;
