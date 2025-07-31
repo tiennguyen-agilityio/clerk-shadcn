@@ -46,7 +46,7 @@ const VideoPlayer = ({
       case "top-right":
         return "top-[33%] right-[33%]";
       case "bottom-left":
-        return "bottom-[33%] left-[25%]";
+        return "bottom-[23%] left-[35%] md:bottom-[33%] md:left-[25%]";
       case "bottom-right":
         return "bottom-[33%] right-[25%]";
       case "center":
@@ -59,7 +59,7 @@ const VideoPlayer = ({
     <div className="relative w-full min-w-full">
       <video
         ref={videoRef}
-        className={clsx("w-full", className)}
+        className={clsx("w-full object-cover h-140 md:h-190 lg:h-auto", className)}
         autoPlay={autoPlay}
         poster={poster}
         muted

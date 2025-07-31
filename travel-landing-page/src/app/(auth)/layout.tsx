@@ -7,7 +7,9 @@ const AuthLayout = ({
 }>) => {
   return (
     <Layout hasBorderBottomHeader>
-      <div className="flex flex-col items-center justify-center h-fit pb-15 pt-35">{children}</div>
+      <div className="flex flex-col items-center justify-center h-fit pb-15 pt-55 md:pt-45">
+        {children}
+      </div>
     </Layout>
   );
 };

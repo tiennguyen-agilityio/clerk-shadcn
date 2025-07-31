@@ -8,7 +8,7 @@ import Heading from "@/components/Heading";
 
 const ServicesSection = () => {
   return (
-    <section className="container mx-auto mt-35">
+    <section className="container mx-auto mt-35 px-5">
       <Heading as="h6" className="font-bold text-ring mb-5">
         SERVICES
       </Heading>

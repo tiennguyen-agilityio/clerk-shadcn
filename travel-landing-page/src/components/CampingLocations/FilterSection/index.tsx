@@ -24,7 +24,7 @@ const CampingLocationsPage = () => {
   };
 
   return (
-    <section className="container mx-auto my-10 md:my-20 lg:my-25">
+    <section className="container mx-auto my-10 md:my-20 lg:my-25 px-5">
       <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-5">
         <div className="lg:col-span-1">
           <FilterSection defaultValue={filter} onChange={handleChangeFilter} />

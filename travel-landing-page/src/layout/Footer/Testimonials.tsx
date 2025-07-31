@@ -25,8 +25,8 @@ const TESTIMONIALS = [
 const Testimonials = () => {
   return (
     <div className="w-full bg-sidebar-accent">
-      <div className="container flex justify-between items-stretch mx-auto py-8 sm:py-12 lg:py-25 gap-2 lg:gap-5">
-        <div className="flex-col w-1/3 ">
+      <div className="container flex flex-col justify-between items-stretch flex-wrap mx-auto py-8 px-5 md:flex-row lg:flex-nowrap sm:py-12 lg:py-25 gap-2 lg:gap-5 overflow-hidden">
+        <div className="flex-col w-full lg:w-1/3">
           <p className="text-ring text-sm">Testimonials</p>
           <p className="text-[50px] mt-11 leading-none">
             What customers
@@ -40,11 +40,13 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {TESTIMONIALS.map((item, index) => (
-          <div key={item.id || index} className="flex-col w-1/3 ">
-            <TestimonialItem {...item} />
-          </div>
-        ))}
+        <div className="flex flex-col w-full md:flex-row lg:w-2/3 justify-between gap-5">
+          {TESTIMONIALS.map((item, index) => (
+            <div key={item.id || index} className="flex-col w-full md:w-1/2 ">
+              <TestimonialItem {...item} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -119,11 +119,14 @@ const SignInPageV2 = () => {
   }, []);
 
   return (
-    <div className="mx-auto overflow-hidden">
+    <div className="mx-auto overflow-hidden px-2 md:px-5">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)}>
-          <fieldset disabled={isSubmitting || !!socialLoading}>
-            <div className="flex-col justify-center align-middle items-center content-center min-w-[545px]">
+          <fieldset
+            disabled={isSubmitting || !!socialLoading}
+            className="w-full mx-auto md:max-w-[545px]"
+          >
+            <div className="flex-col justify-center align-middle items-center content-center md:min-w-[545px]">
               <Heading as="h2" className="font-abel text-center">
                 Sign In
               </Heading>

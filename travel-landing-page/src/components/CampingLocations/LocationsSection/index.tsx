@@ -19,7 +19,7 @@ const LocationsSection = () => {
   } = useLoadMore<LocationItem>({ fetcher: fetchLocations, limit: 3 });
 
   return (
-    <section className="container mx-auto my-10 md:my-20 lg:my-25">
+    <section className="container mx-auto my-10 md:my-20 lg:my-25 px-5">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {locations?.map((item) => {
           return (

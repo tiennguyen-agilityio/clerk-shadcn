@@ -69,7 +69,7 @@ const ContinueSignUpPage = () => {
   }, [isLoaded, signUp, redirectUrl]);
 
   return (
-    <div className="mx-auto overflow-hidden w-[545px]">
+    <div className="mx-auto overflow-hidden md:min-w-[545px] px-2 md:px-5">
       <Form {...form}>
         <fieldset disabled={isSubmitting}>
           <form onSubmit={form.handleSubmit(handleSubmit)}>
