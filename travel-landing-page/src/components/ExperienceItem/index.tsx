@@ -24,7 +24,7 @@ const ExperienceItem = ({ title, label = "", isActive = false, onClick }: Experi
       <Button
         variant="link"
         className={clsx(
-          "capitalize w-fit h-fit text-sm rounded-none text-current md:text-base text-center lg:text-left border-b-1 pt-0 pb-0 pl-0 pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground hover:no-underline",
+          "capitalize w-fit h-fit text-sm rounded-none text-current md:text-base text-center lg:text-left border-b-1 pt-0 pb-0 pl-0 pr-0 sm:pr-2 lg:pr-5 border-transparent hover:text-accent-foreground hover:border-accent-foreground hover:no-underline",
           isActive && "text-accent-foreground border-b-accent-foreground"
         )}
         onClick={onClick}
