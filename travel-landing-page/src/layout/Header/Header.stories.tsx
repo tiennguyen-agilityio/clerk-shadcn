@@ -7,7 +7,7 @@ const meta: Meta<typeof Header> = {
   title: "Components/Header",
   component: Header,
   render: () => (
-    <ClerkProvider publishableKey="pk_test_mock">
+    <ClerkProvider publishableKey="pk_test_Y2xvc2luZy1nYXRvci0yOS5jbGVyay5hY2NvdW50cy5kZXYk">
       <div className="w-full h-25">
         <Header />
       </div>
