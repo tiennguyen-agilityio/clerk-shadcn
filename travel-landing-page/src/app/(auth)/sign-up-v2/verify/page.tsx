@@ -76,9 +76,9 @@ const VerifySignUpPageV2 = () => {
   }, [isLoaded, signUp, router, redirectUrl]);
 
   return (
-    <div className="mx-auto overflow-hidden md:min-w-[545px] px-2 md:px-5">
+    <div className="container mx-auto overflow-hidden px-2 md:px-5">
       <Form {...form}>
-        <fieldset disabled={isSubmitting}>
+        <fieldset disabled={isSubmitting} className="w-full mx-auto md:max-w-[545px]">
           <form onSubmit={form.handleSubmit(handleSubmit)}>
             <Heading as="h4" className="font-abel text-center">
               Verify email code

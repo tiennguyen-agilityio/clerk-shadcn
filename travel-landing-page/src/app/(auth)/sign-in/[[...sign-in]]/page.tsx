@@ -16,16 +16,16 @@ const SignInPage = () => {
   const handleToggleVisible = () => setIsPasswordVisible((prev) => !prev);
 
   return (
-    <div className="text-sm">
+    <div className="container text-sm">
       <SignIn.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (
             <SignIn.Step name="start">
-              <div className="flex-col justify-center align-middle items-center content-center md:min-w-[545px] px-5">
+              <div className="@container flex-col justify-center align-middle items-center content-center md:min-w-[545px] px-5">
                 <h1 className="font-abel text-center text-[70px]">Sign In</h1>
-                <div className="flex justify-between mt-12.5 h-12.5 gap-2.5">
+                <div className="flex flex-col @md:flex-row justify-between mt-12.5 gap-1.5 @md:gap-2.5">
                   <Clerk.Connection asChild name="facebook">
-                    <Button className="gap-2.5 flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300">
+                    <Button className="gap-2.5 @md:flex-1/2 bg-facebook hover:bg-facebook/75 transition-colors duration-300">
                       <FacebookIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:facebook">
@@ -41,7 +41,7 @@ const SignInPage = () => {
                     </Button>
                   </Clerk.Connection>
                   <Clerk.Connection asChild name="google">
-                    <Button className="gap-2.5 flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300">
+                    <Button className="gap-2.5 @md:flex-1/2 bg-google hover:bg-google/75 transition-colors duration-300">
                       <GoogleIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:google">
