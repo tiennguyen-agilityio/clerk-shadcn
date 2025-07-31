@@ -29,7 +29,14 @@ const SignInPage = () => {
                       <FacebookIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:facebook">
-                        {(isLoading) => (isLoading ? "Loading..." : "Sign in with Facebook")}
+                        {(isLoading) => (
+                          <>
+                            Sign in with Facebook
+                            {isLoading && (
+                              <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                            )}
+                          </>
+                        )}
                       </Clerk.Loading>
                     </Button>
                   </Clerk.Connection>
@@ -38,7 +45,14 @@ const SignInPage = () => {
                       <GoogleIcon />
                       <div className="border-l-[1px] h-5 border-foreground" />
                       <Clerk.Loading scope="provider:google">
-                        {(isLoading) => (isLoading ? "Loading..." : "Sign in with Google")}
+                        {(isLoading) => (
+                          <>
+                            Sign in with Google
+                            {isLoading && (
+                              <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                            )}
+                          </>
+                        )}
                       </Clerk.Loading>
                     </Button>
                   </Clerk.Connection>

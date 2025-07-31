@@ -6,6 +6,8 @@ import { useLoadMore } from "@/hooks/useLoadMore";
 
 import Button from "@/components/Button";
 import LocationCard from "@/components/LocationCard";
+import Loading from "@/components/Loading";
+import SkeletonLocationCard from "@/components/SkeletonLocationCard";
 
 const LocationsSection = () => {
   const {
@@ -28,10 +30,19 @@ const LocationsSection = () => {
         })}
       </div>
 
+      {isLoading && (
+        <div className="w-full mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[...Array(3)].map((_, i) => (
+            <SkeletonLocationCard key={i} />
+          ))}
+        </div>
+      )}
+
       {hasMore && (
         <div className="flex justify-center mt-25">
-          <Button className="w-37.5" onClick={onLoadMore}>
-            {isLoading ? "Loading..." : "Load More"}
+          <Button disabled={isLoading} className="w-37.5" onClick={onLoadMore}>
+            Load More
+            {isLoading && <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />}
           </Button>
         </div>
       )}
