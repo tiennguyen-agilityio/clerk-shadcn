@@ -37,9 +37,9 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
           <Logo className="w-auto hover:text-white-500 text-md md:text-xl" />
           <NavigationMenu list={NAV_BAR} path={pathname} />
         </div>
-        <div className="w-full flex justify-between items-center md:w-auto md:flex-end gap-2 md:gap-3 lg:gap-5">
+        <div className="w-full flex justify-between items-center md:w-auto md:flex-end lg:ml-5 gap-2 md:gap-3 lg:gap-5">
           <ModalToggleTheme />
-          <Button className="lg:ml-20 rounded-[20px] font-bold" size="sm">
+          <Button className="xl:ml-20 rounded-[20px] font-bold" size="sm">
             <BookmarkIcon />
             Reservations
           </Button>
