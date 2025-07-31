@@ -21,7 +21,7 @@ const SignInPage = () => {
         <Clerk.Loading>
           {(isGlobalLoading) => (
             <SignIn.Step name="start">
-              <div className="flex-col justify-center align-middle items-center content-center min-w-[545px]">
+              <div className="flex-col justify-center align-middle items-center content-center md:min-w-[545px] px-5">
                 <h1 className="font-abel text-center text-[70px]">Sign In</h1>
                 <div className="flex justify-between mt-12.5 h-12.5 gap-2.5">
                   <Clerk.Connection asChild name="facebook">

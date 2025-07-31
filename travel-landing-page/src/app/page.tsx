@@ -9,17 +9,20 @@ import {
   ServicesSection,
   StatisticsSection,
 } from "@/components/Home";
+import Layout from "@/layout";
 
 const Home = () => {
   return (
-    <div className="w-full overflow-hidden">
-      <HeroSection />
-      <CarouselSection />
-      <AboutSection />
-      <ServicesSection />
-      <StatisticsSection />
-      <VideoPlayer hasPlayed {...HOME_VIDEO} />
-    </div>
+    <Layout>
+      <div className="w-full overflow-hidden">
+        <HeroSection />
+        <CarouselSection />
+        <AboutSection />
+        <ServicesSection />
+        <StatisticsSection />
+        <VideoPlayer hasPlayed {...HOME_VIDEO} />
+      </div>
+    </Layout>
   );
 };
 

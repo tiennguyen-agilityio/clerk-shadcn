@@ -28,16 +28,18 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
   return (
     <header
       className={clsx(
-        "w-full absolute z-2",
+        "w-full absolute z-2 pb-5 md:pb-0",
         hasBorderBottom ? "border-b-1 border-border text-current" : "text-white"
       )}
     >
-      <div className="container flex items-center content-center mx-auto h-25 text-current">
-        <Logo className="w-auto hover:text-white-500 text-xl" />
-        <div className="flex ml-auto mr-0 items-center gap-2 md:gap-3 lg:gap-5">
+      <div className="container flex flex-col md:flex-row items-center content-center mx-auto h-25 my-5 text-current px-5">
+        <div className="w-full flex justify-between items-center">
+          <Logo className="w-auto hover:text-white-500 text-md md:text-xl" />
           <NavigationMenu list={NAV_BAR} path={pathname} />
+        </div>
+        <div className="w-full flex justify-between items-center md:w-auto md:flex-end gap-2 md:gap-3 lg:gap-5">
           <ModalToggleTheme />
-          <Button className="lg:ml-20 rounded-[20px] font-bold text-white" size="sm">
+          <Button className="lg:ml-20 rounded-[20px] font-bold" size="sm">
             <BookmarkIcon />
             Reservations
           </Button>
@@ -65,6 +67,17 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
             </ClerkLoaded>
           </div>
         </div>
+
+        {/* <div className="flex flex-col lg:flex-row ml-auto mr-0 items-center justify-center gap-2 md:gap-3 lg:gap-5">
+					<div className="flex justify-center items-center gap-2 md:gap-3 lg:gap-5">
+						<ModalToggleTheme />
+						<Button className="lg:ml-20 rounded-[20px] font-bold text-white" size="sm">
+							<BookmarkIcon />
+							Reservations
+						</Button>
+						<SearchIcon />
+					</div>
+        </div> */}
       </div>
     </header>
   );

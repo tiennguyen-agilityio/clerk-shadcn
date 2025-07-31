@@ -9,17 +9,17 @@ import VisaIcon from "@/components/Icons/VisaIcon";
 
 const SettingLanguage = () => {
   return (
-    <div className="container flex items-center mx-auto h-24 ">
-      <Logo className="text-teal-600 text-xl lg:text-2xl" />
-
-      <div className="flex gap-7.5 ml-auto mr-5">
-        <MPesaIcon />
-        <DiscoverIcon />
-        <VisaIcon />
-        <PaypalIcon />
-        <MasterCardIcon />
+    <div className="container flex flex-col md:flex-row justify-center items-center mx-auto py-10 gap-5 lg:h-24 ">
+      <div className="w-full flex flex-col md:flex-row justify-between items-center px-5">
+        <Logo className="text-teal-600 text-xl lg:text-2xl" />
+        <div className="flex justify-center items-center gap-7.5 flex-wrap">
+          <MPesaIcon />
+          <DiscoverIcon />
+          <VisaIcon />
+          <PaypalIcon />
+          <MasterCardIcon />
+        </div>
       </div>
-
       <div className="flex gap-2.5">
         <select className="border rounded px-2 py-1 text-[13px]">
           <option className="text-[13px]">English (United States)</option>

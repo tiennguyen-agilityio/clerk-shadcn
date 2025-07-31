@@ -143,15 +143,18 @@ const SignUpPageV2 = () => {
   }, []);
 
   return (
-    <div className="mx-auto overflow-hidden">
+    <div className="container mx-auto overflow-hidden px-2 md:px-5">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)}>
-          <fieldset disabled={isSubmitting || !!socialLoading}>
-            <div className="flex-col justify-center align-middle items-center content-center min-w-[545px]">
+          <fieldset
+            disabled={isSubmitting || !!socialLoading}
+            className="w-full mx-auto md:max-w-[545px]"
+          >
+            <div className="w-full flex-col justify-center items-center content-center">
               <Heading as="h1" className="font-abel text-center">
                 Create Account
               </Heading>
-              <div className="flex justify-between mt-12.5 h-12.5 gap-2.5">
+              <div className="flex justify-between mt-12.5 gap-1.5 md:gap-2.5">
                 <Button
                   type="button"
                   onClick={handleSignInWithFacebook}

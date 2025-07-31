@@ -9,7 +9,7 @@ const AboutSection = () => {
   const handleReadMore = () => {};
 
   return (
-    <section className="container mx-auto mt-24">
+    <section className="container mx-auto mt-24 px-5">
       <Heading as="h6" className="font-bold text-ring mb-5">
         ABOUT US
       </Heading>

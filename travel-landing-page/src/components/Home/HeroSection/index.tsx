@@ -17,10 +17,10 @@ const HeroSection = () => {
   const handleFindExperience = () => {};
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full min-h-100">
       <VideoPlayer hasPlayed iconPosition="bottom-left" {...HOME_VIDEO} />
-      <div className="absolute w-full top-10 md:top-15 lg:top-20 xl:top-34 z-1">
-        <div className="container mt-10 mx-auto h-100">
+      <div className="absolute w-full top-45 md:top-25 lg:top-20 xl:top-34 z-1">
+        <div className="container mt-10 mx-auto h-100 px-5">
           <div className="text-sm text-white">
             <p className="mb-5 text-shadow-md/20">Welcome to Travelsy</p>
             <Heading as="h1" className="text-shadow-md/20">
@@ -31,7 +31,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-16 md:h-20 lg:h-30">
-        <div className="container flex items-center mx-auto">
+        <div className="container flex items-center mx-auto px-5">
           <div className="h-full min-w-screen absolute right-100 bg-background z-1" />
           <div className="flex flex-1 align-center br-5 h-16 md:h-20 lg:h-30 z-30 bg-background">
             <Experiences data={EXPERIENCES} onItemClick={handleExperienceClick} />

@@ -6,7 +6,7 @@ exports[`VideoPlayer component should render correctly 1`] = `
     class="relative w-full min-w-full"
   >
     <video
-      class="w-full"
+      class="w-full object-cover h-140 md:h-190 lg:h-auto"
       poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
     >
       <source
@@ -46,7 +46,7 @@ exports[`VideoPlayer component should render with auto play 1`] = `
   >
     <video
       autoplay=""
-      class="w-full"
+      class="w-full object-cover h-140 md:h-190 lg:h-auto"
       poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
     >
       <source
@@ -65,7 +65,7 @@ exports[`VideoPlayer component should render with position icon bottom left 1`] 
   >
     <video
       autoplay=""
-      class="w-full"
+      class="w-full object-cover h-140 md:h-190 lg:h-auto"
       poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
     >
       <source
@@ -74,7 +74,7 @@ exports[`VideoPlayer component should render with position icon bottom left 1`] 
       />
     </video>
     <div
-      class="w-21.25 h-21.25 absolute p-3 rounded-full border border-accent z-40 bottom-[33%] left-[25%]"
+      class="w-21.25 h-21.25 absolute p-3 rounded-full border border-accent z-40 bottom-[23%] left-[35%] md:bottom-[33%] md:left-[25%]"
     >
       <button
         aria-label="Pause video"
@@ -120,7 +120,7 @@ exports[`VideoPlayer component should render with position icon bottom right 1`]
   >
     <video
       autoplay=""
-      class="w-full"
+      class="w-full object-cover h-140 md:h-190 lg:h-auto"
       poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
     >
       <source
@@ -175,7 +175,7 @@ exports[`VideoPlayer component should render with position icon top left 1`] = `
   >
     <video
       autoplay=""
-      class="w-full"
+      class="w-full object-cover h-140 md:h-190 lg:h-auto"
       poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
     >
       <source
@@ -230,7 +230,7 @@ exports[`VideoPlayer component should render with position icon top right 1`] = 
   >
     <video
       autoplay=""
-      class="w-full"
+      class="w-full object-cover h-140 md:h-190 lg:h-auto"
       poster="https://cdn.pixabay.com/video/2018/11/28/19609-303404131_tiny.jpg"
     >
       <source

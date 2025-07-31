@@ -7,9 +7,9 @@ import Button from "@/components/Button";
 
 const TopNav = () => {
   return (
-    <div className="container mx-auto py-8 sm:py-12 lg:py-25">
-      <div className="flex justify-between">
-        <div>
+    <div className="container mx-auto py-8 sm:py-12 lg:py-25 md:px-5">
+      <div className="flex flex-col md:flex-row justify-center md:justify-between md:flex-wrap lg:flex-nowrap lg:gap-5">
+        <div className="w-full md:flex-1/2 px-5 md:px-0 ld:w-auto">
           <h3 className="font-bold text-[13px] mb-3">Need Travelsy Help?</h3>
           <p className="mb-1 text-[13px]">Got Questions? Call us 24/7!</p>
           <p className="mb-1 text-[13px]">
@@ -49,7 +49,7 @@ const TopNav = () => {
         </div>
 
         {NAV_FOOTERS?.map(({ label = "", links = [] }, index) => (
-          <div key={index}>
+          <div key={index} className="w-full md:w-1/2 ld:w-auto px-5 md:px-0 mt-5 lg:mt-0">
             <h3 className="font-bold text-[13px] mb-3">{label}</h3>
             <div className="flex flex-col gap-2.5">
               {links?.map(({ text = "", href = "" }, currentIndex) => (
@@ -61,7 +61,7 @@ const TopNav = () => {
           </div>
         ))}
 
-        <div className="max-w-[355px]">
+        <div className="w-full md:w-1/2 lg:grow-1 lg:min-w-[355px] px-5 md:px-0 mt-5 lg:mt-0">
           <h3 className="font-bold text-[13px] mb-3">Mailing List</h3>
           <p className="text-xs mb-3">
             Sign up for our mailing list and get the latest offers and promotions straight in your

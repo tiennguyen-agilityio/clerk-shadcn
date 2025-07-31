@@ -35,11 +35,11 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="text-sm justify-center mx-auto ">
+    <div className="text-sm justify-center mx-auto px-2 md:px-5">
       <SignUp.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (
-            <div className="flex-col justify-center items-center content-center min-w-[545px]">
+            <div className="flex-col justify-center items-center content-center md:min-w-[545px]">
               <SignUp.Step name="start" className="w-full">
                 <Heading as="h4" className="font-abel text-center">
                   Create Account
