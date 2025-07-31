@@ -20,6 +20,8 @@ interface AlertDialogProps {
   textButton?: string;
   textCancel?: string;
   textAction?: string;
+  open?: boolean;
+  isLoading?: boolean;
   onOpenChange?: (open?: boolean) => void;
   onClickAction?: () => void;
   onClickCancel?: () => void;
@@ -28,30 +30,49 @@ interface AlertDialogProps {
 const AlertDialog = ({
   title,
   description = "",
-  textButton = "Confirm",
+  textButton = "",
   textCancel = "Cancel",
   textAction = "Continue",
+  open = false,
+  isLoading = false,
   onOpenChange,
   onClickAction,
   onClickCancel,
 }: AlertDialogProps) => {
   return (
-    <ShadCNAlertDialog onOpenChange={onOpenChange}>
-      <AlertDialogTrigger asChild className="p-0">
-        <Button data-testid="btn-confirm" variant="ghost" className="p-0 h-auto">
-          {textButton}
-        </Button>
-      </AlertDialogTrigger>
+    <ShadCNAlertDialog open={open} onOpenChange={onOpenChange}>
+      {textButton && (
+        <AlertDialogTrigger asChild className="p-0">
+          <Button
+            disabled={isLoading}
+            data-testid="btn-confirm"
+            variant="ghost"
+            className="p-0 h-auto"
+          >
+            {textButton}
+          </Button>
+        </AlertDialogTrigger>
+      )}
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
           {description && <AlertDialogDescription>{description}</AlertDialogDescription>}
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel data-testid="btn-cancel" onClick={onClickCancel} className="h-10">
+          <AlertDialogCancel
+            data-testid="btn-cancel"
+            disabled={isLoading}
+            onClick={onClickCancel}
+            className="h-10"
+          >
             {textCancel}
           </AlertDialogCancel>
-          <AlertDialogAction data-testid="btn-continue" onClick={onClickAction} className="h-10">
+          <AlertDialogAction
+            data-testid="btn-continue"
+            disabled={isLoading}
+            onClick={onClickAction}
+            className="h-10"
+          >
             {textAction}
           </AlertDialogAction>
         </AlertDialogFooter>

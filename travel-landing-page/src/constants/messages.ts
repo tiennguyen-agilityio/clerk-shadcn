@@ -12,4 +12,9 @@ export const ERROR_MESSAGES = {
   USERNAME_INVALID: "Username can only contain letters, numbers and - or _.",
   CODE_INVALID: "Verification code must contain only numbers.",
   VERIFICATION_INCOMPLETE: "Verification incomplete. Try again.",
+  SIGN_OUT_FAILED: "Logout failed. Something went wrong.",
+};
+
+export const SUCCESS_MESSAGES = {
+  SIGNED_OUT: "Signed out successfully",
 };
