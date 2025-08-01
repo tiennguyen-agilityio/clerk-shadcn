@@ -20,8 +20,8 @@ const SignInPage = () => {
       <SignIn.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (
-            <SignIn.Step name="start">
-              <div className="@container flex-col justify-center align-middle items-center content-center md:min-w-[545px] px-5">
+            <SignIn.Step name="start" className="@container">
+              <div className="container mx-auto flex-col justify-center align-middle items-center content-center w-[545px] px-5">
                 <h1 className="font-abel text-center text-[70px]">Sign In</h1>
                 <div className="flex flex-col @md:flex-row justify-between mt-12.5 gap-1.5 @md:gap-2.5">
                   <Clerk.Connection asChild name="facebook">

@@ -38,7 +38,7 @@ const SignUpPage = () => {
       <SignUp.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (
-            <div className="@container flex-col justify-center items-center content-center md:min-w-[545px]">
+            <div className="@container mx-auto flex-col justify-center items-center content-center max-w-[545px]">
               <SignUp.Step name="start" className="w-full">
                 <h1 className="font-abel text-center text-[70px]">Sign Up</h1>
 
