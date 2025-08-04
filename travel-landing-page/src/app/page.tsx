@@ -2,13 +2,11 @@ import React from "react";
 
 import { HOME_VIDEO } from "@/constants/video";
 import VideoPlayer from "@/components/VideoPlayer";
-import {
-  HeroSection,
-  CarouselSection,
-  AboutSection,
-  ServicesSection,
-  StatisticsSection,
-} from "@/components/Home";
+import HeroSection from "@/sections/HomeHeroSection";
+import CarouselSection from "@/sections/CarouselSection";
+import AboutSection from "@/sections/AboutSection";
+import ServicesSection from "@/sections/ServicesSection";
+import StatisticsSection from "@/sections/StatisticsSection";
 import Layout from "@/layout";
 
 const Home = () => {

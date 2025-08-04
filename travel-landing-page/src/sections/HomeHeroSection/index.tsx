@@ -11,7 +11,7 @@ import Heading from "@/components/Heading";
 import Button from "@/components/Button";
 import ArrowIcon from "@/components/Icons/ArrowIcon";
 
-const HeroSection = () => {
+const HomeHeroSection = () => {
   const handleExperienceClick = () => {};
 
   const handleFindExperience = () => {};
@@ -49,4 +49,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HomeHeroSection;
