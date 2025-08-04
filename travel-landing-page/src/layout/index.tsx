@@ -1,6 +1,11 @@
+"use client";
+
+import React, { ReactNode } from "react";
+
+import { useSessionWatcher } from "@/hooks/useSessionWatcher";
+
 import Footer from "./Footer";
 import Header from "./Header";
-import React, { ReactNode } from "react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,6 +13,7 @@ interface LayoutProps {
 }
 
 const Layout = ({ children, hasBorderBottomHeader = false }: LayoutProps) => {
+  useSessionWatcher();
   return (
     <div>
       <Header hasBorderBottom={hasBorderBottomHeader} />
