@@ -6,15 +6,17 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 // Types
-import { ContinueFormData } from "@/types/auth";
+import { VerifyFormData } from "@/types/auth";
 
 // Constants
 import { SCHEMA } from "@/constants/validation";
+import { ERROR_MESSAGES } from "@/constants/messages";
 
 // Components
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
+import Loading from "@/components/Loading";
 import {
   Form,
   FormControl,
@@ -24,14 +26,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
-const ContinueSignUpPage = () => {
+const VerifyForm = () => {
   const { signUp, isLoaded, setActive } = useSignUp();
-
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const form = useForm<ContinueFormData>({
-    defaultValues: { username: "" },
+  const form = useForm<VerifyFormData>({
+    defaultValues: { code: "" },
     mode: "onBlur",
   });
   const [errorMessage, setErrorMessage] = useState("");
@@ -40,20 +41,22 @@ const ContinueSignUpPage = () => {
   const isLoading = isSubmitting || !isLoaded;
   const redirectUrl = searchParams.get("redirect_url") || "/";
 
-  const handleSubmit = async (data: ContinueFormData) => {
+  const handleSubmit = async ({ code }: VerifyFormData) => {
     if (!isLoaded || !signUp) return;
+    setErrorMessage("");
 
     try {
-      const attempt = await signUp.update({
-        username: data.username,
-      });
+      const attempt = await signUp.attemptEmailAddressVerification({ code });
 
       if (attempt.status === "complete") {
-        await setActive({ session: signUp.createdSessionId });
-        router.push(redirectUrl || "/");
+        await setActive({ session: attempt.createdSessionId });
+        router.push(redirectUrl);
+        return;
       }
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "Failed to complete sign up.";
+
+      setErrorMessage(ERROR_MESSAGES.VERIFICATION_INCOMPLETE);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : ERROR_MESSAGES.VERIFICATION_INCOMPLETE;
       setErrorMessage(message);
     }
   };
@@ -64,30 +67,31 @@ const ContinueSignUpPage = () => {
 
   useEffect(() => {
     if (isLoaded && signUp && signUp.status === "complete") {
-      router.replace(redirectUrl || "/");
+      router.push(redirectUrl);
     }
-  }, [isLoaded, signUp, redirectUrl]);
+  }, [isLoaded, signUp, router, redirectUrl]);
 
   return (
-    <div className="w-full mx-auto overflow-hidden px-2 md:px-5">
+    <div className="container mx-auto overflow-hidden px-2 md:px-5">
       <Form {...form}>
         <fieldset disabled={isSubmitting} className="w-full mx-auto md:max-w-[545px]">
           <form onSubmit={form.handleSubmit(handleSubmit)}>
             <Heading as="h4" className="font-abel text-center">
-              Continue registration
+              Verify email code
             </Heading>
 
             <div className="w-full flex flex-col mt-12.5 gap-7.5">
               <FormField
                 control={form.control}
-                name="username"
-                rules={SCHEMA.userName}
+                name="code"
+                rules={SCHEMA.code}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel>Email code</FormLabel>
                     <FormControl>
                       <Input
                         {...field}
+                        type="number"
                         placeholder="Choose a username"
                         onChange={(e) => {
                           field.onChange(e);
@@ -102,8 +106,11 @@ const ContinueSignUpPage = () => {
 
               <div className="w-full">
                 {errorMessage && <p className="text-error text-center my-2">{errorMessage}</p>}
-                <Button className="text-sm w-full">
-                  {isLoading ? "Submitting..." : " Continue"}
+                <Button className="text-sm w-full" disabled={isLoading}>
+                  Verify
+                  {isLoading && (
+                    <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                  )}
                 </Button>
               </div>
 
@@ -126,4 +133,4 @@ const ContinueSignUpPage = () => {
   );
 };
 
-export default ContinueSignUpPage;
+export default VerifyForm;
