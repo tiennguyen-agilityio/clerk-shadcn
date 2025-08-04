@@ -1,14 +1,15 @@
+import { Suspense } from "react";
+
+// Constants
 import { HOME_VIDEO } from "@/constants/video";
 
+// Components
 import VideoPlayer from "@/components/VideoPlayer";
-import {
-  DiscoverSection,
-  FilterSection,
-  HeroSection,
-  LocationsSection,
-} from "@/components/CampingLocations";
-import { Suspense } from "react";
 import Loading from "@/components/Loading";
+import DiscoverSection from "@/sections/DiscoverSection";
+import FilterSection from "@/sections/FilterSection";
+import HeroSection from "@/sections/HeroSection";
+import LocationsSection from "@/sections/LocationsSection";
 
 const CampingLocationsPage = () => {
   return (
