@@ -3,7 +3,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { HOME_VIDEO } from "@/constants";
 
 import VideoPlayer from "..";
-import React from "react";
 
 describe("VideoPlayer component", () => {
   const props = {
@@ -44,32 +43,14 @@ describe("VideoPlayer component", () => {
     expect(container).toMatchSnapshot();
   });
 
+  it("should render correctly with iconClassName prop", () => {
+    const { container } = render(<VideoPlayer {...props} iconClassName="mx-auto" />);
+
+    expect(container).toMatchSnapshot();
+  });
+
   it("should render with auto play", () => {
     const { container } = render(<VideoPlayer {...HOME_VIDEO} autoPlay />);
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it("should render with position icon top left", () => {
-    const { container } = render(<VideoPlayer {...props} autoPlay iconPosition="top-left" />);
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it("should render with position icon top right", () => {
-    const { container } = render(<VideoPlayer {...props} autoPlay iconPosition="top-right" />);
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it("should render with position icon bottom left", () => {
-    const { container } = render(<VideoPlayer {...props} autoPlay iconPosition="bottom-left" />);
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it("should render with position icon bottom right", () => {
-    const { container } = render(<VideoPlayer {...props} autoPlay iconPosition="bottom-right" />);
 
     expect(container).toMatchSnapshot();
   });
