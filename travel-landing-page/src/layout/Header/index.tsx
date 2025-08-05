@@ -34,12 +34,12 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
   return (
     <header
       className={cn(
-        "w-full absolute z-2 pb-5 md:pb-0",
+        "w-full absolute z-2",
         hasBorderBottom ? "border-b-1 border-border text-current" : "text-white"
       )}
     >
-      <div className="container mx-auto h-25 my-5 text-current px-5">
-        <div className="hidden md:flex items-center content-center">
+      <div className="container mx-auto my-5 text-current px-5">
+        <div className="hidden h-25 md:flex items-center content-center">
           <div className="w-full flex justify-between items-center">
             <Logo className="w-auto hover:text-white-500 text-md md:text-xl" />
             <NavigationMenu list={NAV_BAR} path={pathname} />
@@ -75,7 +75,7 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
             </div>
           </div>
         </div>
-        <div className="flex md:hidden justify-between items-center ">
+        <div className="flex h-20 md:hidden justify-between items-center ">
           <Logo className="w-auto hover:text-white-500 text-md md:text-xl" />
           <Sheet>
             <SheetTrigger asChild>
