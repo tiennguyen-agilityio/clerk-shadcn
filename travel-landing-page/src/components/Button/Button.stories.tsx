@@ -19,7 +19,7 @@ export const Default: Story = {
 export const Secondary: Story = {
   args: {
     children: "Secondary",
-    variant: "destructive",
+    variant: "secondary",
   },
 };
 
