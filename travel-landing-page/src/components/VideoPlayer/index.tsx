@@ -43,10 +43,10 @@ const VideoPlayer = ({
   };
 
   return (
-    <div className="relative w-full h-140 md:min-h-160 lg:min-h-180">
+    <div className="relative w-full h-120 md:min-h-160 lg:min-h-180">
       <video
         ref={videoRef}
-        className="w-full object-cover h-140 md:min-h-160 lg:min-h-180"
+        className="w-full object-cover h-full md:min-h-160 lg:min-h-180"
         autoPlay={autoPlay}
         poster={poster}
         muted
