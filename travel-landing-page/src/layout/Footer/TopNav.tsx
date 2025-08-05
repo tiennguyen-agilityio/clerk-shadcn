@@ -4,6 +4,7 @@ import Link from "next/link";
 import { NAV_FOOTERS } from "@/constants/nav";
 
 import Button from "@/components/Button";
+import Input from "@/components/Input";
 
 const TopNav = () => {
   return (
@@ -68,14 +69,12 @@ const TopNav = () => {
             inbox.
           </p>
           <div className="flex">
-            <input
+            <Input
               type="email"
               placeholder="Your Email"
-              className="p-2 border border-border rounded-l-md w-full"
+              className="h-12.5 rounded-r-none rounded-br-none focus:outline-0 w-full"
             />
-            <Button className=" px-4 rounded-r-md rounded-tl-none rounded-bl-none">
-              Subscribe
-            </Button>
+            <Button className="px-4 rounded-r-md rounded-tl-none rounded-bl-none">Subscribe</Button>
           </div>
         </div>
       </div>
