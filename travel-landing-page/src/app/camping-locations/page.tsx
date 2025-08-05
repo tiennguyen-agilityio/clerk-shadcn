@@ -8,13 +8,26 @@ import VideoPlayer from "@/components/VideoPlayer";
 import Loading from "@/components/Loading";
 import DiscoverSection from "@/sections/DiscoverSection";
 import FilterSection from "@/sections/FilterSection";
-import HeroSection from "@/sections/HeroSection";
 import LocationsSection from "@/sections/LocationsSection";
 
 const CampingLocationsPage = () => {
   return (
     <div className="w-full overflow-hidden">
-      <HeroSection />
+      <VideoPlayer
+        autoPlay
+        {...HOME_VIDEO}
+        subTitle="Experience a Different Africa"
+        title={
+          <>
+            Last Minute Festive
+            <br />
+            Packages From
+            <br />
+            Superbreak
+          </>
+        }
+        description="Camping Locations"
+      />
       <FilterSection />
       <DiscoverSection />
       <VideoPlayer hasPlayed {...HOME_VIDEO} />
