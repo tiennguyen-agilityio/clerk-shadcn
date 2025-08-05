@@ -1,5 +1,15 @@
-import React from "react";
+"use client";
 
+import React from "react";
+import Image from "next/image";
+
+// Constants
+import { EMPTY_IMAGE } from "@/constants/images";
+
+// Utils
+import { generateImageToBase64 } from "@/utils/images";
+
+// Components
 import { Card, CardContent, CardHeader } from "../ui/card";
 import Heading from "../Heading";
 
@@ -14,14 +24,13 @@ interface CarouselItem {
 interface CarouselCardProps {
   item: CarouselItem;
   isActive?: boolean;
-  imageHeight?: number | string;
 }
 
-const CarouselCard = ({ item, isActive = false, imageHeight = "475px" }: CarouselCardProps) => {
+const CarouselCard = ({ item, isActive = false }: CarouselCardProps) => {
   const { title, description, image, alt } = item || {};
 
   return (
-    <Card className="p-0 border-none hover:shadow-none gap-12 bg-transparent">
+    <Card className="w-full p-0 border-none hover:shadow-none gap-12 bg-transparent">
       <CardHeader className="flex justify-between items-center h-25 p-0 gap-5">
         {isActive && (
           <>
@@ -32,14 +41,14 @@ const CarouselCard = ({ item, isActive = false, imageHeight = "475px" }: Carouse
           </>
         )}
       </CardHeader>
-      <CardContent
-        className="flex items-center justify-center p-0 mb-0 rounded-sm"
-        style={{ height: imageHeight }}
-      >
-        <img
-          src={image}
+      <CardContent className="relative flex items-center justify-center p-0 mb-0 bg-muted rounded-sm aspect-[4/3]">
+        <Image
+          src={image || EMPTY_IMAGE}
           alt={alt}
-          className="w-full h-full object-cover overflow-hidden rounded-sm"
+          placeholder="blur"
+          fill
+          blurDataURL={generateImageToBase64(200, 200)}
+          className="object-cover overflow-hidden rounded-sm"
         />
       </CardContent>
     </Card>

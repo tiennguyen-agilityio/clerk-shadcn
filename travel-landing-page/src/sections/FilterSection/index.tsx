@@ -1,10 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
+// Types
 import { Filter } from "@/types/common";
+
+// Constants
 import { LOCATIONS } from "@/mocks";
 
+// Components
 import Heading from "@/components/Heading";
 import FilterSection from "@/components/FilterSection";
 import LocationCard from "@/components/LocationCard";
@@ -41,7 +45,7 @@ const CampingLocationsPage = () => {
         </div>
         <div className="lg:col-span-2 h-auto">
           <Heading as="h4">Popular Locations</Heading>
-          <div className="w-full mt-10 md:mt-12 lg:mt-25 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="w-full mb-2 mt-10 md:mt-12 lg:mt-25 grid grid-cols-1 md:grid-cols-2 gap-5">
             {LOCATIONS.slice(0, 4).map((item, index) => {
               return (
                 <div key={item?.id || index} className="md:col-span-1">

@@ -1,9 +1,18 @@
 "use client";
 
+// Types
 import { LocationItem } from "@/types/location";
-import { fetchLocations } from "@/services/location";
+
+// Constants
+import { PAGE_SIZE } from "@/constants/common";
+
+// Hooks
 import { useLoadMore } from "@/hooks/useLoadMore";
 
+// Services
+import { fetchLocations } from "@/services/location";
+
+// Components
 import Button from "@/components/Button";
 import LocationCard from "@/components/LocationCard";
 import Loading from "@/components/Loading";
@@ -16,7 +25,7 @@ const LocationsSection = () => {
     isLoading,
     hasMore,
     error,
-  } = useLoadMore<LocationItem>({ fetcher: fetchLocations, limit: 3 });
+  } = useLoadMore<LocationItem>({ fetcher: fetchLocations, limit: PAGE_SIZE });
 
   return (
     <section className="container mx-auto my-10 md:my-20 lg:my-25 px-5">
@@ -28,15 +37,8 @@ const LocationsSection = () => {
             </div>
           );
         })}
+        {isLoading && [...Array(PAGE_SIZE)].map((_, i) => <SkeletonLocationCard key={i} />)}
       </div>
-
-      {isLoading && (
-        <div className="w-full mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {[...Array(3)].map((_, i) => (
-            <SkeletonLocationCard key={i} />
-          ))}
-        </div>
-      )}
 
       {hasMore && (
         <div className="flex justify-center mt-25">

@@ -19,8 +19,16 @@ type Story = StoryObj<typeof Avatar>;
 
 export const Default: Story = {
   args: {
+    src: "",
+    name: "",
+  },
+};
+
+export const HasImage: Story = {
+  args: {
     src: "https://github.com/shadcn.png",
     name: "TN",
+    isActive: true,
   },
 };
 
