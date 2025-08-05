@@ -6,13 +6,19 @@ exports[`LocationTile component should render correctly 1`] = `
     href=""
   >
     <div
-      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md w-full relative cursor-pointer overflow-hidden rounded-[3px] group p-0"
+      class="text-card-foreground flex flex-col gap-6 hover:shadow-md w-full h-full relative cursor-pointer bg-muted overflow-hidden rounded-[3px] group p-0"
       data-slot="card"
     >
       <img
         alt="Nairobi"
         class="h-auto w-full object-cover rounded-[3px] transform transition-transform duration-300 ease-in-out group-hover:scale-105"
-        src="https://i.ibb.co/hxbHQJf8/Rectangle.png"
+        data-nimg="fill"
+        decoding="async"
+        loading="lazy"
+        sizes="100vw"
+        src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=3840&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=3840&q=75 3840w"
+        style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
       />
       <div
         class="absolute bottom-0 left-0 right-0 px-7.5 pb-3 text-white text-shadow-lg/30"
@@ -49,13 +55,19 @@ exports[`LocationTile component should render correctly with link 1`] = `
     href="/link"
   >
     <div
-      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md w-full relative cursor-pointer overflow-hidden rounded-[3px] group p-0"
+      class="text-card-foreground flex flex-col gap-6 hover:shadow-md w-full h-full relative cursor-pointer bg-muted overflow-hidden rounded-[3px] group p-0"
       data-slot="card"
     >
       <img
         alt="Nairobi"
         class="h-auto w-full object-cover rounded-[3px] transform transition-transform duration-300 ease-in-out group-hover:scale-105"
-        src="https://i.ibb.co/hxbHQJf8/Rectangle.png"
+        data-nimg="fill"
+        decoding="async"
+        loading="lazy"
+        sizes="100vw"
+        src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=3840&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FhxbHQJf8%2FRectangle.png&w=3840&q=75 3840w"
+        style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
       />
       <div
         class="absolute bottom-0 left-0 right-0 px-7.5 pb-3 text-white text-shadow-lg/30"

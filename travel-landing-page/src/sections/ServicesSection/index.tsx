@@ -1,8 +1,12 @@
-import clsx from "clsx";
 import React from "react";
 
+// Constants
 import { LOCATION_TILES } from "@/mocks";
 
+// Utils
+import { cn } from "@/utils/styles";
+
+// Components
 import LocationTile from "@/components/LocationTile";
 import Heading from "@/components/Heading";
 
@@ -22,9 +26,9 @@ const ServicesSection = () => {
           {LOCATION_TILES.map((item, index) => (
             <div
               key={index}
-              className={clsx(
-                "rounded-[3px] overflow-hidden",
-                index === 0 && "sm:col-span-2 md:col-span-2"
+              className={cn(
+                "rounded-[3px] max-h-120 overflow-hidden aspect-square",
+                index === 0 && "sm:col-span-2 md:col-span-2 aspect-[2/1]"
               )}
             >
               <LocationTile key={index} {...item} link={`/${item.slug}`} />

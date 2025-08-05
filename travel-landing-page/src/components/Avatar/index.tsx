@@ -1,3 +1,4 @@
+import { DEFAULT_AVATAR } from "@/constants/images";
 import {
   Avatar as ShadCNAvatar,
   AvatarFallback,
@@ -15,8 +16,8 @@ interface AvatarProps extends ShadCNAvatarProps {
 const Avatar = ({ src, name, size, alt = "", isActive = false }: AvatarProps) => {
   return (
     <ShadCNAvatar size={size}>
-      <AvatarImage src={src} alt={alt} />
-      <AvatarFallback>{name?.slice(0, 2)}</AvatarFallback>
+      <AvatarImage src={src || (name ? "" : DEFAULT_AVATAR)} alt={alt} />
+      <AvatarFallback>{name}</AvatarFallback>
       {isActive && (
         <div className="absolute top-1 right-0 z-2 w-2.75 h-2.75 bg-white flex flex-col items-center justify-center rounded-full">
           <div className="w-2.25 h-2.25 bg-error rounded-full" />

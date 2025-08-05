@@ -1,17 +1,21 @@
 "use client";
 
-import React, { ComponentProps, useState, useEffect } from "react";
-import clsx from "clsx";
+import { ComponentProps, useState, useEffect } from "react";
 
+// Types
 import { CarouselItem } from "@/types/carousel";
 
+// Utils
+import { cn } from "@/utils/styles";
+
+// Components
 import {
   Carousel as ShadCNCarousel,
   CarouselContent,
   CarouselItem as ShadCNCarouselItem,
   CarouselApi,
   CarouselPagination,
-} from "@/components/ui/carousel";
+} from "../ui/carousel";
 import CarouselCard from "./CarouselCard";
 
 interface CarouselProps extends ComponentProps<"div"> {
@@ -42,13 +46,13 @@ const Carousel = ({ list, className = "" }: CarouselProps) => {
       }}
       setApi={setApi}
       orientation="horizontal"
-      className={clsx("h-full max-h-xs", className)}
+      className={cn("h-full max-h-xs", className)}
     >
       <CarouselContent className="flex gap-0 mb-4">
         {list.map((item, index) => {
           const isActive = index + 1 === current;
           return (
-            <ShadCNCarouselItem key={index} className="flex flex-col md:basis-3/4">
+            <ShadCNCarouselItem key={index} className="flex flex-col w-full md:basis-3/4">
               <CarouselCard item={item} isActive={isActive} />
             </ShadCNCarouselItem>
           );

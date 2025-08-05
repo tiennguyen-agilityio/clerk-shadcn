@@ -7,11 +7,11 @@ exports[`LocationCard component should render correctly 1`] = `
     href=""
   >
     <div
-      class="bg-card text-card-foreground gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full h-full p-0 flex flex-row md:flex-col justify-between"
+      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full h-full p-0"
       data-slot="card"
     >
       <div
-        class="@container/card-header auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 block w-1/2 md:w-full relative p-0 grow-1 bg-muted overflow-hidden"
+        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 w-full relative p-0 grow-1 bg-muted overflow-hidden min-h-[30px] aspect-square"
         data-slot="card-header"
       >
         <div
@@ -23,11 +23,17 @@ exports[`LocationCard component should render correctly 1`] = `
         <img
           alt="Coffee Farm"
           class="object-cover h-full w-full transform transition-transform duration-300 ease-in-out group-hover:scale-105"
-          src="https://i.ibb.co/1JR5vmjd/Rectangle-Copy-21.png"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F1JR5vmjd%2FRectangle-Copy-21.png&w=3840&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F1JR5vmjd%2FRectangle-Copy-21.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F1JR5vmjd%2FRectangle-Copy-21.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F1JR5vmjd%2FRectangle-Copy-21.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F1JR5vmjd%2FRectangle-Copy-21.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F1JR5vmjd%2FRectangle-Copy-21.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F1JR5vmjd%2FRectangle-Copy-21.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F1JR5vmjd%2FRectangle-Copy-21.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F1JR5vmjd%2FRectangle-Copy-21.png&w=3840&q=75 3840w"
+          style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
         />
       </div>
       <div
-        class="w-1/2 md:w-full px-7.5 pt-4 mb-0 pb-6"
+        class="px-7.5 pt-4 mb-0 pb-6"
         data-slot="card-content"
       >
         <p
@@ -104,11 +110,11 @@ exports[`LocationCard component should render with default value 1`] = `
     href=""
   >
     <div
-      class="bg-card text-card-foreground gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full h-full p-0 flex flex-row md:flex-col justify-between"
+      class="bg-card text-card-foreground flex flex-col gap-6 hover:shadow-md rounded-b-sm overflow-hidden w-full h-full p-0"
       data-slot="card"
     >
       <div
-        class="@container/card-header auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 block w-1/2 md:w-full relative p-0 grow-1 bg-muted overflow-hidden"
+        class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 w-full relative p-0 grow-1 bg-muted overflow-hidden min-h-[30px] aspect-square"
         data-slot="card-header"
       >
         <div
@@ -118,10 +124,17 @@ exports[`LocationCard component should render with default value 1`] = `
         <img
           alt=""
           class="object-cover h-full w-full transform transition-transform duration-300 ease-in-out group-hover:scale-105"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=%2Fimages%2Fempty-image.webp&w=3840&q=75"
+          srcset="/_next/image?url=%2Fimages%2Fempty-image.webp&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fempty-image.webp&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fempty-image.webp&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fempty-image.webp&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fempty-image.webp&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fempty-image.webp&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fempty-image.webp&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fempty-image.webp&w=3840&q=75 3840w"
+          style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
         />
       </div>
       <div
-        class="w-1/2 md:w-full px-7.5 pt-4 mb-0 pb-6"
+        class="px-7.5 pt-4 mb-0 pb-6"
         data-slot="card-content"
       >
         <p

@@ -1,4 +1,12 @@
-import React from "react";
+"use client";
+
+import Image from "next/image";
+
+// Constants
+import { DEFAULT_AVATAR } from "@/constants/images";
+
+// Utils
+import { generateImageToBase64 } from "@/utils/images";
 
 interface TestimonialItemProps {
   title: string;
@@ -18,7 +26,16 @@ const TestimonialItem = ({
       <p className="font-abel text-base line-clamp-2">{title}</p>
       <p className="text-sm mt-3.5 line-clamp-7">{descriptions}</p>
       <div className="flex items-center gap-2.5 mt-auto mb-0">
-        <img className="w-10 h-10 rounded-full" src={authorAvatar} />
+        <div className="relative w-10 h-10 overflow-hidden rounded-full">
+          <Image
+            src={authorAvatar || DEFAULT_AVATAR}
+            alt={authorName}
+            placeholder="blur"
+            fill
+            blurDataURL={generateImageToBase64(40, 40)}
+            className="object-cover "
+          />
+        </div>
         <span className="text-sm line-clamp-1">{authorName}</span>
       </div>
     </div>
