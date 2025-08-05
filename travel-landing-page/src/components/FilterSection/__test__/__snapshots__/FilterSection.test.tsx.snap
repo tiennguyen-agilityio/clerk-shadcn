@@ -15,7 +15,7 @@ exports[`FilterSection component should render correctly 1`] = `
     >
       <div>
         <label
-          class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-4"
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-4"
           data-slot="label"
         >
           Budget Per Night
@@ -62,7 +62,7 @@ exports[`FilterSection component should render correctly 1`] = `
         class="mt-1"
       >
         <label
-          class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
           data-slot="label"
         >
           Location
@@ -139,7 +139,7 @@ exports[`FilterSection component should render correctly 1`] = `
         class="mt-1"
       >
         <label
-          class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
           data-slot="label"
         >
           Category
@@ -232,7 +232,7 @@ exports[`FilterSection component should render correctly with default value loca
     >
       <div>
         <label
-          class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-4"
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-4"
           data-slot="label"
         >
           Budget Per Night
@@ -279,7 +279,7 @@ exports[`FilterSection component should render correctly with default value loca
         class="mt-1"
       >
         <label
-          class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
           data-slot="label"
         >
           Location
@@ -356,7 +356,7 @@ exports[`FilterSection component should render correctly with default value loca
         class="mt-1"
       >
         <label
-          class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+          class="flex items-center gap-2 text-sm leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
           data-slot="label"
         >
           Category

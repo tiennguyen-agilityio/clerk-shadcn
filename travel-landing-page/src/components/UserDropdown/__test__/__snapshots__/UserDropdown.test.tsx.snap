@@ -5,7 +5,7 @@ exports[`UserDropdown component should render correctly 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="menu"
-    class="flex items-center gap-3.5 w-fit"
+    class="cursor-pointer flex items-center gap-3.5 w-fit"
     data-slot="dropdown-menu-trigger"
     data-state="closed"
     data-testid="btn-dropdown"
@@ -52,7 +52,7 @@ exports[`UserDropdown component should render with default values when user is n
   <div
     aria-expanded="false"
     aria-haspopup="menu"
-    class="flex items-center gap-3.5 w-fit"
+    class="cursor-pointer flex items-center gap-3.5 w-fit"
     data-slot="dropdown-menu-trigger"
     data-state="closed"
     data-testid="btn-dropdown"

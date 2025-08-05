@@ -153,7 +153,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
-        "min-w-0 shrink-0 grow-0 basis-full",
+        "min-w-0 shrink-0 grow-0 basis-ful cursor-pointer",
         orientation === "horizontal" ? "pl-4" : "pt-4",
         className
       )}
@@ -241,7 +241,7 @@ function CarouselPagination({ className, ...props }: React.ComponentProps<"div">
           <button
             key={i}
             className={cn(
-              "h-2.5 rounded-full transition-all duration-300 ease-in-out",
+              "h-2.5 rounded-full transition-all duration-300 ease-in-out cursor-pointer",
               i === activeIndex ? "w-5.5 bg-chart-1" : "w-2.5 bg-ring",
               className
             )}
