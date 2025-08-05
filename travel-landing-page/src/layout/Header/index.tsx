@@ -67,17 +67,6 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
             </ClerkLoaded>
           </div>
         </div>
-
-        {/* <div className="flex flex-col lg:flex-row ml-auto mr-0 items-center justify-center gap-2 md:gap-3 lg:gap-5">
-					<div className="flex justify-center items-center gap-2 md:gap-3 lg:gap-5">
-						<ModalToggleTheme />
-						<Button className="lg:ml-20 rounded-[20px] font-bold text-white" size="sm">
-							<BookmarkIcon />
-							Reservations
-						</Button>
-						<SearchIcon />
-					</div>
-        </div> */}
       </div>
     </header>
   );

@@ -65,7 +65,7 @@ const UserDropdown = () => {
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
+        <DropdownMenuTrigger asChild className="cursor-pointer">
           <div data-testid="btn-dropdown" className="flex items-center gap-3.5 w-fit">
             <Avatar src={imageUrl || ""} name={displayName} isActive />
             <ChevronIcon direction={DIRECTION.DOWN} />
@@ -78,7 +78,7 @@ const UserDropdown = () => {
               data-testid="dropdown-menu-item"
               key={index}
               className={clsx(
-                "flex flex-col justify-star items-start px-5 py-2.5 hover:rounded-none font-primary",
+                "flex flex-col justify-star items-start px-5 py-2.5 hover:rounded-none font-primary cursor-pointer",
                 index < USER_DROPDOWNS_LENGTH - 1 && "border-b-[1px] rounded-none"
               )}
               onClick={() => handleClick(href, isSignOut)}
