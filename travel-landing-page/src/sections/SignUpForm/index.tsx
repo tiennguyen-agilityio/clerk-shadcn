@@ -6,6 +6,9 @@ import * as SignUp from "@clerk/elements/sign-up";
 // Constants
 import { DAYS, MONTHS, YEARS } from "@/constants";
 
+// Hooks
+import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";
+
 // Components
 import Button from "@/components/Button";
 import Loading from "@/components/Loading";
@@ -16,6 +19,8 @@ import SocialButtons from "../SocialButtons";
 import ClerkField from "../ClerkField";
 
 const SignUpForm = () => {
+  useCleanClerkUrl();
+
   return (
     <div className="container text-sm justify-center mx-auto px-2 md:px-5">
       <SignUp.Root fallback={<Loading />}>

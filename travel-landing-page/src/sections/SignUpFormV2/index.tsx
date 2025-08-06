@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSignUp } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -14,9 +14,13 @@ import { ERROR_MESSAGES } from "@/constants/messages";
 import { DAYS, MONTHS, YEARS } from "@/constants/common";
 import { ROUTES } from "@/constants";
 
+// Hooks
+import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";
+
 // Components
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import Divider from "@/components/Divider";
 import Heading from "@/components/Heading";
 import Loading from "@/components/Loading";
 import Checkbox from "@/components/Checkbox";
@@ -32,6 +36,7 @@ import Select from "@/components/Select";
 import SocialButtonsV2 from "../SocialButtonsV2";
 
 const SignUpFormV2 = () => {
+  const { redirectUrl } = useCleanClerkUrl();
   const { isLoaded, signUp, setActive } = useSignUp();
   const router = useRouter();
 
@@ -50,7 +55,6 @@ const SignUpFormV2 = () => {
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [redirectUrl, setRedirectUrl] = useState<string>("");
 
   const { isSubmitting } = form.formState;
 
@@ -80,7 +84,11 @@ const SignUpFormV2 = () => {
           strategy: "email_code",
         });
 
-        router.push(`${ROUTES.SIGN_UP_VERIFY}?redirect_url=${encodeURIComponent(redirectUrl)}`);
+        const url = redirectUrl
+          ? `${ROUTES.SIGN_UP_VERIFY}?redirect_url=${encodeURIComponent(redirectUrl)}`
+          : ROUTES.SIGN_UP_VERIFY;
+
+        router.push(url);
       } else if (attempt.status === "complete") {
         await setActive({ session: attempt.createdSessionId });
         router.push(redirectUrl || "/");
@@ -94,21 +102,6 @@ const SignUpFormV2 = () => {
   const handleGoToSignIn = () => {
     router.push(ROUTES.SIGN_IN);
   };
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hash = window.location.hash;
-      const params = new URLSearchParams(hash.slice(2));
-
-      const redirect = params.get("redirect_url") || "";
-
-      if (redirect) {
-        const decoded = decodeURIComponent(redirect);
-        const url = new URL(decoded);
-        setRedirectUrl(url.pathname);
-      }
-    }
-  }, []);
 
   return (
     <div className="container mx-auto overflow-hidden px-2 md:px-5">
@@ -124,12 +117,9 @@ const SignUpFormV2 = () => {
               </Heading>
 
               <SocialButtonsV2 />
+              <Divider text="OR" className="my-7.5" />
               <div className="flex flex-col gap-7.5">
-                <div className="flex flex-col justify-center items-center h-10 relative pt-5">
-                  <div className="h-[1px] bg-input absolute z-1 w-full" />
-                  <span className="flex items-center h-2.5 px-3 bg-background z-2">OR</span>
-                </div>
-                <div className="flex flex-col md:flex-row gap-5">
+                <div className="flex flex-col items-start md:flex-row gap-5">
                   <FormField
                     control={form.control}
                     name="firstName"

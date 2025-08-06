@@ -3,11 +3,10 @@
 import { useCallback, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ClerkLoaded, SignedIn, SignedOut } from "@clerk/nextjs";
+import { ClerkLoaded, SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 
 // Constants
 import { NAV_BAR } from "@/constants/nav";
-import { ROUTES } from "@/constants/routes";
 
 // Utils
 import { cn } from "@/utils/styles";
@@ -71,26 +70,28 @@ const MiniHeader = () => {
 
           <ClerkLoaded>
             <SignedOut>
-              <Link
-                href={ROUTES.SIGN_IN}
-                onClick={handleCloseSheet}
-                className={cn(
-                  "items-center font-bold rounded-sm p-2 text-sm hover:text-accent-foreground",
-                  isActiveSignIn && "text-primary"
-                )}
-              >
-                Sign In
-              </Link>
-              <Link
-                href={ROUTES.SIGN_UP}
-                onClick={handleCloseSheet}
-                className={cn(
-                  "items-center font-bold rounded-sm p-2 text-sm hover:text-accent-foreground",
-                  isActiveSignUp && "text-primary"
-                )}
-              >
-                Sign Up
-              </Link>
+              <div className="flex flex-col items-center font-bold text-[13px]">
+                <SignInButton>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={handleCloseSheet}
+                    className={cn("p-0 hover:bg-transparent ", isActiveSignIn && "text-primary")}
+                  >
+                    Sign In
+                  </Button>
+                </SignInButton>
+                <SignUpButton>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={handleCloseSheet}
+                    className={cn("p-0 hover:bg-transparent ", isActiveSignUp && "text-primary")}
+                  >
+                    Sign Up
+                  </Button>
+                </SignUpButton>
+              </div>
             </SignedOut>
             <SignedIn>
               <div className="my-2">

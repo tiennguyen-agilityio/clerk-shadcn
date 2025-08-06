@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSignIn } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -13,9 +13,13 @@ import { SCHEMA } from "@/constants/validation";
 import { ERROR_MESSAGES } from "@/constants/messages";
 import { ROUTES } from "@/constants/routes";
 
+// Hooks
+import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";
+
 // Components
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import Divider from "@/components/Divider";
 import Loading from "@/components/Loading";
 import Heading from "@/components/Heading";
 import Checkbox from "@/components/Checkbox";
@@ -30,6 +34,7 @@ import {
 import SocialButtonsV2 from "../SocialButtonsV2";
 
 const SignInFormV2 = () => {
+  const { redirectUrl } = useCleanClerkUrl();
   const { isLoaded, signIn, setActive } = useSignIn();
   const router = useRouter();
 
@@ -43,7 +48,6 @@ const SignInFormV2 = () => {
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [redirectUrl, setRedirectUrl] = useState<string>("");
 
   const { isSubmitting } = form.formState;
 
@@ -74,21 +78,6 @@ const SignInFormV2 = () => {
     router.push(ROUTES.SIGN_UP);
   };
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hash = window.location.hash;
-      const params = new URLSearchParams(hash.slice(2));
-
-      const redirect = params.get("redirect_url") || "";
-
-      if (redirect) {
-        const decoded = decodeURIComponent(redirect);
-        const url = new URL(decoded);
-        setRedirectUrl(url.pathname);
-      }
-    }
-  }, []);
-
   return (
     <div className="container mx-auto overflow-hidden px-2 md:px-5">
       <Form {...form}>
@@ -99,12 +88,8 @@ const SignInFormV2 = () => {
                 Sign In
               </Heading>
               <SocialButtonsV2 isSignIn />
+              <Divider text="OR" className="my-7.5" />
               <div className="flex flex-col gap-7.5">
-                <div className="flex flex-col justify-center items-center h-10 relative pt-5">
-                  <div className="h-[1px] bg-input absolute z-1 w-full" />
-                  <span className="flex items-center h-2.5 px-3 bg-background z-2">OR</span>
-                </div>
-
                 <FormField
                   control={form.control}
                   name="email"

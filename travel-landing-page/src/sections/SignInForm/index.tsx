@@ -3,15 +3,20 @@
 import * as SignIn from "@clerk/elements/sign-in";
 import * as Clerk from "@clerk/elements/common";
 
+// Hooks
+import { useCleanClerkUrl } from "@/hooks/useCleanClerkUrl";
+
+// Components
 import Button from "@/components/Button";
 import Checkbox from "@/components/Checkbox";
 import Loading from "@/components/Loading";
 import Divider from "@/components/Divider";
-
 import SocialButtons from "../SocialButtons";
 import ClerkField from "../ClerkField";
 
 const SignInForm = () => {
+  useCleanClerkUrl();
+
   return (
     <div className="container text-sm">
       <SignIn.Root fallback={<Loading />}>
