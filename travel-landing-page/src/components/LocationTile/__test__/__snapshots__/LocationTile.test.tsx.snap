@@ -33,7 +33,7 @@ exports[`LocationTile component should render correctly 1`] = `
           class="mt-1"
         >
           <span
-            class="text-2xl "
+            class="text-2xl"
           >
             23
           </span>
@@ -82,7 +82,7 @@ exports[`LocationTile component should render correctly with link 1`] = `
           class="mt-1"
         >
           <span
-            class="text-2xl "
+            class="text-2xl"
           >
             0
           </span>

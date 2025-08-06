@@ -3,7 +3,7 @@
 exports[`Heading component renders with h2 1`] = `
 <div>
   <h2
-    class="text-3xl md:text-4xl lg:text-[70px] lg:leading-[95px]"
+    class="text-3xl md:text-4xl lg:text-[70px] lg:leading-[80px]"
   >
     Heading 2
   </h2>
@@ -23,7 +23,7 @@ exports[`Heading component renders with h3 1`] = `
 exports[`Heading component renders with h4 1`] = `
 <div>
   <h4
-    class="text-xl md:text-2xl lg:text-[50px] leading-[55px]"
+    class="text-xl md:text-2xl lg:text-[50px] lg:leading-[55px]"
   >
     Heading 4
   </h4>

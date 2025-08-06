@@ -42,7 +42,7 @@ const Testimonials = () => {
 
         <div className="flex flex-col w-full md:flex-row lg:w-2/3 justify-between gap-5">
           {TESTIMONIALS.map((item, index) => (
-            <div key={item.id || index} className="flex-col w-full md:w-1/2 ">
+            <div key={item.id || index} className="flex-col w-full md:w-1/2">
               <TestimonialItem {...item} />
             </div>
           ))}
