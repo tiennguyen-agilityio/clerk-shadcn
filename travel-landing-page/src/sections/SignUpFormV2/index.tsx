@@ -12,6 +12,7 @@ import { SignUpFormData } from "@/types/auth";
 import { SCHEMA } from "@/constants/validation";
 import { ERROR_MESSAGES } from "@/constants/messages";
 import { DAYS, MONTHS, YEARS } from "@/constants/common";
+import { ROUTES } from "@/constants";
 
 // Components
 import Input from "@/components/Input";
@@ -79,7 +80,7 @@ const SignUpFormV2 = () => {
           strategy: "email_code",
         });
 
-        router.push(`/sign-up-v2/verify?redirect_url=${encodeURIComponent(redirectUrl)}`);
+        router.push(`${ROUTES.SIGN_UP_VERIFY}?redirect_url=${encodeURIComponent(redirectUrl)}`);
       } else if (attempt.status === "complete") {
         await setActive({ session: attempt.createdSessionId });
         router.push(redirectUrl || "/");
@@ -91,7 +92,7 @@ const SignUpFormV2 = () => {
   };
 
   const handleGoToSignIn = () => {
-    router.push("/sign-in-v2");
+    router.push(ROUTES.SIGN_IN);
   };
 
   useEffect(() => {
