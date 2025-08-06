@@ -2,8 +2,6 @@
 
 import React, { ReactNode } from "react";
 
-import { useSessionWatcher } from "@/hooks/useSessionWatcher";
-
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -13,7 +11,6 @@ interface LayoutProps {
 }
 
 const Layout = ({ children, hasBorderBottomHeader = false }: LayoutProps) => {
-  useSessionWatcher();
   return (
     <div>
       <Header hasBorderBottom={hasBorderBottomHeader} />

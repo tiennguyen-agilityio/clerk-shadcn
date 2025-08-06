@@ -10,10 +10,11 @@ import { toast } from "sonner";
 import { DIRECTION } from "@/types/svg";
 
 // Constants
+import { LOCAL_STORAGE_KEYS } from "@/constants/common";
 import { USER_DROPDOWNS, USER_DROPDOWNS_LENGTH } from "@/constants/nav";
 import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@/constants/messages";
 
-// COmponents
+// Components
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -50,6 +51,7 @@ const UserDropdown = () => {
 
   const handleSignOut = async () => {
     setIsLoading(true);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.MANUAL_SIGN_OUT, "true");
     await signOut({ redirectUrl: pathname })
       .then(() => {
         toast.success(SUCCESS_MESSAGES.SIGNED_OUT);

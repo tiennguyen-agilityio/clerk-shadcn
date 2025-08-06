@@ -121,3 +121,7 @@ export const CATEGORIES = [
     value: "hot springs",
   },
 ];
+
+export const LOCAL_STORAGE_KEYS = {
+  MANUAL_SIGN_OUT: "manualSignOut",
+};

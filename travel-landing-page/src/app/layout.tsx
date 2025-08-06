@@ -6,6 +6,7 @@ import "@/themes/theme.css";
 import { LOCALIZATION } from "@/constants/localization";
 import { abel } from "@/config/fonts";
 import { Toaster } from "@/components/ui/sonner";
+import SessionWatcher from "@/components/SessionWatcher";
 
 import { ThemeProvider } from "@/themes/ThemeProvider";
 
@@ -20,22 +21,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider
-      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-      localization={LOCALIZATION}
-      appearance={{
-        cssLayerName: "clerk",
-      }}
-      afterSignOutUrl="/sign-in"
-    >
-      <html lang="en" suppressHydrationWarning>
-        <Head>
-          <link rel="icon" href="/favicon.ico" type="image/png" />
-          <meta name="theme-color" content="#ffffff" />
-          <meta name="description" content="Travel Landing Page" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        </Head>
-        <body className={`${abel.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <Head>
+        <link rel="icon" href="/favicon.ico" type="image/png" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="description" content="Travel Landing Page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <body className={`${abel.variable} antialiased`}>
+        <ClerkProvider
+          publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+          localization={LOCALIZATION}
+          appearance={{
+            cssLayerName: "clerk",
+          }}
+          afterSignOutUrl="/sign-in"
+        >
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
@@ -43,10 +44,11 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <SessionWatcher />
             <Toaster theme="light" closeButton richColors />
           </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
