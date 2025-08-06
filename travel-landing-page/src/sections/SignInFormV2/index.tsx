@@ -11,6 +11,7 @@ import { LoginFormData } from "@/types/auth";
 // Constants
 import { SCHEMA } from "@/constants/validation";
 import { ERROR_MESSAGES } from "@/constants/messages";
+import { ROUTES } from "@/constants/routes";
 
 // Components
 import Input from "@/components/Input";
@@ -70,7 +71,7 @@ const SignInFormV2 = () => {
   };
 
   const handleGoToSignUp = () => {
-    router.push("/sign-up-v2");
+    router.push(ROUTES.SIGN_UP);
   };
 
   useEffect(() => {
@@ -94,7 +95,7 @@ const SignInFormV2 = () => {
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <fieldset disabled={isSubmitting} className="@container w-full mx-auto md:max-w-[545px]">
             <div className="flex-col justify-center align-middle items-center content-center">
-              <Heading as="h2" className="font-abel text-center">
+              <Heading as="h1" className="font-abel text-center">
                 Sign In
               </Heading>
               <SocialButtonsV2 isSignIn />
