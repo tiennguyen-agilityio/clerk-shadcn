@@ -2,12 +2,10 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import { ClerkLoaded, SignedIn, SignedOut } from "@clerk/nextjs";
-import Link from "next/link";
+import { ClerkLoaded, SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 
 // Constants
 import { NAV_BAR } from "@/constants/nav";
-import { ROUTES } from "@/constants/routes";
 
 // Utils
 import { cn } from "@/utils/styles";
@@ -55,25 +53,31 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
               <ClerkLoaded>
                 <SignedOut>
                   <div className="flex items-center font-bold text-[13px]">
-                    <Link
-                      href={ROUTES.SIGN_IN}
-                      className={cn(
-                        "items-center font-bold rounded-sm text-sm hover:text-accent-foreground",
-                        isActiveSignIn && "text-primary"
-                      )}
-                    >
-                      Sign In
-                    </Link>
+                    <SignInButton>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        className={cn(
+                          "p-0 hover:bg-transparent ",
+                          isActiveSignIn && "text-primary"
+                        )}
+                      >
+                        Sign In
+                      </Button>
+                    </SignInButton>
                     /
-                    <Link
-                      href={ROUTES.SIGN_UP}
-                      className={cn(
-                        "items-center font-bold rounded-sm text-sm hover:text-accent-foreground",
-                        isActiveSignUp && "text-primary"
-                      )}
-                    >
-                      Sign Up
-                    </Link>
+                    <SignUpButton>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        className={cn(
+                          "p-0 hover:bg-transparent ",
+                          isActiveSignUp && "text-primary"
+                        )}
+                      >
+                        Sign Up
+                      </Button>
+                    </SignUpButton>
                   </div>
                 </SignedOut>
                 <SignedIn>
