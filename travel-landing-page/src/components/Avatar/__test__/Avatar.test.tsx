@@ -12,6 +12,11 @@ describe("Avatar component", () => {
     expect(container).toMatchSnapshot();
   });
 
+  it("should render correctly with default image", () => {
+    const { container } = render(<Avatar src="" name="" />);
+    expect(container).toMatchSnapshot();
+  });
+
   it("should render correctly has new activity", () => {
     const { container } = render(<Avatar {...props} isActive alt="Avatar Image" />);
     expect(container).toMatchSnapshot();

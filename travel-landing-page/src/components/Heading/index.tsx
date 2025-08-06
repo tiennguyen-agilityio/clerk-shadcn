@@ -11,9 +11,9 @@ interface HeadingProps {
 
 const headingStyles: Record<HeadingLevel, string> = {
   h1: "text-4xl md:text-5xl lg:text-[80px] lg:leading-[95px]",
-  h2: "text-3xl md:text-4xl lg:text-[70px] lg:leading-[95px]",
+  h2: "text-3xl md:text-4xl lg:text-[70px] lg:leading-[80px]",
   h3: "text-2xl md:text-3xl lg:text-[60px]",
-  h4: "text-xl md:text-2xl lg:text-[50px] leading-[55px]",
+  h4: "text-xl md:text-2xl lg:text-[50px] lg:leading-[55px]",
   h5: "text-lg",
   h6: "text-sm",
 };

@@ -39,6 +39,20 @@ exports[`Avatar component should render correctly has new activity 1`] = `
 </div>
 `;
 
+exports[`Avatar component should render correctly with default image 1`] = `
+<div>
+  <span
+    class="relative flex shrink-0 rounded-full size-10"
+    data-slot="avatar"
+  >
+    <span
+      class="bg-muted flex size-full items-center justify-center rounded-full"
+      data-slot="avatar-fallback"
+    />
+  </span>
+</div>
+`;
+
 exports[`Avatar component should render correctly with fallback 1`] = `
 <div>
   <span

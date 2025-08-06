@@ -58,7 +58,7 @@ const VideoPlayer = ({
         <div className="container mx-auto h-full px-5">
           <div className="flex h-full flex-col justify-center">
             {(subTitle || title) && (
-              <div className="flex-0 flex-start text-sm ">
+              <div className="flex-0 flex-start text-sm">
                 {subTitle && <p className="mb-5 text-shadow-md/20 text-white">{subTitle}</p>}
                 {title && (
                   <Heading as="h1" className="mb-6 text-shadow-md/20 text-white">
