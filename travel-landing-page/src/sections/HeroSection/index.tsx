@@ -38,7 +38,7 @@ const HeroSection = () => {
           </div>
           <Button
             onClick={handleFindExperience}
-            className="h-14 sm:gap-5 text-sx lg:text-sm bg-accent-foreground sm:h-20 lg:h-30 w-full sm:w-50 lg:w-65.5 sm:rounded-none sm:rounded-tr-[20px] z-30"
+            className="h-14 sm:gap-5 text-sx text-white lg:text-sm bg-accent-foreground sm:h-20 lg:h-30 w-full sm:w-50 lg:w-65.5 sm:rounded-none sm:rounded-tr-[20px] z-30"
           >
             FIND AN EXPERIENCE
             <ArrowIcon />

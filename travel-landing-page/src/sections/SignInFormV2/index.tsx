@@ -79,7 +79,7 @@ const SignInFormV2 = () => {
   };
 
   return (
-    <div className="container mx-auto overflow-hidden px-2 md:px-5">
+    <div className="container mx-auto overflow-hidden px-5">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <fieldset disabled={isSubmitting} className="@container w-full mx-auto md:max-w-[545px]">
