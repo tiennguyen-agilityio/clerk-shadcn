@@ -18,8 +18,8 @@ interface PostProps {
   text: string;
   image: string;
   alt?: string;
-  onReadMore?: () => void;
   className?: string;
+  onReadMore?: () => void;
 }
 
 const Post = ({ text, image, alt = "", className = "", onReadMore }: PostProps) => {
