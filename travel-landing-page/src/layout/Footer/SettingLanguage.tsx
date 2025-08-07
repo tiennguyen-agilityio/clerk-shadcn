@@ -12,7 +12,7 @@ const SettingLanguage = () => {
   return (
     <div className="container flex flex-col md:flex-row justify-center items-center mx-auto py-10 px-5 gap-5 lg:h-24">
       <div className="w-full flex flex-col md:flex-row justify-between items-center">
-        <Logo className="text-teal-600 text-xl lg:text-2xl" />
+        <Logo className="text-chart-2 text-xl lg:text-2xl" />
         <div className="flex justify-center items-center gap-5 lg:gap-7.5 flex-wrap">
           <MPesaIcon />
           <DiscoverIcon />
