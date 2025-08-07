@@ -8,7 +8,7 @@ const meta: Meta<typeof Header> = {
   component: Header,
   render: () => (
     <ClerkProvider publishableKey="pk_test_Y2xvc2luZy1nYXRvci0yOS5jbGVyay5hY2NvdW50cy5kZXYk">
-      <div className="w-full h-25">
+      <div className="w-full h-30 items-center bg-gray-800">
         <Header />
       </div>
     </ClerkProvider>

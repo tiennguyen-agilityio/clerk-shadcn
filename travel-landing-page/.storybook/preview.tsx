@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import type { Preview } from "@storybook/nextjs";
-import { ThemeProvider } from "next-themes";
 import { AppRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
+import { cn } from "../src/utils/styles";
 import { abel } from "../src/config";
+import { ThemeProvider } from "../src/themes/ThemeProvider";
 import "../src/themes/theme.css";
 
 const mockRouter: AppRouterInstance = {
@@ -16,6 +17,22 @@ const mockRouter: AppRouterInstance = {
   prefetch: async () => {},
 };
 
+export const globalTypes = {
+  theme: {
+    name: "Theme",
+    description: "Global theme for components",
+    defaultValue: "light",
+    toolbar: {
+      icon: "paintbrush",
+      items: [
+        { value: "light", icon: "circle", title: "Light" },
+        { value: "dark", icon: "circle", title: "Dark" },
+      ],
+      showName: true,
+    },
+  },
+};
+
 const preview: Preview = {
   parameters: {
     controls: {
@@ -24,37 +41,27 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    themes: {
-      name: "Theme",
-      description: "Global theme for components",
-      defaultValue: "light",
-      toolbar: {
-        icon: "circlehollow",
-        items: [
-          { value: "light", title: "Light" },
-          { value: "dark", title: "Dark" },
-          { value: "system", title: "System" },
-        ],
-        showName: true,
-      },
-    },
   },
   tags: ["autodocs"],
   decorators: [
     (Story, context) => {
+      const theme = context.globals.theme || "light";
+
       useEffect(() => {
-        document.documentElement.classList.add(abel.variable);
-      }, []);
+        const root = document.documentElement;
+        root.classList.remove("light", "dark");
+        root.classList.add(theme);
+      }, [theme]);
 
       return (
         <AppRouterContext.Provider value={mockRouter}>
           <ThemeProvider
             attribute="class"
-            defaultTheme={context.globals.theme || "light"}
-            enableSystem={false}
+            defaultTheme={theme}
+            enableSystem={true}
             disableTransitionOnChange
           >
-            <div className={`${abel.variable} antialiased`}>
+            <div className={cn("antialiased", abel.variable)}>
               <Story />
             </div>
           </ThemeProvider>

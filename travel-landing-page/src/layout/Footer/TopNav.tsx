@@ -72,7 +72,8 @@ const TopNav = () => {
             <Input
               type="email"
               placeholder="Your Email"
-              className="h-12.5 rounded-r-none rounded-br-none focus:outline-0 w-full"
+              wrapperClassName="w-full"
+              className="h-12.5 rounded-r-none rounded-br-none focus:outline-0 min-w-full"
             />
             <Button className="px-4 rounded-r-md rounded-tl-none rounded-bl-none">Subscribe</Button>
           </div>

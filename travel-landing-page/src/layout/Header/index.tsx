@@ -56,9 +56,9 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
                     <SignInButton>
                       <Button
                         type="button"
-                        variant="ghost"
+                        variant="link"
                         className={cn(
-                          "p-0 hover:bg-transparent ",
+                          "p-0 text-current hover:text-primary hover:bg-transparent hover:no-underline",
                           isActiveSignIn && "text-primary"
                         )}
                       >
@@ -69,9 +69,9 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
                     <SignUpButton>
                       <Button
                         type="button"
-                        variant="ghost"
+                        variant="link"
                         className={cn(
-                          "p-0 hover:bg-transparent ",
+                          "p-0 h-fit text-current hover:text-primary hover:bg-transparent hover:no-underline",
                           isActiveSignUp && "text-primary"
                         )}
                       >
