@@ -1,2 +1,7 @@
 cd travel-landing-page
+
 npx lint-staged
+
+pnpm test:coverage
+
+pnpm build
