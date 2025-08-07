@@ -1,2 +1,5 @@
 cd travel-landing-page
-yarn test:coverage
+
+pnpm test:coverage
+
+pnpm build
