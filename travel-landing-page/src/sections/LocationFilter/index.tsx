@@ -13,7 +13,7 @@ import Heading from "@/components/Heading";
 import FilterSection from "@/components/FilterSection";
 import LocationCard from "@/components/LocationCard";
 
-const CampingLocationsPage = () => {
+const LocationFilter = () => {
   const [filter, setFilter] = useState<Filter>({
     budget: [1200, 10000],
     locations: [],
@@ -60,4 +60,4 @@ const CampingLocationsPage = () => {
   );
 };
 
-export default CampingLocationsPage;
+export default LocationFilter;
