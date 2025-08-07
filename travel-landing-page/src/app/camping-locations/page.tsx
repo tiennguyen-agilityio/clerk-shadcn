@@ -7,7 +7,7 @@ import { HOME_VIDEO } from "@/constants/video";
 import VideoPlayer from "@/components/VideoPlayer";
 import Loading from "@/components/Loading";
 import DiscoverSection from "@/sections/DiscoverSection";
-import FilterSection from "@/sections/FilterSection";
+import FilterSection from "@/sections/LocationFilter";
 import LocationsSection from "@/sections/LocationsSection";
 
 const CampingLocationsPage = () => {

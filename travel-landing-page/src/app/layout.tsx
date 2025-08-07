@@ -35,7 +35,6 @@ export default function RootLayout({
           appearance={{
             cssLayerName: "clerk",
           }}
-          afterSignOutUrl="/sign-in"
         >
           <ThemeProvider
             attribute="class"
