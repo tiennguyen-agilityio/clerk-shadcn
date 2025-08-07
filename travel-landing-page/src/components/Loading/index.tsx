@@ -6,7 +6,7 @@ interface LoadingProps {
   wrapperClassName?: string;
 }
 
-const Loading = ({ iconOnly = false, iconClassName = "", wrapperClassName }: LoadingProps) => {
+const Loading = ({ iconOnly = false, iconClassName = "", wrapperClassName = "" }: LoadingProps) => {
   return (
     <div
       className={cn(

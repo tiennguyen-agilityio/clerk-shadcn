@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useCallback, useState } from "react";
 
 import { LOCATIONS, CATEGORIES } from "@/constants/common";
 
@@ -17,47 +17,62 @@ interface FilterSectionProps {
   onChange: (value: Filter) => void;
 }
 
-const FilterSection = ({ defaultValue, onChange }: FilterSectionProps) => {
+const DEFAULT_VALUE = {
+  budget: [],
+  locations: [],
+  categories: [],
+};
+
+const FilterSection = ({ defaultValue = DEFAULT_VALUE, onChange }: FilterSectionProps) => {
   const [budget, setBudget] = useState<number[]>(defaultValue?.budget || []);
 
   const [locations, setLocation] = useState<string[]>(defaultValue?.locations || []);
   const [categories, setCategories] = useState<string[]>(defaultValue?.categories || []);
 
-  const handleChangeBudget = (value: number[]) => {
+  const handleChangeBudget = useCallback((value: number[]) => {
     setBudget(value);
-  };
+  }, []);
 
-  const handleBudgetCommit = (value: number[]) => {
-    onChange({ budget: value });
-  };
+  const handleBudgetCommit = useCallback(
+    (value: number[]) => {
+      onChange({ budget: value });
+    },
+    [onChange]
+  );
 
-  const handleChangeLocation = (value: string, isAdd = false) => {
-    let newLocations = [...locations];
-    if (isAdd) {
-      if (!locations.includes(value)) {
-        newLocations = [...locations, value];
+  const handleChangeLocation = useCallback(
+    (value: string, isAdd = false) => {
+      let newLocations = [...locations];
+      if (isAdd) {
+        if (!locations.includes(value)) {
+          newLocations = [...locations, value];
+        }
+      } else {
+        newLocations = locations.filter((item) => item !== value);
       }
-    } else {
-      newLocations = locations.filter((item) => item !== value);
-    }
 
-    onChange({ locations: newLocations });
-    setLocation(newLocations);
-  };
+      onChange({ locations: newLocations });
+      setLocation(newLocations);
+    },
+    [locations, onChange]
+  );
 
-  const handleChangeCategory = (value: string, isAdd = false) => {
-    let newCategories = [...categories];
-    if (isAdd) {
-      if (!categories.includes(value)) {
-        newCategories = [...categories, value];
+  const handleChangeCategory = useCallback(
+    (value: string, isAdd = false) => {
+      let newCategories = [...categories];
+      if (isAdd) {
+        if (!categories.includes(value)) {
+          newCategories = [...categories, value];
+        }
+      } else {
+        newCategories = categories.filter((item) => item !== value);
       }
-    } else {
-      newCategories = categories.filter((item) => item !== value);
-    }
 
-    onChange({ categories: newCategories });
-    setCategories(newCategories);
-  };
+      onChange({ categories: newCategories });
+      setCategories(newCategories);
+    },
+    [categories, onChange]
+  );
 
   return (
     <div className="w-full">
@@ -133,4 +148,4 @@ const FilterSection = ({ defaultValue, onChange }: FilterSectionProps) => {
   );
 };
 
-export default FilterSection;
+export default memo(FilterSection);

@@ -41,7 +41,7 @@ const CarouselCard = ({ item, isActive = false }: CarouselCardProps) => {
           </>
         )}
       </CardHeader>
-      <CardContent className="relative flex items-center justify-center p-0 mb-0 bg-muted rounded-sm aspect-[4/3]">
+      <CardContent className="relative flex items-center justify-center p-0 mb-0 bg-muted rounded-sm max-h-[475px] overflow-hidden aspect-[4/3]">
         <Image
           src={image || EMPTY_IMAGE}
           alt={alt}
