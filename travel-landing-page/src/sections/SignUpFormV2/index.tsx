@@ -104,7 +104,7 @@ const SignUpFormV2 = () => {
   };
 
   return (
-    <div className="container mx-auto overflow-hidden px-2 md:px-5">
+    <div className="container mx-auto overflow-hidden px-5">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <fieldset
@@ -290,7 +290,7 @@ const SignUpFormV2 = () => {
                   <Button className="text-sm w-full">
                     Sign Up
                     {isLoading && (
-                      <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                      <Loading iconOnly iconClassName="size-6" wrapperClassName="w-fit" />
                     )}
                   </Button>
                 </div>

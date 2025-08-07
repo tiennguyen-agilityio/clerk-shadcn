@@ -72,7 +72,7 @@ const VerifyForm = () => {
   }, [isLoaded, signUp, router, redirectUrl]);
 
   return (
-    <div className="container mx-auto overflow-hidden px-2 md:px-5">
+    <div className="container mx-auto overflow-hidden px-5">
       <Form {...form}>
         <fieldset disabled={isSubmitting} className="w-full mx-auto md:max-w-[545px]">
           <form onSubmit={form.handleSubmit(handleSubmit)}>
@@ -109,7 +109,7 @@ const VerifyForm = () => {
                 <Button className="text-sm w-full" disabled={isLoading}>
                   Verify
                   {isLoading && (
-                    <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit!" />
+                    <Loading iconOnly iconClassName="size-6" wrapperClassName="w-fit" />
                   )}
                 </Button>
               </div>

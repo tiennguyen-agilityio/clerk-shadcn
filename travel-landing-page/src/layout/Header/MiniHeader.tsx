@@ -70,13 +70,16 @@ const MiniHeader = () => {
 
           <ClerkLoaded>
             <SignedOut>
-              <div className="flex flex-col items-center font-bold text-[13px]">
+              <div className="flex flex-col items-center font-bold text-[13px] gap-2">
                 <SignInButton>
                   <Button
                     type="button"
                     variant="ghost"
                     onClick={handleCloseSheet}
-                    className={cn("p-0 hover:bg-transparent ", isActiveSignIn && "text-primary")}
+                    className={cn(
+                      "h-fit hover:bg-transparent focus-visible:ring-0",
+                      isActiveSignIn && "text-primary"
+                    )}
                   >
                     Sign In
                   </Button>
@@ -86,7 +89,10 @@ const MiniHeader = () => {
                     type="button"
                     variant="ghost"
                     onClick={handleCloseSheet}
-                    className={cn("p-0 hover:bg-transparent ", isActiveSignUp && "text-primary")}
+                    className={cn(
+                      "h-fit hover:bg-transparent focus-visible:ring-0",
+                      isActiveSignUp && "text-primary"
+                    )}
                   >
                     Sign Up
                   </Button>

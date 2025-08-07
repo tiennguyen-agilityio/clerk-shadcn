@@ -22,7 +22,7 @@ const SignUpForm = () => {
   useCleanClerkUrl();
 
   return (
-    <div className="container text-sm justify-center mx-auto px-2 md:px-5">
+    <div className="container text-sm justify-center mx-auto px-5">
       <SignUp.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (
@@ -34,13 +34,13 @@ const SignUpForm = () => {
 
                 <SignUp.Captcha className="mt-5 text-center" />
                 <div className="flex flex-col gap-7.5">
-                  <div className="flex gap-5">
+                  <div className="flex flex-col md:flex-row gap-5">
                     <ClerkField
                       required
                       name="firstName"
                       label="First Name"
                       placeholder="Enter first name"
-                      wrapperClassName="w-1/2"
+                      wrapperClassName="w-full md:w-1/2"
                     />
 
                     <ClerkField
@@ -48,7 +48,7 @@ const SignUpForm = () => {
                       name="lastName"
                       label="Last Name"
                       placeholder="Enter last name"
-                      wrapperClassName="w-1/2"
+                      wrapperClassName="w-full md:w-1/2"
                     />
                   </div>
 
@@ -77,16 +77,22 @@ const SignUpForm = () => {
                   </div>
                   <Checkbox
                     defaultChecked
+                    disabled={isGlobalLoading}
                     label="I have read and agree to the Terms and Conditions"
                   />
                   <Clerk.GlobalError className="block text-sm text-error" />
 
                   <SignUp.Action submit asChild disabled={isGlobalLoading}>
-                    <Button className="text-sm" disabled={isGlobalLoading}>
-                      <Clerk.Loading>
-                        {(isLoading) => (isLoading ? "Submitting..." : " Sign Up")}
-                      </Clerk.Loading>
-                    </Button>
+                    <Clerk.Loading>
+                      {(isLoading) => (
+                        <Button className="text-sm" disabled={isGlobalLoading}>
+                          Sign Up
+                          {isLoading && (
+                            <Loading iconOnly iconClassName="size-6" wrapperClassName="w-fit" />
+                          )}
+                        </Button>
+                      )}
+                    </Clerk.Loading>
                   </SignUp.Action>
                   <div className="flex justify-center text-center gap">
                     Already have an Account?&nbsp;
@@ -114,11 +120,16 @@ const SignUpForm = () => {
 
                     <Clerk.GlobalError className="block text-sm text-error" />
                     <SignUp.Action submit asChild disabled={isGlobalLoading}>
-                      <Button className="text-sm" disabled={isGlobalLoading}>
-                        <Clerk.Loading>
-                          {(isLoading) => (isLoading ? "Submitting..." : " Verify")}
-                        </Clerk.Loading>
-                      </Button>
+                      <Clerk.Loading>
+                        {(isLoading) => (
+                          <Button className="text-sm" disabled={isGlobalLoading}>
+                            Verify
+                            {!isLoading && (
+                              <Loading iconOnly iconClassName="size-6" wrapperClassName="w-fit" />
+                            )}
+                          </Button>
+                        )}
+                      </Clerk.Loading>
                     </SignUp.Action>
                   </SignUp.Strategy>
 

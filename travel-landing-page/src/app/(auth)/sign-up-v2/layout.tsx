@@ -1,6 +1,6 @@
 import Layout from "@/layout";
 
-const AuthLayout = ({
+const SignUpLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -12,4 +12,4 @@ const AuthLayout = ({
   );
 };
 
-export default AuthLayout;
+export default SignUpLayout;

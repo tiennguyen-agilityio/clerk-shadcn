@@ -18,12 +18,12 @@ const SignInForm = () => {
   useCleanClerkUrl();
 
   return (
-    <div className="container text-sm">
+    <div className="container text-sm mx-auto px-5">
       <SignIn.Root fallback={<Loading />}>
         <Clerk.Loading>
           {(isGlobalLoading) => (
             <SignIn.Step name="start" className="@container">
-              <div className="container mx-auto flex-col justify-center align-middle items-center content-center max-w-[545px] px-5">
+              <div className="container mx-auto flex-col justify-center align-middle items-center content-center max-w-[545px]">
                 <h1 className="font-abel text-center text-[70px]">Sign In</h1>
                 <SocialButtons />
                 <Divider text="OR" className="my-7.5" />
@@ -56,8 +56,13 @@ const SignInForm = () => {
 
                   <SignIn.Action submit asChild disabled={isGlobalLoading}>
                     <Button className="text-sm">
+                      Sign In
                       <Clerk.Loading>
-                        {(isLoading) => (isLoading ? "Submitting..." : " Sign In")}
+                        {(isLoading) =>
+                          isLoading && (
+                            <Loading iconOnly iconClassName="size-6" wrapperClassName="w-fit" />
+                          )
+                        }
                       </Clerk.Loading>
                     </Button>
                   </SignIn.Action>
