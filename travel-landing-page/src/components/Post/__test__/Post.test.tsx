@@ -18,6 +18,14 @@ describe("Post component", () => {
     expect(container).toMatchSnapshot();
   });
 
+  it("should render correctly with default image", () => {
+    const { container } = render(
+      <Post {...props} image="" onReadMore={onReadMore} alt="Mountain Vacations" />
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   it("should render with onReadMore is not provided", () => {
     const { container } = render(<Post {...props} />);
 
