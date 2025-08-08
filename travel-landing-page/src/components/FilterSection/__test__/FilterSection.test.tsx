@@ -1,7 +1,7 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
-import FilterSection from "..";
 import { CATEGORIES, LOCATIONS } from "@/constants/common";
+import FilterSection from "..";
 
 describe("FilterSection component", () => {
   const onChange = jest.fn();
@@ -13,6 +13,12 @@ describe("FilterSection component", () => {
     },
     onChange,
   };
+
+  beforeAll(() => {
+    Element.prototype.setPointerCapture = jest.fn();
+    Element.prototype.hasPointerCapture = jest.fn();
+    Element.prototype.releasePointerCapture = jest.fn();
+  });
 
   it("should render correctly", () => {
     const { container } = render(<FilterSection {...props} />);
@@ -35,38 +41,47 @@ describe("FilterSection component", () => {
     expect(container).toMatchSnapshot();
   });
 
+  it("calls onChange when budget change value", async () => {
+    render(<FilterSection defaultValue={{ budget: [10, 200] }} onChange={onChange} />);
+
+    const sliders: HTMLElement[] = await waitFor(() => screen.getAllByRole("slider"));
+    const firstItem = sliders[0];
+    fireEvent.click(firstItem);
+    fireEvent.keyDown(firstItem, { key: "ArrowRight" });
+
+    expect(onChange).toHaveBeenCalled();
+  });
+
   it("calls onChange when location toggle is clicked", () => {
-    const mockOnChange = jest.fn();
-    render(<FilterSection onChange={mockOnChange} />);
+    render(<FilterSection onChange={onChange} />);
 
     const locationButton = screen.getByText(new RegExp(`${LOCATIONS[1].text}`));
     fireEvent.click(locationButton);
 
-    expect(mockOnChange).toHaveBeenCalledWith({
+    expect(onChange).toHaveBeenCalledWith({
       locations: [LOCATIONS[1].value],
     });
 
     // Toggle off
     fireEvent.click(locationButton);
-    expect(mockOnChange).toHaveBeenCalledWith({
+    expect(onChange).toHaveBeenCalledWith({
       locations: [],
     });
   });
 
   it("calls onChange when category toggle is clicked", () => {
-    const mockOnChange = jest.fn();
-    render(<FilterSection onChange={mockOnChange} />);
+    render(<FilterSection onChange={onChange} />);
 
     const categoryBtn = screen.getByText(new RegExp(`${CATEGORIES[1].text}`));
     fireEvent.click(categoryBtn);
 
-    expect(mockOnChange).toHaveBeenCalledWith({
+    expect(onChange).toHaveBeenCalledWith({
       categories: [CATEGORIES[1].value],
     });
 
     // Toggle off
     fireEvent.click(categoryBtn);
-    expect(mockOnChange).toHaveBeenCalledWith({
+    expect(onChange).toHaveBeenCalledWith({
       categories: [],
     });
   });

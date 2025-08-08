@@ -19,4 +19,12 @@ describe("LocationTile component", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("should render correctly with default image", () => {
+    const { container } = render(
+      <LocationTile {...props} imageUrl="" link="/link" count={undefined} />
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });

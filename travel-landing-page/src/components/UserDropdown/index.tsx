@@ -34,14 +34,14 @@ const UserDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { imageUrl = "", firstName = "", lastName = "" } = user || {};
+  const { imageUrl, firstName, lastName } = user || {};
   const displayName = `${firstName?.trim().charAt(0)}${lastName?.trim().charAt(0)}`;
 
   const handleToggleModal = (isOpen?: boolean) => {
     setIsOpen(!!isOpen);
   };
 
-  const handleClick = (href = "", isSignOut = false) => {
+  const handleClick = (href: string, isSignOut: boolean) => {
     if (isSignOut) {
       return handleToggleModal(true);
     }
@@ -75,7 +75,7 @@ const UserDropdown = () => {
         </DropdownMenuTrigger>
 
         <DropdownMenuContent sideOffset={0} className="w-fit mt-2 p-0 rounded-sm shadow-lg">
-          {USER_DROPDOWNS.map(({ text = "", href = "", isSignOut = false }, index) => (
+          {USER_DROPDOWNS.map(({ text, href, isSignOut = false }, index) => (
             <DropdownMenuItem
               data-testid="dropdown-menu-item"
               key={index}

@@ -93,3 +93,48 @@ exports[`UserDropdown component should render with default values when user is n
   </div>
 </div>
 `;
+
+exports[`UserDropdown component should render with default values when user is null 2`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="cursor-pointer flex items-center gap-3.5 w-fit"
+    data-slot="dropdown-menu-trigger"
+    data-state="closed"
+    data-testid="btn-dropdown"
+    id="radix-«r1s»"
+    type="button"
+  >
+    <span
+      class="relative flex shrink-0 rounded-full size-10"
+      data-slot="avatar"
+    >
+      <span
+        class="bg-muted flex size-full items-center justify-center rounded-full"
+        data-slot="avatar-fallback"
+      />
+      <div
+        class="absolute top-1 right-0 z-2 w-2.75 h-2.75 bg-white flex flex-col items-center justify-center rounded-full"
+      >
+        <div
+          class="w-2.25 h-2.25 bg-error rounded-full"
+        />
+      </div>
+    </span>
+    <svg
+      fill="none"
+      height="9"
+      style="transform: rotate(0deg);"
+      viewBox="0 0  17 9"
+      width="17"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.8261 0.173913C16.5918 -0.057971 16.211 -0.057971 15.9767 0.173913L8.50822 7.57971L1.02509 0.173913C0.790781 -0.057971 0.410035 -0.057971 0.175729 0.173913C-0.0585764 0.405797 -0.0585764 0.782609 0.175729 1.01449L8.06889 8.82609C8.18605 8.94203 8.33249 9 8.49357 9C8.64001 9 8.8011 8.94203 8.91825 8.82609L16.8114 1.01449C17.0604 0.782609 17.0604 0.405797 16.8261 0.173913Z"
+        fill="currentColor"
+      />
+    </svg>
+  </div>
+</div>
+`;

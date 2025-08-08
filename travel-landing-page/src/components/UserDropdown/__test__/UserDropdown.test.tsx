@@ -10,6 +10,12 @@ import UserDropdown from "..";
 const mockPush = jest.fn();
 const mockSignOut = jest.fn();
 
+let mockUser = {
+  firstName: "John",
+  lastName: "Doe",
+  imageUrl: "https://i.ibb.co/cXVN8z3D/avatar-01.png",
+};
+
 jest.mock("next/navigation", () => ({
   useRouter: () => ({
     push: mockPush,
@@ -20,11 +26,7 @@ jest.mock("next/navigation", () => ({
 jest.mock("@clerk/nextjs", () => ({
   ...jest.requireActual("@clerk/nextjs"),
   useUser: () => ({
-    user: {
-      firstName: "John",
-      lastName: "Doe",
-      imageUrl: "https://i.ibb.co/cXVN8z3D/avatar-01.png",
-    },
+    user: mockUser,
   }),
   useClerk: () => ({
     signOut: mockSignOut,
@@ -137,5 +139,16 @@ describe("UserDropdown component", () => {
       expect(mockSignOut).toHaveBeenCalledTimes(1);
       expect(toast.error).toHaveBeenCalledWith(ERROR_MESSAGES.SIGN_OUT_FAILED);
     });
+  });
+
+  it("should render with default values when user is null", () => {
+    mockUser = {
+      firstName: "",
+      lastName: "",
+      imageUrl: "",
+    };
+    const { container } = render(<UserDropdown />);
+
+    expect(container).toMatchSnapshot();
   });
 });
