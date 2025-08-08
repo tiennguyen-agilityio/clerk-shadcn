@@ -82,7 +82,6 @@ const FilterSection = ({ defaultValue = DEFAULT_VALUE, onChange }: FilterSection
           <Label className="mb-4">Budget Per Night</Label>
           <Slider
             data-testid="slider"
-            min={0}
             max={11000}
             step={100}
             value={budget}

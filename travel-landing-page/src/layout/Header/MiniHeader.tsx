@@ -17,7 +17,13 @@ import Button from "@/components/Button";
 import UserDropdown from "@/components/UserDropdown";
 import BookmarkIcon from "@/components/Icons/BookmarkIcon";
 import HamburgerIcon from "@/components/Icons/HamburgerIcon";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { ModalToggleTheme } from "@/themes";
 
 const MiniHeader = () => {
@@ -46,6 +52,8 @@ const MiniHeader = () => {
           side="top"
           className="min-w-full h-fit md:hidden justify-center items-center p-5 gap-2"
         >
+          <SheetTitle />
+          <SheetDescription />
           {NAV_BAR?.map(({ name, href }, index) => {
             const isActive = pathname === href;
             return (

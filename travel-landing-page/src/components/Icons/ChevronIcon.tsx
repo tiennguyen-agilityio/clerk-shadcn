@@ -20,14 +20,13 @@ const ChevronIcon = ({
 }: ChevronIconProps) => {
   const rotateValue = (): number => {
     switch (direction) {
-      case DIRECTION.DOWN:
-        return 0;
       case DIRECTION.LEFT:
         return 90;
       case DIRECTION.UP:
         return 180;
       case DIRECTION.RIGHT:
         return -90;
+      case DIRECTION.DOWN:
       default:
         return 0;
     }

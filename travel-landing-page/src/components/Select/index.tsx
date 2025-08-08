@@ -19,13 +19,7 @@ type SelectProps = ComponentProps<typeof ShadCNSelect> &
     placeholder?: string;
   };
 
-const Select = ({
-  label = "",
-  placeholder = "",
-  size = "default",
-  options,
-  ...props
-}: SelectProps) => {
+const Select = ({ label = "", placeholder = "", size, options, ...props }: SelectProps) => {
   const id = useId();
 
   return (
@@ -41,7 +35,7 @@ const Select = ({
         </SelectTrigger>
         <SelectContent>
           {options?.map((item, index) => (
-            <SelectItem key={index} value={item} size={size} className="">
+            <SelectItem key={index} value={item} size={size}>
               {item}
             </SelectItem>
           ))}
