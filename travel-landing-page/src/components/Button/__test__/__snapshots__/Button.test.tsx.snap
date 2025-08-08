@@ -11,6 +11,8 @@ exports[`Button component should render correctly 1`] = `
 </div>
 `;
 
+exports[`Button component should render correctly with asChild true 1`] = `<div />`;
+
 exports[`Button component should render correctly with size sm 1`] = `
 <div>
   <button

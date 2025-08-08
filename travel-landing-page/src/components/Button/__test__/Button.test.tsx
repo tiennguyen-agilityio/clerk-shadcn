@@ -14,6 +14,11 @@ describe("Button component", () => {
     expect(container).toMatchSnapshot();
   });
 
+  it("should render correctly with asChild true", () => {
+    const { container } = render(<Button {...props} asChild />);
+    expect(container).toMatchSnapshot();
+  });
+
   it("should render correctly with variant destructive", () => {
     const { container } = render(<Button {...props} variant="destructive" />);
     expect(container).toMatchSnapshot();
