@@ -34,7 +34,7 @@ const UserDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { imageUrl, firstName, lastName } = user || {};
+  const { imageUrl = "", firstName = "", lastName = "" } = user || {};
   const displayName = `${firstName?.trim().charAt(0)}${lastName?.trim().charAt(0)}`;
 
   const handleToggleModal = (isOpen?: boolean) => {
