@@ -1,12 +1,12 @@
-import { useEffect } from "react";
 import type { Preview } from "@storybook/nextjs";
 import { AppRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { withThemeByClassName } from "@storybook/addon-themes";
 
-import { cn } from "../src/utils/styles";
 import { abel } from "../src/config";
 import { ThemeProvider } from "../src/themes/ThemeProvider";
 import "../src/themes/theme.css";
+import "./preview.css";
 
 const mockRouter: AppRouterInstance = {
   push: async () => true,
@@ -35,24 +35,22 @@ export const globalTypes = {
 
 const preview: Preview = {
   parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+    backgrounds: {
+      disable: true,
     },
   },
   tags: ["autodocs"],
   decorators: [
+    withThemeByClassName({
+      themes: {
+        light: "light",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
+
     (Story, context) => {
       const theme = context.globals.theme || "light";
-
-      useEffect(() => {
-        const root = document.documentElement;
-        root.classList.remove("light", "dark");
-        root.classList.add(theme);
-      }, [theme]);
-
       return (
         <AppRouterContext.Provider value={mockRouter}>
           <ThemeProvider
@@ -61,7 +59,7 @@ const preview: Preview = {
             enableSystem={true}
             disableTransitionOnChange
           >
-            <div className={cn("antialiased", abel.variable)}>
+            <div className={abel.variable}>
               <Story />
             </div>
           </ThemeProvider>
