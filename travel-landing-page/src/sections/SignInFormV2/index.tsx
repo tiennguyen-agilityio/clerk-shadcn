@@ -119,10 +119,11 @@ const SignInFormV2 = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-current">Password</FormLabel>
-                      <FormControl>
-                        <div className="relative">
+                      <div className="relative">
+                        <FormControl>
                           <Input
                             {...field}
+                            className="z-40"
                             type={isPasswordVisible ? "text" : "password"}
                             placeholder="Enter password"
                             onChange={(e) => {
@@ -130,27 +131,26 @@ const SignInFormV2 = () => {
                               if (errorMessage) setErrorMessage("");
                             }}
                           />
-
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            onClick={handleToggleVisible}
-                            className="absolute top-0 right-3 h-full px-1 text-link hover:text-link/80 hover:bg-transparent"
-                          >
-                            {isPasswordVisible ? "Hide Password" : "Show Password"}
-                          </Button>
-                        </div>
-                      </FormControl>
+                        </FormControl>
+                        <Button
+                          type="button"
+                          variant="link"
+                          onClick={handleToggleVisible}
+                          className="absolute top-0 right-3 h-full px-1 text-link hover:text-link/80 hover:no-underline hover:bg-transparent"
+                        >
+                          {isPasswordVisible ? "Hide Password" : "Show Password"}
+                        </Button>
+                      </div>
                       <FormMessage className="text-xs" />
                     </FormItem>
                   )}
                 />
-                <div className="flex justify-between -mt-4">
-                  <Checkbox label="Remember me" disabled={isLoading} />
+                <div className="flex justify-between">
+                  <Checkbox defaultChecked label="Remember me" disabled={isLoading} />
                   <Button
                     type="button"
-                    variant="ghost"
-                    className="text-link hover:text-link/90 p-0 hover:bg-transparent hover:underline"
+                    variant="link"
+                    className="text-link hover:text-link/90 p-0 h-fit hover:bg-transparent hover:underline"
                   >
                     Forgot password?
                   </Button>
@@ -172,9 +172,9 @@ const SignInFormV2 = () => {
                   Don&#8217;t have an account?&nbsp;
                   <Button
                     type="button"
-                    variant="ghost"
+                    variant="link"
                     onClick={handleGoToSignUp}
-                    className="text-link hover:text-link/90 p-0 hover:bg-transparent hover:underline gap-1"
+                    className="text-link hover:text-link/90 p-0 h-fit hover:bg-transparent"
                   >
                     Sign up
                   </Button>

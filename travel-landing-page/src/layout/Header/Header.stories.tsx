@@ -6,10 +6,10 @@ import Header from ".";
 const meta: Meta<typeof Header> = {
   title: "Components/Header",
   component: Header,
-  render: () => (
+  render: (props) => (
     <ClerkProvider publishableKey="pk_test_Y2xvc2luZy1nYXRvci0yOS5jbGVyay5hY2NvdW50cy5kZXYk">
-      <div className="w-full h-30 items-center bg-gray-800">
-        <Header />
+      <div className="w-full h-30 items-center">
+        <Header {...props} />
       </div>
     </ClerkProvider>
   ),
@@ -19,5 +19,8 @@ export default meta;
 type Story = StoryObj<typeof Header>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    className: "text-current",
+    hasBorderBottom: true,
+  },
 };

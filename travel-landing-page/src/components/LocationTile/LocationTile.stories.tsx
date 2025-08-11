@@ -17,7 +17,7 @@ export const Default: Story = {
     ...LOCATION_TILES[0],
   },
   render: (props) => (
-    <div className="w-100">
+    <div className="w-100 h-50">
       <LocationTile {...props} />
     </div>
   ),

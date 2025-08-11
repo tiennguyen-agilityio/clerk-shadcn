@@ -45,7 +45,7 @@ const SignInForm = () => {
                   />
 
                   <div className="flex justify-between">
-                    <Checkbox label="Remember me" />
+                    <Checkbox defaultChecked label="Remember me" />
                     <SignIn.Action
                       navigate="forgot-password"
                       className="text-link hover:text-link/90 font-semibold hover:underline cursor-pointer"
