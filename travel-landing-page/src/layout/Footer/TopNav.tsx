@@ -37,15 +37,24 @@ const TopNav = () => {
             Nairobi, Kenya
           </p>
           <div className="flex space-x-3 mt-3 text-[10px]">
-            <button className="w-8 h-8 border rounded-full flex items-center justify-center hover:bg-sidebar-accent">
+            <Button
+              variant="outline"
+              className="w-8 h-8 border-border rounded-full flex items-center justify-center hover:bg-sidebar-accent text-current"
+            >
               Tw
-            </button>
-            <button className="w-8 h-8 border rounded-full flex items-center justify-center hover:bg-sidebar-accent">
+            </Button>
+            <Button
+              variant="outline"
+              className="w-8 h-8 border-border rounded-full flex items-center justify-center hover:bg-sidebar-accent text-current"
+            >
               Ins
-            </button>
-            <button className="w-8 h-8 border rounded-full flex items-center justify-center hover:bg-sidebar-accent">
+            </Button>
+            <Button
+              variant="outline"
+              className="w-8 h-8 border-border rounded-full flex items-center justify-center hover:bg-sidebar-accent text-current"
+            >
               You
-            </button>
+            </Button>
           </div>
         </div>
 
