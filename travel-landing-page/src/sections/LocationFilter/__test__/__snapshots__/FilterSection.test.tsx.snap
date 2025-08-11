@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`LocationFilter component should render correctly 1`] = `
+exports[`FilterSection component should render correctly 1`] = `
 <div>
   <section
     class="container mx-auto my-10 md:my-20 lg:my-25 px-5"

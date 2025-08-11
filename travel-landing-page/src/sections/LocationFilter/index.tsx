@@ -10,10 +10,10 @@ import { LOCATIONS } from "@/mocks";
 
 // Components
 import Heading from "@/components/Heading";
-import FilterSection from "@/components/FilterSection";
+import LocationFilter from "@/components/LocationFilter";
 import LocationCard from "@/components/LocationCard";
 
-const LocationFilter = () => {
+const FilterSection = () => {
   const [filter, setFilter] = useState<Filter>({
     budget: [1200, 10000],
     locations: [],
@@ -31,7 +31,7 @@ const LocationFilter = () => {
     <section className="container mx-auto my-10 md:my-20 lg:my-25 px-5">
       <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-5">
         <div className="lg:col-span-1">
-          <FilterSection defaultValue={filter} onChange={handleChangeFilter} />
+          <LocationFilter defaultValue={filter} onChange={handleChangeFilter} />
 
           <div className="my-5">
             <iframe
@@ -60,4 +60,4 @@ const LocationFilter = () => {
   );
 };
 
-export default LocationFilter;
+export default FilterSection;

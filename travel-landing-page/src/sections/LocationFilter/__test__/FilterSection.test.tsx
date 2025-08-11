@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
 
-import LocationFilter from "..";
+import FilterSection from "..";
 
-describe("LocationFilter component", () => {
+describe("FilterSection component", () => {
   it("should render correctly", () => {
-    const { container } = render(<LocationFilter />);
+    const { container } = render(<FilterSection />);
     expect(container).toMatchSnapshot();
   });
 });
