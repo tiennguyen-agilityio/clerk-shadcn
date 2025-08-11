@@ -24,7 +24,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <Head>
         <link rel="icon" href="/favicon.ico" type="image/png" />
-        <meta name="theme-color" content="#ffffff" />
         <meta name="description" content="Travel Landing Page" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>

@@ -1,6 +1,6 @@
 import Layout from "@/layout";
 
-const CampingLocationsLayout = ({
+const PublicLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -8,4 +8,4 @@ const CampingLocationsLayout = ({
   return <Layout>{children}</Layout>;
 };
 
-export default CampingLocationsLayout;
+export default PublicLayout;
