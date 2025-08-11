@@ -113,7 +113,7 @@ const SocialButtonsV2 = ({ isSignIn = false }: Props) => {
           <div className="border-l-[1px] h-5 border-foreground" />
           Sign {isSignIn ? "in" : "up"} with Facebook
           {socialLoading === OAuthStrategy.Facebook && (
-            <Loading iconOnly iconClassName="max-size-6!" wrapperClassName="w-fit!" />
+            <Loading iconOnly iconClassName="size-6" wrapperClassName="w-fit h-fit" />
           )}
         </Button>
 
@@ -126,7 +126,7 @@ const SocialButtonsV2 = ({ isSignIn = false }: Props) => {
           <div className="border-l-[1px] h-5 border-foreground" />
           Sign {isSignIn ? "in" : "up"} with Google
           {socialLoading === OAuthStrategy.Google && (
-            <Loading iconOnly iconClassName="size-6!" wrapperClassName="w-fit! h-fit!" />
+            <Loading iconOnly iconClassName="size-6" wrapperClassName="w-fit h-fit" />
           )}
         </Button>
       </div>
