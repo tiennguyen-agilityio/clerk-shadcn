@@ -47,7 +47,7 @@ const LocationCard = ({ item, href = "" }: LocationCardProps) => {
             alt={name}
             placeholder="blur"
             fill
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             blurDataURL={generateImageToBase64(320, 320)}
             className="object-cover h-full w-full transform transition-transform duration-300 ease-in-out group-hover:scale-105"
           />

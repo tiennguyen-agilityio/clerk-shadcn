@@ -1,9 +1,9 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import { CATEGORIES, LOCATIONS } from "@/constants/common";
-import FilterSection from "..";
+import LocationFilter from "..";
 
-describe("FilterSection component", () => {
+describe("LocationFilter component", () => {
   const onChange = jest.fn();
   const props = {
     defaultValue: {
@@ -21,7 +21,7 @@ describe("FilterSection component", () => {
   });
 
   it("should render correctly", () => {
-    const { container } = render(<FilterSection {...props} />);
+    const { container } = render(<LocationFilter {...props} />);
 
     expect(container).toMatchSnapshot();
   });
@@ -30,7 +30,7 @@ describe("FilterSection component", () => {
     const locations = LOCATIONS.slice(0, 2).map(({ value }) => value);
     const categories = CATEGORIES.slice(1, 3).map(({ value }) => value);
     const { container } = render(
-      <FilterSection
+      <LocationFilter
         defaultValue={{
           locations,
           categories,
@@ -42,7 +42,7 @@ describe("FilterSection component", () => {
   });
 
   it("calls onChange when budget change value", async () => {
-    render(<FilterSection defaultValue={{ budget: [10, 200] }} onChange={onChange} />);
+    render(<LocationFilter defaultValue={{ budget: [10, 200] }} onChange={onChange} />);
 
     const sliders: HTMLElement[] = await waitFor(() => screen.getAllByRole("slider"));
     const firstItem = sliders[0];
@@ -53,7 +53,7 @@ describe("FilterSection component", () => {
   });
 
   it("calls onChange when location toggle is clicked", () => {
-    render(<FilterSection onChange={onChange} />);
+    render(<LocationFilter onChange={onChange} />);
 
     const locationButton = screen.getByText(new RegExp(`${LOCATIONS[1].text}`));
     fireEvent.click(locationButton);
@@ -70,7 +70,7 @@ describe("FilterSection component", () => {
   });
 
   it("calls onChange when category toggle is clicked", () => {
-    render(<FilterSection onChange={onChange} />);
+    render(<LocationFilter onChange={onChange} />);
 
     const categoryBtn = screen.getByText(new RegExp(`${CATEGORIES[1].text}`));
     fireEvent.click(categoryBtn);

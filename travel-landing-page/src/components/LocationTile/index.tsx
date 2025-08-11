@@ -28,6 +28,7 @@ const LocationTile = ({ title, count = 0, imageUrl, link = "" }: LocationTilePro
           alt={title}
           placeholder="blur"
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           blurDataURL={generateImageToBase64(100, 100)}
           className="h-auto w-full object-cover rounded-[3px] transform transition-transform duration-300 ease-in-out group-hover:scale-105"
         />

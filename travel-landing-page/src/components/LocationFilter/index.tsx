@@ -12,7 +12,7 @@ import { Label } from "../ui/label";
 import { Slider } from "../ui/slider";
 import { Toggle } from "../ui/toggle";
 
-interface FilterSectionProps {
+interface LocationFilterProps {
   defaultValue?: Filter;
   onChange: (value: Filter) => void;
 }
@@ -23,7 +23,7 @@ const DEFAULT_VALUE = {
   categories: [],
 };
 
-const FilterSection = ({ defaultValue = DEFAULT_VALUE, onChange }: FilterSectionProps) => {
+const LocationFilter = ({ defaultValue = DEFAULT_VALUE, onChange }: LocationFilterProps) => {
   const [budget, setBudget] = useState<number[]>(defaultValue?.budget || []);
 
   const [locations, setLocation] = useState<string[]>(defaultValue?.locations || []);
@@ -147,4 +147,4 @@ const FilterSection = ({ defaultValue = DEFAULT_VALUE, onChange }: FilterSection
   );
 };
 
-export default memo(FilterSection);
+export default memo(LocationFilter);

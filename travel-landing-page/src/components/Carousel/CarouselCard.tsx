@@ -47,6 +47,7 @@ const CarouselCard = ({ item, isActive = false }: CarouselCardProps) => {
           alt={alt}
           placeholder="blur"
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 75vw"
           blurDataURL={generateImageToBase64(200, 200)}
           className="object-cover overflow-hidden rounded-sm"
         />

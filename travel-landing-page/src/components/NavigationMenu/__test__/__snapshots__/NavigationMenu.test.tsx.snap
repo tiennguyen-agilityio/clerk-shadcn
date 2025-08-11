@@ -25,7 +25,7 @@ exports[`NavigationMenu should render correctly 1`] = `
           data-slot="navigation-menu-item"
         >
           <a
-            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
             data-radix-collection-item=""
             data-slot="navigation-menu-link"
             href="/camping-locations"
@@ -45,7 +45,7 @@ exports[`NavigationMenu should render correctly 1`] = `
           data-slot="navigation-menu-item"
         >
           <a
-            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
             data-radix-collection-item=""
             data-slot="navigation-menu-link"
             href="/activities"
@@ -65,7 +65,7 @@ exports[`NavigationMenu should render correctly 1`] = `
           data-slot="navigation-menu-item"
         >
           <a
-            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
             data-radix-collection-item=""
             data-slot="navigation-menu-link"
             href="/equipment"
@@ -85,7 +85,7 @@ exports[`NavigationMenu should render correctly 1`] = `
           data-slot="navigation-menu-item"
         >
           <a
-            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
             data-radix-collection-item=""
             data-slot="navigation-menu-link"
             href="/blogs"
@@ -134,7 +134,7 @@ exports[`NavigationMenu should render correctly Activities 1`] = `
           data-slot="navigation-menu-item"
         >
           <a
-            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold text-primary"
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold text-primary"
             data-radix-collection-item=""
             data-slot="navigation-menu-link"
             href="/camping-locations"
@@ -154,7 +154,7 @@ exports[`NavigationMenu should render correctly Activities 1`] = `
           data-slot="navigation-menu-item"
         >
           <a
-            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
             data-radix-collection-item=""
             data-slot="navigation-menu-link"
             href="/activities"
@@ -174,7 +174,7 @@ exports[`NavigationMenu should render correctly Activities 1`] = `
           data-slot="navigation-menu-item"
         >
           <a
-            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
             data-radix-collection-item=""
             data-slot="navigation-menu-link"
             href="/equipment"
@@ -194,7 +194,7 @@ exports[`NavigationMenu should render correctly Activities 1`] = `
           data-slot="navigation-menu-item"
         >
           <a
-            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
+            class="data-[active=true]:focus:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-transparent hover:text-accent-foreground focus:bg-transparent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 items-center font-bold"
             data-radix-collection-item=""
             data-slot="navigation-menu-link"
             href="/blogs"

@@ -34,7 +34,7 @@ const Post = ({ text, image, alt = "", className = "", onReadMore }: PostProps) 
           alt={alt}
           placeholder="blur"
           fill
-          sizes="100vw"
+          sizes="50vw"
           blurDataURL={generateImageToBase64(320, 320)}
           className="object-cover h-full w-full transform transition-transform duration-300 ease-in-out group-hover:scale-105"
         />

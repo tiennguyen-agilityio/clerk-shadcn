@@ -31,9 +31,10 @@ const TestimonialItem = ({
             src={authorAvatar || DEFAULT_AVATAR}
             alt={authorName}
             placeholder="blur"
-            fill
+            width={40}
+            height={40}
             blurDataURL={generateImageToBase64(40, 40)}
-            className="object-cover "
+            className="object-cover"
           />
         </div>
         <span className="text-sm line-clamp-1">{authorName}</span>

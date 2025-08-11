@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`FilterSection component should render correctly 1`] = `
+exports[`LocationFilter component should render correctly 1`] = `
 <div>
   <div
     class="w-full"
@@ -217,7 +217,7 @@ exports[`FilterSection component should render correctly 1`] = `
 </div>
 `;
 
-exports[`FilterSection component should render correctly with default value locations, categories 1`] = `
+exports[`LocationFilter component should render correctly with default value locations, categories 1`] = `
 <div>
   <div
     class="w-full"
