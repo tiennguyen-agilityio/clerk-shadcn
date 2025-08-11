@@ -17,7 +17,7 @@ import UserDropdown from "@/components/UserDropdown";
 import BookmarkIcon from "@/components/Icons/BookmarkIcon";
 import SearchIcon from "@/components/Icons/SearchIcon";
 import NavigationMenu from "@/components/NavigationMenu";
-import { ModalToggleTheme } from "@/themes";
+import ThemeToggle from "@/components/ThemeToggle";
 import MiniHeader from "./MiniHeader";
 
 interface HeaderProps {
@@ -45,7 +45,7 @@ const Header = ({ hasBorderBottom = false, className }: HeaderProps) => {
             <NavigationMenu list={NAV_BAR} path={pathname} />
           </div>
           <div className="w-full flex justify-between items-center md:w-auto md:flex-end lg:ml-5 gap-2 md:gap-3 lg:gap-5">
-            <ModalToggleTheme />
+            <ThemeToggle />
             <Button className="xl:ml-20 rounded-[20px] font-bold" size="sm">
               <BookmarkIcon />
               Reservations

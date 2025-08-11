@@ -1,4 +1,5 @@
 import { NavFooter } from "@/types/common";
+import { ROUTES } from "./routes";
 
 export const NAV_BAR = [
   { name: "Camping Locations", href: "/camping-locations" },
@@ -44,7 +45,7 @@ export const NAV_FOOTERS: NavFooter[] = [
 export const USER_DROPDOWNS = [
   {
     text: "Profile",
-    href: "/user/profile",
+    href: ROUTES.USER_PROFILE,
   },
   {
     text: "Favorites",
