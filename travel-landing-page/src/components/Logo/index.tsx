@@ -9,7 +9,7 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ text = "Travelsy", className = "" }: LogoProps) => {
   return (
-    <Link href="/" className={clsx("text-lg text-white-500 font-bold", className)}>
+    <Link href="/" className={clsx("text-lg font-bold", className)}>
       {text}
     </Link>
   );

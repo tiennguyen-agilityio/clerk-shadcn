@@ -124,7 +124,7 @@ const SignUpForm = () => {
                         {(isLoading) => (
                           <Button className="text-sm" disabled={isGlobalLoading}>
                             Verify
-                            {!isLoading && (
+                            {isLoading && (
                               <Loading iconOnly iconClassName="size-6" wrapperClassName="w-fit" />
                             )}
                           </Button>

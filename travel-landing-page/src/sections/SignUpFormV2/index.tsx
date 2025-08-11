@@ -193,8 +193,8 @@ const SignUpFormV2 = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-current">Password</FormLabel>
-                      <FormControl>
-                        <div className="relative">
+                      <div className="relative">
+                        <FormControl>
                           <Input
                             {...field}
                             type={isPasswordVisible ? "text" : "password"}
@@ -204,16 +204,16 @@ const SignUpFormV2 = () => {
                               if (errorMessage) setErrorMessage("");
                             }}
                           />
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            onClick={handleToggleVisible}
-                            className="absolute top-0 right-3 h-full px-1 text-link hover:text-link/80 hover:bg-transparent"
-                          >
-                            {isPasswordVisible ? "Hide Password" : "Show Password"}
-                          </Button>
-                        </div>
-                      </FormControl>
+                        </FormControl>
+                        <Button
+                          type="button"
+                          variant="link"
+                          onClick={handleToggleVisible}
+                          className="absolute top-0 right-3 h-full px-1 text-link hover:text-link/80 hover:bg-transparent hover:no-underline"
+                        >
+                          {isPasswordVisible ? "Hide Password" : "Show Password"}
+                        </Button>
+                      </div>
                       <FormMessage className="text-xs" />
                     </FormItem>
                   )}
@@ -283,7 +283,10 @@ const SignUpFormV2 = () => {
                   </div>
                 </div>
 
-                <Checkbox label="I have read and agree to the Terms and Conditions" />
+                <Checkbox
+                  defaultChecked
+                  label="I have read and agree to the Terms and Conditions"
+                />
 
                 <div className="w-full">
                   {errorMessage && <p className="text-error text-center my-2">{errorMessage}</p>}
@@ -299,9 +302,9 @@ const SignUpFormV2 = () => {
                   Already have an Account?&nbsp;
                   <Button
                     type="button"
-                    variant="ghost"
+                    variant="link"
                     onClick={handleGoToSignIn}
-                    className="text-link hover:text-link/80 p-0 hover:bg-transparent hover:underline gap-1"
+                    className="text-link hover:text-link/80 p-0 hover:bg-transparent"
                   >
                     Log In
                   </Button>

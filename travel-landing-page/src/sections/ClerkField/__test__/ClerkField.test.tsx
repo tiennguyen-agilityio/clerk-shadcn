@@ -5,6 +5,9 @@ import ClerkField from "..";
 import { ComponentProps } from "react";
 
 jest.mock("@clerk/elements/common", () => ({
+  FieldState: ({ children }: { children: (field: { message?: string }) => React.ReactNode }) => {
+    return <>{children({ message: "" })}</>;
+  },
   Field: ({ children, className }: ComponentProps<"div">) => (
     <div className={className}>{children}</div>
   ),

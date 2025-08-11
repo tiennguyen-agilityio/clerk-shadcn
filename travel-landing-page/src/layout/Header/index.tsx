@@ -22,9 +22,10 @@ import MiniHeader from "./MiniHeader";
 
 interface HeaderProps {
   hasBorderBottom?: boolean;
+  className?: string;
 }
 
-const Header = ({ hasBorderBottom = false }: HeaderProps) => {
+const Header = ({ hasBorderBottom = false, className }: HeaderProps) => {
   const pathname = usePathname() || "";
   const isActiveSignIn = pathname.startsWith("/sign-in");
   const isActiveSignUp = pathname.startsWith("/sign-up");
@@ -32,8 +33,9 @@ const Header = ({ hasBorderBottom = false }: HeaderProps) => {
   return (
     <header
       className={cn(
-        "w-full absolute z-2",
-        hasBorderBottom ? "border-b-1 border-border text-current" : "text-white"
+        "w-full absolute z-2 ",
+        hasBorderBottom ? "border-b-1 border-border text-current" : "text-white",
+        className
       )}
     >
       <div className="container mx-auto my-5 text-current px-5">
