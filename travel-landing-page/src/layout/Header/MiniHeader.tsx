@@ -61,7 +61,7 @@ const MiniHeader = () => {
                 href={href}
                 onClick={handleCloseSheet}
                 className={cn(
-                  "w-full items-center font-bold rounded-sm py-2 px-5 text-sm hover:text-accent-foreground hover:bg-accent",
+                  "w-full items-center font-bold rounded-sm py-2 px-5 text-sm hover:text-accent-foreground hover:bg-accent dark:hover:bg-accent/50",
                   isActive && "text-primary bg-accent"
                 )}
               >
@@ -77,15 +77,15 @@ const MiniHeader = () => {
 
           <ClerkLoaded>
             <SignedOut>
-              <div className="flex flex-col items-start font-bold text-[13px] gap-2">
+              <div className="w-full flex flex-col justify-start items-start font-bold text-[13px] gap-2">
                 <SignInButton>
                   <Button
                     type="button"
                     variant="ghost"
                     onClick={handleCloseSheet}
                     className={cn(
-                      "h-fit hover:bg-transparent focus-visible:ring-0",
-                      isActiveSignIn && "text-primary"
+                      "w-full h-fit justify-start focus-visible:ring-0",
+                      isActiveSignIn && "text-primary bg-accent"
                     )}
                   >
                     Sign In
@@ -97,8 +97,8 @@ const MiniHeader = () => {
                     variant="ghost"
                     onClick={handleCloseSheet}
                     className={cn(
-                      "h-fit hover:bg-transparent focus-visible:ring-0",
-                      isActiveSignUp && "text-primary"
+                      "w-full h-fit justify-start focus-visible:ring-0",
+                      isActiveSignUp && "text-primary bg-accent"
                     )}
                   >
                     Sign Up
