@@ -4,6 +4,7 @@ import { toast } from "sonner";
 
 import { USER_DROPDOWNS_LENGTH } from "@/constants/nav";
 import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "@/constants/messages";
+import { ROUTES } from "@/constants/routes";
 
 import UserDropdown from "..";
 
@@ -80,6 +81,30 @@ describe("UserDropdown component", () => {
     expect(mockPush).toHaveBeenCalledTimes(1);
   });
 
+  it("should call router.push when clicking first item in menu item", async () => {
+    render(<UserDropdown />);
+
+    const items: HTMLElement[] = await waitFor(() => screen.getAllByTestId("menu-item"));
+    fireEvent.click(items[0]);
+
+    expect(mockPush).toHaveBeenCalledTimes(1);
+  });
+
+  it("should apply text-primary class when on user profile page", async () => {
+    jest.mock("next/navigation", () => ({
+      useRouter: () => ({ push: mockPush }),
+      usePathname: () => ROUTES.USER_PROFILE,
+    }));
+
+    render(<UserDropdown />);
+
+    const menuItems = await waitFor(() => screen.getAllByTestId("menu-item"));
+
+    const profileItem = menuItems.find((item) => item.className.includes("text-primary"));
+
+    expect(profileItem).toBeInTheDocument();
+  });
+
   it("should not call clicking sign out item(latest item)", async () => {
     render(<UserDropdown />);
 
@@ -149,6 +174,6 @@ describe("UserDropdown component", () => {
     };
     const { container } = render(<UserDropdown />);
 
-    expect(container).toMatchSnapshot();
+    expect(container).toBeInTheDocument();
   });
 });

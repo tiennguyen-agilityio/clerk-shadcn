@@ -15,8 +15,8 @@ import { cn } from "@/utils/styles";
 import Logo from "@/components/Logo";
 import Button from "@/components/Button";
 import UserDropdown from "@/components/UserDropdown";
-import BookmarkIcon from "@/components/Icons/BookmarkIcon";
 import HamburgerIcon from "@/components/Icons/HamburgerIcon";
+import ThemeToggle from "@/components/ThemeToggle";
 import {
   Sheet,
   SheetContent,
@@ -24,7 +24,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ModalToggleTheme } from "@/themes";
 
 const MiniHeader = () => {
   const pathname = usePathname() || "";
@@ -62,7 +61,7 @@ const MiniHeader = () => {
                 href={href}
                 onClick={handleCloseSheet}
                 className={cn(
-                  "items-center font-bold rounded-sm p-2 text-sm hover:text-accent-foreground",
+                  "items-center font-bold rounded-sm py-2 text-sm hover:text-accent-foreground",
                   isActive && "text-primary"
                 )}
               >
@@ -109,19 +108,11 @@ const MiniHeader = () => {
             </SignedOut>
             <SignedIn>
               <div className="my-2">
-                <UserDropdown />
+                <UserDropdown onChange={handleCloseSheet} />
               </div>
             </SignedIn>
           </ClerkLoaded>
-          <ModalToggleTheme onChange={handleCloseSheet} />
-          <Button
-            onClick={handleCloseSheet}
-            className="mt-2 xl:ml-20 rounded-[20px] font-bold"
-            size="sm"
-          >
-            <BookmarkIcon />
-            Reservations
-          </Button>
+          <ThemeToggle onChange={handleCloseSheet} />
         </SheetContent>
       </Sheet>
     </div>
