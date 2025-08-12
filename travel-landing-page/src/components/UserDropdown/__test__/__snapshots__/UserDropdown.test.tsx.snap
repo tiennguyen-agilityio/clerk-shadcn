@@ -52,38 +52,38 @@ exports[`UserDropdown component should render correctly 1`] = `
     class="md:hidden"
   >
     <div
-      class="flex flex-col items-center gap-2"
+      class="flex flex-col items-start gap-2"
     >
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >
         Profile
       </button>
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >
         Favorites
       </button>
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >
         Notifications
       </button>
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >
         My Reservations
       </button>
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >
@@ -146,38 +146,38 @@ exports[`UserDropdown component should render with default values when user is n
     class="md:hidden"
   >
     <div
-      class="flex flex-col items-center gap-2"
+      class="flex flex-col items-start gap-2"
     >
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >
         Profile
       </button>
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >
         Favorites
       </button>
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >
         Notifications
       </button>
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >
         My Reservations
       </button>
       <button
-        class="inline-flex justify-center gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary"
+        class="inline-flex gap-2 whitespace-nowrap rounded-sm text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer underline-offset-4 has-[>svg]:px-3 items-start justify-start px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent"
         data-slot="button"
         data-testid="menu-item"
       >

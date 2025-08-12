@@ -104,15 +104,15 @@ const UserDropdown = ({ onChange }: UserDropdownProps) => {
         </DropdownMenu>
       </div>
       <div className="md:hidden">
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-start gap-2">
           {USER_DROPDOWNS.map(({ text, href, isSignOut = false }, index) => (
             <Button
               data-testid="menu-item"
               variant="link"
               key={index}
               className={cn(
-                "items-center px-0 py-2 h-fit w-fit font-bold text-current hover:no-underline hover:text-primary",
-                isUserProfile && href === ROUTES.USER_PROFILE && "text-primary"
+                "items-start justify-start  px-5 py-2 h-fit w-full font-bold text-current hover:no-underline hover:text-primary hover:bg-accent",
+                isUserProfile && href === ROUTES.USER_PROFILE && "text-primary bg-accent"
               )}
               onClick={() => handleClick(href, isSignOut)}
             >

@@ -37,7 +37,7 @@ exports[`ThemeToggle renders MoonIcon when theme is dark 1`] = `
       </div>
     </div>
     <div
-      class="md:hidden"
+      class="md:hidden px-5"
     >
       <button
         class="bg-transparent size-10 border-primary"
@@ -89,7 +89,7 @@ exports[`ThemeToggle renders MoonIcon when theme is system 1`] = `
       </div>
     </div>
     <div
-      class="md:hidden"
+      class="md:hidden px-5"
     >
       <button
         class="bg-transparent size-10 border-primary"
@@ -141,7 +141,7 @@ exports[`ThemeToggle renders SunIcon when theme is light 1`] = `
       </div>
     </div>
     <div
-      class="md:hidden"
+      class="md:hidden px-5"
     >
       <button
         class="bg-transparent size-10 border-primary"
@@ -193,7 +193,7 @@ exports[`ThemeToggle renders SunIcon when theme is light default 1`] = `
       </div>
     </div>
     <div
-      class="md:hidden"
+      class="md:hidden px-5"
     >
       <button
         class="bg-transparent size-10 border-primary"

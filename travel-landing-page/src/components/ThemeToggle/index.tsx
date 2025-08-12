@@ -50,7 +50,7 @@ const ThemeToggle = ({ onChange }: ThemeToggleProps) => {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="md:hidden">
+      <div className="md:hidden px-5">
         <Button
           variant="outline"
           className="bg-transparent size-10 border-primary"
