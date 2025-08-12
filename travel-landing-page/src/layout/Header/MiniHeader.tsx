@@ -49,7 +49,7 @@ const MiniHeader = () => {
         </SheetTrigger>
         <SheetContent
           side="top"
-          className="min-w-full h-fit md:hidden justify-center items-center p-5 gap-2"
+          className="min-w-full h-fit md:hidden justify-center items-start p-5 gap-2"
         >
           <SheetTitle />
           <SheetDescription />
@@ -61,8 +61,8 @@ const MiniHeader = () => {
                 href={href}
                 onClick={handleCloseSheet}
                 className={cn(
-                  "items-center font-bold rounded-sm py-2 text-sm hover:text-accent-foreground",
-                  isActive && "text-primary"
+                  "w-full items-center font-bold rounded-sm py-2 px-5 text-sm hover:text-accent-foreground hover:bg-accent",
+                  isActive && "text-primary bg-accent"
                 )}
               >
                 <span className={cn(isActive && "text-primary")}>{name}</span>
@@ -77,7 +77,7 @@ const MiniHeader = () => {
 
           <ClerkLoaded>
             <SignedOut>
-              <div className="flex flex-col items-center font-bold text-[13px] gap-2">
+              <div className="flex flex-col items-start font-bold text-[13px] gap-2">
                 <SignInButton>
                   <Button
                     type="button"
@@ -107,7 +107,7 @@ const MiniHeader = () => {
               </div>
             </SignedOut>
             <SignedIn>
-              <div className="my-2">
+              <div className="w-full">
                 <UserDropdown onChange={handleCloseSheet} />
               </div>
             </SignedIn>
